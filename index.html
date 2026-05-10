@@ -11,7 +11,6 @@
 :root{--ocean:#1b4f72;--deep:#0e2a38;--lava:#c0392b;--sun:#d4a017;--sand:#f5ede0;--green:#1e8449;--white:#fdfaf6;--text:#1a2a35;--mid:#5a7a8a}
 body{font-family:'Lato',sans-serif;background:var(--deep);color:var(--white)}
 
-/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(14,42,56,.97);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1.5rem}
 .modal-overlay.hidden{display:none}
 .modal-box{background:rgba(27,79,114,.25);border:1px solid rgba(255,255,255,.12);padding:2.5rem;max-width:420px;width:100%;text-align:center;border-radius:4px}
@@ -26,12 +25,10 @@ body{font-family:'Lato',sans-serif;background:var(--deep);color:var(--white)}
 .name-chip{display:inline-block;margin:.2rem .25rem;padding:.3rem .8rem;border:1px solid rgba(255,255,255,.15);border-radius:20px;font-size:.75rem;cursor:pointer;color:rgba(255,255,255,.6)}
 .name-chip:hover{border-color:var(–sun);color:var(–sun)}
 
-/* USER PILL */
 .user-pill{position:fixed;top:1rem;right:1rem;z-index:200;background:rgba(14,42,56,.92);border:1px solid rgba(255,255,255,.15);padding:.4rem 1rem;border-radius:20px;font-size:.75rem;display:flex;align-items:center;gap:.6rem;cursor:pointer}
 .user-pill .dot{width:8px;height:8px;border-radius:50%;background:var(–green)}
 .user-pill.hidden{display:none}
 
-/* HERO */
 .hero{position:relative;height:100vh;min-height:500px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
 .hero-img{position:absolute;inset:0;background:url(‘https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1400&q=80’) center/cover no-repeat;filter:brightness(.32)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(14,42,56,.05),rgba(14,42,56,.85))}
@@ -47,48 +44,52 @@ body{font-family:'Lato',sans-serif;background:var(--deep);color:var(--white)}
 .scroll-arrow{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,.6),transparent);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
 
-/* MAP SECTION */
+/* MAP */
 .map-section{background:var(–white);color:var(–text);padding:3rem 2rem}
-.map-section h2{font-family:‘Playfair Display’,serif;font-size:clamp(1.6rem,4vw,2.5rem);text-align:center;margin-bottom:.5rem}
+.map-section h2{font-family:‘Playfair Display’,serif;font-size:clamp(1.6rem,4vw,2.4rem);text-align:center;margin-bottom:.4rem}
 .map-section h2 em{font-style:italic;color:var(–lava)}
-.map-section p{text-align:center;font-size:.9rem;color:var(–mid);font-weight:300;margin-bottom:1.5rem}
+.map-section>.sub{text-align:center;font-size:.9rem;color:var(–mid);margin-bottom:1.5rem;font-weight:300}
 .homes-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:700px;margin:0 auto 1.5rem}
-.home-card{background:var(–deep);color:var(–white);padding:1rem 1.25rem;border-radius:4px}
-.home-icon{font-size:1.4rem;margin-bottom:.4rem}
-.home-name{font-family:‘Playfair Display’,serif;font-size:1rem;margin-bottom:.25rem}
-.home-family{font-size:.75rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.6}
-.map-embed{width:100%;height:380px;border:0;border-radius:4px;display:block;max-width:900px;margin:0 auto}
+.home-card{background:var(–deep);color:var(–white);padding:1rem 1.25rem;border-radius:4px;border-left:3px solid var(–sun)}
+.home-icon{font-size:1.5rem;margin-bottom:.4rem}
+.home-name{font-family:‘Playfair Display’,serif;font-size:1rem;margin-bottom:.3rem}
+.home-family{font-size:.75rem;color:rgba(255,255,255,.45);font-weight:300;line-height:1.7}
+.map-frame-wrap{max-width:900px;margin:0 auto;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.12)}
+.map-frame-wrap iframe{width:100%;height:400px;border:0;display:block}
 
 /* INTRO */
 .intro{background:var(–deep);padding:3rem 2rem;text-align:center}
-.intro-title{font-family:‘Playfair Display’,serif;font-size:clamp(1.6rem,4vw,2.5rem);margin-bottom:1rem}
+.intro-title{font-family:‘Playfair Display’,serif;font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:1rem}
 .intro-title em{font-style:italic;color:var(–sun)}
-.intro-body{max-width:640px;margin:0 auto;font-size:.95rem;font-weight:300;line-height:1.9;color:rgba(255,255,255,.65)}
+.intro-body{max-width:640px;margin:0 auto;font-size:.95rem;font-weight:300;line-height:1.9;color:rgba(255,255,255,.6)}
 .vote-legend{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem}
-.legend-item{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:rgba(255,255,255,.55)}
+.legend-item{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:rgba(255,255,255,.5)}
 .legend-dot{width:10px;height:10px;border-radius:50%}
 
-/* SLOTS GRID */
+/* SLOTS */
 .slots-section{background:var(–deep);padding:2rem 1rem 3rem}
 .slots-section-header{text-align:center;padding:0 1rem 2rem}
 .slots-section-header h2{font-family:‘Playfair Display’,serif;font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:.4rem}
-.slots-section-header p{font-size:.85rem;color:rgba(255,255,255,.45);font-weight:300}
-.slots-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:4px;overflow:hidden;max-width:1200px;margin:0 auto}
+.slots-section-header p{font-size:.85rem;color:rgba(255,255,255,.4);font-weight:300}
+.slots-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:4px;overflow:hidden;max-width:1200px;margin:0 auto}
 
-/* SLOT CARD */
-.slot{background:rgba(14,42,56,.96);position:relative;overflow:hidden;display:flex;flex-direction:column}
-.slot-photos{position:relative;height:220px;overflow:hidden;flex-shrink:0}
-.slot-photo{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.slot:hover .slot-photo{transform:scale(1.04)}
-.slot-photo-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem}
-.slot-photos-nav{position:absolute;bottom:.5rem;right:.5rem;display:flex;gap:.3rem}
-.photo-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .2s}
-.photo-dot.active{background:var(–white)}
+/* CARD */
+.slot{background:rgba(14,42,56,.97);position:relative;display:flex;flex-direction:column}
+.slot-gallery{position:relative;height:230px;overflow:hidden;flex-shrink:0;background:#1a3a4a}
+.slot-gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s}
+.gallery-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;z-index:3;transition:background .2s}
+.gallery-btn:hover{background:rgba(0,0,0,.7)}
+.gallery-btn.prev{left:.6rem}
+.gallery-btn.next{right:.6rem}
+.gallery-dots{position:absolute;bottom:.6rem;left:50%;transform:translateX(-50%);display:flex;gap:.35rem;z-index:3}
+.gdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .2s}
+.gdot.on{background:#fff}
 .slot-body{padding:1.25rem 1.5rem 1.5rem;display:flex;flex-direction:column;flex:1}
 .slot-cat{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(–sun);font-weight:700;margin-bottom:.5rem}
-.slot-name{font-family:‘Playfair Display’,serif;font-size:1.3rem;margin-bottom:.75rem;line-height:1.25}
-.slot-desc{font-size:.87rem;font-weight:300;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:.85rem;flex:1}
-.slot-note{font-size:.77rem;font-style:italic;color:rgba(255,255,255,.38);margin-bottom:1rem;padding:.55rem .75rem;border-left:2px solid rgba(212,160,23,.4);background:rgba(212,160,23,.05);line-height:1.6}
+.slot-name{font-family:‘Playfair Display’,serif;font-size:1.3rem;margin-bottom:.6rem;line-height:1.25}
+.slot-hook{font-size:.9rem;font-weight:700;color:rgba(255,255,255,.9);line-height:1.55;margin-bottom:.7rem;font-style:italic}
+.slot-desc{font-size:.86rem;font-weight:300;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:.85rem;flex:1}
+.slot-note{font-size:.77rem;color:rgba(255,255,255,.38);margin-bottom:1rem;padding:.55rem .75rem;border-left:2px solid rgba(212,160,23,.4);background:rgba(212,160,23,.05);line-height:1.65;font-style:italic}
 .slot-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem}
 .stag{font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .6rem;border-radius:2px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5)}
 .stag.water{border-color:rgba(174,214,241,.4);color:#aed6f1}
@@ -117,13 +118,11 @@ body{font-family:'Lato',sans-serif;background:var(--deep);color:var(--white)}
 .who-chip.maybe{background:rgba(212,160,23,.2);color:var(–sun)}
 .who-chip.no{background:rgba(192,57,43,.2);color:#e8967a}
 .no-votes-yet{font-size:.65rem;opacity:.3;font-style:italic}
-
-/* WINNER BADGE */
-.winner-badge{position:absolute;top:.7rem;left:.7rem;font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border-radius:2px;background:rgba(30,132,73,.9);color:#fff;font-weight:700;display:none;z-index:2}
+.winner-badge{position:absolute;top:.7rem;left:.7rem;font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border-radius:2px;background:rgba(30,132,73,.9);color:#fff;font-weight:700;display:none;z-index:4}
 .slot.winner{outline:2px solid var(–green)}
 .slot.winner .winner-badge{display:block}
 
-/* PROPOSE BTN */
+/* PROPOSE */
 .propose-section{padding:2rem;text-align:center;background:var(–deep)}
 .propose-big-btn{background:none;border:1px solid rgba(212,160,23,.6);color:var(–sun);font-family:‘Lato’,sans-serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;padding:1rem 2.5rem;border-radius:2px;cursor:pointer;transition:all .2s}
 .propose-big-btn:hover{background:rgba(212,160,23,.1)}
@@ -134,14 +133,11 @@ body{font-family:'Lato',sans-serif;background:var(--deep);color:var(--white)}
 .podium-section h2 em{font-style:italic;color:var(–lava)}
 .podium-sub{text-align:center;font-size:.85rem;color:var(–mid);margin-bottom:2rem;font-weight:300}
 .podium-list{display:grid;gap:.6rem;max-width:800px;margin:0 auto}
-.podium-row{background:var(–white);display:grid;grid-template-columns:44px 60px 1fr auto;align-items:center;gap:.75rem;padding:.6rem 1rem;border-left:3px solid var(–ocean)}
-.podium-rank{font-family:‘Playfair Display’,serif;font-size:1.4rem;color:var(–mid);text-align:center}
-.podium-rank.gold{color:#d4a017}
-.podium-rank.silver{color:#9aa5b0}
-.podium-rank.bronze{color:#b87333}
-.podium-thumb{width:52px;height:52px;object-fit:cover;border-radius:2px;flex-shrink:0}
+.podium-row{background:var(–white);display:grid;grid-template-columns:44px 60px 1fr auto;align-items:center;gap:.75rem;padding:.65rem 1rem;border-left:3px solid var(–ocean)}
+.podium-rank{font-size:1.3rem;text-align:center}
+.podium-thumb{width:52px;height:52px;object-fit:cover;border-radius:2px}
 .podium-name{font-family:‘Playfair Display’,serif;font-size:.95rem;line-height:1.2}
-.podium-score{font-family:‘Lato’,sans-serif;font-size:.8rem;font-weight:700;color:var(–green);white-space:nowrap}
+.podium-score{font-size:.8rem;font-weight:700;color:var(–green);white-space:nowrap}
 
 /* PRACTICAL */
 .practical{background:var(–deep);padding:3.5rem 2rem}
@@ -166,17 +162,16 @@ body{font-family:'Lato',sans-serif;background:var(--deep);color:var(--white)}
 .msg{max-width:90%;padding:.75rem 1rem;border-radius:4px;font-size:.87rem;line-height:1.65}
 .msg.claude{background:rgba(27,79,114,.4);border:1px solid rgba(255,255,255,.08);align-self:flex-start;color:rgba(255,255,255,.85)}
 .msg.user{background:rgba(30,132,73,.2);border:1px solid rgba(30,132,73,.3);align-self:flex-end;color:#82e0aa}
-.msg.system{background:rgba(212,160,23,.1);border:1px solid rgba(212,160,23,.2);align-self:center;color:var(–sun);font-size:.78rem;text-align:center;font-style:italic}
+.msg.system{background:rgba(212,160,23,.1);border:1px solid rgba(212,160,23,.2);align-self:center;color:var(–sun);font-size:.78rem;text-align:center;font-style:italic;max-width:100%}
 .chat-input-row{padding:.75rem 1rem;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:.5rem}
 .chat-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:var(–white);font-family:‘Lato’,sans-serif;font-size:.9rem;padding:.7rem 1rem;border-radius:2px;outline:none}
 .chat-input:focus{border-color:var(–sun)}
 .chat-send{background:var(–ocean);color:var(–white);border:none;font-family:‘Lato’,sans-serif;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.2rem;cursor:pointer;border-radius:2px;white-space:nowrap}
 .chat-send:disabled{opacity:.4;cursor:not-allowed}
 .chat-typing{font-size:.75rem;color:rgba(255,255,255,.3);font-style:italic;padding:0 .25rem}
-
 footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65rem;letter-spacing:.15em;color:rgba(255,255,255,.3);text-transform:uppercase}
 .loading-spinner{text-align:center;padding:3rem;font-size:.8rem;color:rgba(255,255,255,.35);letter-spacing:.2em;text-transform:uppercase}
-@media(max-width:600px){.slots-grid{grid-template-columns:1fr}.homes-row{grid-template-columns:1fr}.podium-row{grid-template-columns:36px 48px 1fr auto}}
+@media(max-width:600px){.slots-grid{grid-template-columns:1fr}.homes-row{grid-template-columns:1fr}.podium-row{grid-template-columns:36px 44px 1fr auto;gap:.5rem}}
 </style>
 
 </head>
@@ -230,28 +225,33 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
 
 <div class="map-section" id="map-section">
   <h2>Nos deux <em>maisons</em></h2>
-  <p>À 8 km l'une de l'autre · Côté est de l'île · 15 min de Funchal</p>
+  <p class="sub">Côté est de l'île · 8 km l'une de l'autre · 15 min de Funchal</p>
   <div class="homes-row">
     <div class="home-card">
       <div class="home-icon">🏠</div>
-      <div class="home-name">Ana & Thibault</div>
+      <div class="home-name">Ana &amp; Thibault</div>
       <div class="home-family">Palheiro Village · São Gonçalo<br>Elsa · Faustine · Azélie</div>
     </div>
     <div class="home-card">
       <div class="home-icon">🏠</div>
-      <div class="home-name">Gaspard & Jennifer</div>
-      <div class="home-family">Caniço · Travessa E.B. de Melo<br>Ulysse · Timothée · Salomé · Isaure · Castille</div>
+      <div class="home-name">Gaspard &amp; Jennifer</div>
+      <div class="home-family">Travessa E.B. de Melo · Caniço<br>Ulysse · Timothée · Salomé · Isaure · Castille</div>
     </div>
   </div>
-  <iframe class="map-embed"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=Madeira+Island+Portugal&center=32.72,-16.85&zoom=10"
-    allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
+  <div class="map-frame-wrap">
+    <iframe
+      src="https://www.openstreetmap.org/export/embed.html?bbox=-17.35%2C32.55%2C-16.60%2C32.90&layer=mapnik&marker=32.6497%2C-16.8721"
+      allowfullscreen loading="lazy">
+    </iframe>
+  </div>
+  <p style="text-align:center;font-size:.75rem;color:var(--mid);margin-top:.75rem">
+    🏠 Palheiro Village (32.6497, -16.8721) &nbsp;·&nbsp; 🏠 Caniço (32.6419, -16.8558)
+  </p>
 </div>
 
 <div class="intro">
   <h2 class="intro-title">Votez pour construire le <em>programme</em></h2>
-  <p class="intro-body">Pas de planning imposé — juste une liste d'activités à trier ensemble. Votez 👍 Pour, 🤔 Peut-être ou 👎 Non. Les scores déterminent le classement final. Vous pouvez aussi proposer vos propres idées via le bouton ✨ en bas.</p>
+  <p class="intro-body">Pas de planning imposé — une liste d'activités à trier ensemble. Votez 👍 Pour, 🤔 Peut-être ou 👎 Non. Les cartes se réorganisent selon les scores. Vous pouvez aussi proposer vos idées via le bouton ✨ en bas.</p>
   <div class="vote-legend">
     <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Pour (3 pts)</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--sun)"></div> Peut-être (1 pt)</div>
@@ -262,7 +262,7 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
 <div class="slots-section">
   <div class="slots-section-header">
     <h2>Les activités proposées</h2>
-    <p>Votes de toutes les familles visibles en direct · Plusieurs photos par activité</p>
+    <p>Plusieurs photos par activité · Votes visibles en direct · Triées par score</p>
   </div>
   <div class="slots-grid" id="slotsGrid">
     <div class="loading-spinner">Connexion à la base de votes…</div>
@@ -288,7 +288,7 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
       <div class="pcard"><p class="pcard-title">🌤️ Météo en août</p><ul><li>21–26°C littoral, ~17°C en altitude</li><li>Quasi pas de pluie (~1 jour/mois)</li><li>8h de soleil par jour · Mer à ~22°C</li><li>Veste légère pour les randos en altitude</li></ul></div>
       <div class="pcard"><p class="pcard-title">🎒 À emporter</p><ul><li>Lampes frontales (tunnels des levadas !)</li><li>Chaussures de rando fermées pour tous</li><li>Anti-nausée ferry + routes en lacets</li><li>Crème solaire haute protection</li><li>Porte-bébé pour la petite en rando</li><li>Masque et tuba léger</li></ul></div>
       <div class="pcard"><p class="pcard-title">🍽️ À goûter absolument</p><ul><li>Espada au maracuja — poisson sabre local</li><li>Bolo do mel — gâteau de miel épicé</li><li>Poncha au citron vert (adultes…)</li><li>Ananas de Madère — goût incomparable</li><li>Pastel de nata bien sûr</li></ul></div>
-      <div class="pcard"><p class="pcard-title">🏠 Les maisons</p><ul><li>Palheiro Village — Ana & Thibault</li><li>Caniço — Gaspard & Jennifer</li><li>8 km l'une de l'autre</li><li>15 min de Funchal en voiture</li><li>Côté est, proche de l'aéroport</li></ul></div>
+      <div class="pcard"><p class="pcard-title">🏠 Les deux maisons</p><ul><li>Palheiro Village — Ana &amp; Thibault</li><li>Caniço — Gaspard &amp; Jennifer</li><li>8 km l'une de l'autre</li><li>15 min de Funchal en voiture</li><li>Côté est, proche de l'aéroport</li></ul></div>
     </div>
   </div>
 </div>
@@ -302,122 +302,169 @@ async function sbFetch(path,opts={}){
   const t=await r.text();if(!r.ok)throw new Error(t);return t?JSON.parse(t):[];
 }
 
-// Real Google Places photos for each slot
 const BASE_SLOTS=[
-  {id:'s01',cat:'Randonnée ★★ — Incontournable',emoji:'🌋',bg:'#301808',
-   name:'Ponta de São Lourenço',
-   photos:[
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZM5BSDdwHVIMpUV00yuhi1Kj6YqOQ0PTZm1iZjV0OmCeWQNxx3I7PveJ-H3efyIs5DDVQrGbDXCyqYeQu7wB8GExHdxBXfY6e--DV3bpg_Kz4fUoPspbjOvrz1wMhUlyqUQTabNm9Cbw9FvOKQ=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZODCaNdjsTvQRpbfRt9yZ6C95e_3e6IVPdeh2VnCughcZkjUXVE-HLQ5hOM-T4z2btEevk6oI-iq8yUIZUhNNUprgLwrYIuoVYILAtMHgKYK1VmsIkcAtss9BNrXcL1jNEkAVznx-4uwVzZVg=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZNfFAD_00O0YeUupVTY-Og3C8eDmRBuGH0tocDlBmex9CKr4KtW6zoduaN2J0zISWfuC8W1DZgP58IfQwdpO6FC4KuPRwJ06DHev66yfNBDXIymNT88vLfx0-leUdJMunia0XOKlK4IHvsZSg=s800-w800-h600',
-   ],
-   description:"La péninsule est de Madère est un autre monde : aride, ocre et rouge, avec la mer turquoise des deux côtés simultanément. Le sentier (8 km aller-retour, peu de dénivelé) longe des crêtes étroites avec panoramas à 360° à chaque virage. Les formations rocheuses rouges et noires plongeant dans l'eau bleue sont à couper le souffle. Les grands font l'aller-retour complet (3h). Pour la petite, les premiers 2 km sont déjà spectaculaires — porte-bébé recommandé.",
-   note:'⚑ Aucun ombre — eau et chapeaux obligatoires. Parking complet avant 9h en août.',
-   tags:[{l:'Rando',c:'hike'},{l:'Vues spectaculaires',c:'cult'},{l:'Tout âge adapté',c:'chill'}]},
-
-  {id:'s02',cat:'Piscines naturelles — Road trip',emoji:'🌊',bg:'#081828',
-   name:'Porto Moniz — piscines volcaniques',
-   photos:[
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZNSZXR-_U05NnMey_qlHFNYSKSAYdb5pA1Vjo5e626u-J3TEZTh0T_DtUY-GL4QaOGX4U9EpgU0jtE-s8wgi6Do3-pOji6dX9hWucT4IbpWBZjYNtbKS9hsJPQ3jMKG6k8uZ6JScrlgVlst7ck=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZPkMQCSOq-5cICzgsBggM4x6BYHwGxKt_1Nl0_iD9sJcm1-t8UpgwxE28aoQEDxD0IeKag6RogNJqIW_385AVuNtcQsXQyirsaMqgjIKvnqtks81OBqQFnNVMKEEvJbcGHwjUn8xPxMpx8d=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZOAZDqm_DU-pFdvinjSObbOc4sztMGHiU9qaWo8ONa6qZ20oMycW0RNFLCuvERbBeNivv0glUDuzEP3kIwIA__G2bOvt-sHYe9Kf84eaTmqlnu0gTiH4LcAQ=s800-w800-h600',
-   ],
-   description:"La grande traversée de l'île par le col d'Encumeada (1 000 m), arrêt à Santana pour les palheiros — les maisons au toit de chaume triangulaire. Puis Porto Moniz : des piscines naturelles creusées dans la roche volcanique noire, remplies par les vagues de l'Atlantique. Eau cristalline, vagues qui éclatent sur les rochers en arrière-plan. Un cadre absolument unique qui ne ressemble à rien d'autre.",
-   note:'Journée longue (~1h45 de route depuis Funchal). Prévoir pique-nique. Surveiller la petite dans les bassins.',
-   tags:[{l:'Baignade',c:'water'},{l:'Road trip',c:'fun'},{l:'Nature',c:'hike'}]},
-
-  {id:'s03',cat:'★ Grande journée — Ferry',emoji:'🏝️',bg:'#281808',
-   name:'Île de Porto Santo — 9 km de plage',
-   photos:[
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZMsGlgSv2RH6myykR4_agpp8DE0PNMNG8qDv8Mr8XYHIVK1Y7-l38Dw3FJNs0UoEKSI48Zz_xXKlFddSegVvpSzYZzBNWodk3ze0TmbgH3IgxH9gV6VlUYfkFxM5SW_l8jbHNrnnN1Lib0WV34=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZND-hZG65ErRrtKrcB-pAH_5NcAkFMwOLK2QXPp9tRrmyZGEnaTMMxymtUPwZZYgievVCod8IJEPNJ1M_kESlyIXQF3uWv7ZQnTLxxxbY3LrQf2tK0pkVhDCyJCvH1mTHmXIGt9hUtOeGNX=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZNpgOlm5R_04UyTJVgtqO7_rZTlPQvvzQF9903MRwrzxK_meqLn40kfeXOG_ty3-LvVbTjSifDzvw21489gkJeJPOVj5OjNk2OY9yHnRQ7gLmQFgCEduRJY3cS2ELkIy6qWXVgwraSuJatGug=s800-w800-h600',
-   ],
-   description:"Porto Santo est l'île voisine à 2h15 de ferry : plate, sèche, dorée. 9 km de plage de sable fin ininterrompus, réputée dans tout le Portugal pour ses propriétés thérapeutiques. Eau chaude et peu de vagues, idéale pour tous les âges. Les enfants ont un espace infini pour courir et construire. On peut louer des vélos ou des buggies électriques. Souvent citée comme la journée préférée du séjour — sans voiture, sans planning, juste la plage.",
-   note:'⚑ Réserver le ferry à l\'avance — complet plusieurs jours avant en août. Départ ~8h, retour ~18h.',
-   tags:[{l:'Plage',c:'water'},{l:'Ferry aller-retour',c:'cult'},{l:'Tout âge',c:'chill'},{l:'Inoubliable',c:'fun'}]},
-
-  {id:'s04',cat:'Jardins & Téléphérique',emoji:'🌿',bg:'#1a4030',
-   name:'Monte Palace & luge en osier',
-   photos:[
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZOhgdcXkaKSQM2_Wrszk9k7NVi8PUCqa77Zc7otLa7G822lBkI0rme0aG_KXmn3snDWwAqTuSwaJ10sOVJUBe_iZcujz0sWzxxDLVMmBQtCphicYkEBLdGawPh5eRfLtkA0ssca_EAgJfAADuI=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZObcYazEJfrPCaGQoPy4jvdjTJicVbgGBKT40a0VZWsRh0vpehHFX1MRZsmkm_2k9LyD7uuAGtONEsTw33jA3iece9s_8Kb3Q09Vs3A8lX44ez6Op9NwQd1FDw__zGGdQ9UJOMJML8ovpL5Pnk=s800-w800-h600',
-     'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&q=80',
-   ],
-   description:"Téléphérique depuis le Zona Velha de Funchal jusqu'au quartier de Monte, avec vue plongeante sur la baie. En haut : les jardins tropicaux du Monte Palace, parmi les plus beaux du Portugal. Bassins de carpes koï géantes, azulejos monumentaux, orchidées. Puis la descente en carrinho de cesto — deux hommes en blanc poussent un panier en osier dans les ruelles pentues, freinant avec leurs semelles en cuir. 2 km de descente à vive allure — la grande attraction de l'île.",
-   note:'Arriver avant 9h30 pour éviter la file du téléphérique. ~30€/panier, 2 personnes max.',
-   tags:[{l:'Nature',c:'hike'},{l:'Sensations',c:'fun'},{l:'Tout âge',c:'chill'}]},
-
-  {id:'s05',cat:'Forêt primaire UNESCO — Rando',emoji:'🌿',bg:'#081e10',
-   name:'Levada do Caldeirão Verde',
-   photos:[
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZNYWTK5CR4u_BcX7jcHX6hvaIU3-ujIN7puW3UfD11QijplAbssZ0Wpb_BkaTq7magW7A1RYWuHIGshIRdWj-uApK4fefD_SOsYIgnwG-l5VNgk_kAAo941YsIDV26cmvS6aoXR5hyA2rtQ_A=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZPwFCXDxUEVy75iMfyKSnwIm0m3kHwCPQw_jVCM5oBousN5x0D8QRERy0InZtFdot6vURdrAp4LvmmD4qxo1CfTFm8Hxrnf5oG1lM-VEIdphc4GLqAMXxTMwBih0zngT7CxRdw3_oUuu-Nq_E8=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZMlhx_uyEgKGKRLJrME8l4ufHQDuGhZsyl9FkCrSymUH3mdV-874aNW3wbqDkjW5QtEj-wJ5FHuWm3lO-jMAvVgHYOwyVzqG8DMtJlW3k8ORycKe4Q3qcDhmWECFM7oEm3GgEj53kWaV_Imaw=s800-w800-h600',
-   ],
-   description:"La laurisilva de Madère est l'une des dernières forêts primaires subtropicales d'Europe, classée UNESCO. Le sentier longe un canal d'irrigation sur 8 km dans une végétation de fougères arborescentes géantes, lauriers centenaires et mousses. Atmosphère fraîche et mystique — dépaysement total. Le clou : quatre tunnels creusés dans la roche à traverser à la lampe frontale dans le noir complet. Les enfants adorent l'aspect explorateurs. Au bout : une cascade dans un lac naturel.",
-   note:'⚑ Lampes frontales INDISPENSABLES ! Chaussures fermées obligatoires. Praticable pour tous les âges.',
-   tags:[{l:'Rando',c:'hike'},{l:'UNESCO',c:'cult'},{l:'Lampes frontales !',c:'fun'}]},
-
-  {id:'s06',cat:'Panorama — Belvédère',emoji:'🗻',bg:'#202028',
-   name:'Cabo Girão — falaise à 580 m',
-   photos:[
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZOzq166sY8NY2WVapu4lgg-NnipHKhS_JnZLdmOKNOh3xkKCpgvJ8XPcHaGscxBacusDLBzHsH_5F9g7YA54Vra2ohvOsJPaYD_iBr8BVxbTA_V_OAlg8-qoV6S33ej8ot1yv7o3rAySDyztQ=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZP4KTtVEf3RrDpla8RToH-nN6xtEzTlhJJMg2n1Du6IJHuZh8jYsIlCkLFMw-tf4IpXfKAzpXk-h2OQSvN9iQ1nPIv1F3PWf2g2DMK1sMSi0zUfMKps_K0oGtnOhukAA0edBtzOOn0pwWyxFQ=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZNO5v08gfXNsdv1Jb5lJ_Wr_3QG8eVqV3qHkml95BJ1ckKIYvDKCkSj9JnfYgAPbfAM4TVdcqxJlrOCR-f9vL9PkFj5oSfKl5HxP8gzJMCFcp5b6ACZmuizKLeNsqVcp8JFvyC94gSsb7ynfdCL0YrkcQ=s800-w800-h600',
-   ],
-   description:"Cabo Girão est l'une des plus hautes falaises d'Europe à 580 m au-dessus de l'Atlantique. Le belvédère au sol vitré est suspendu dans le vide — les photos et la réalité font le même effet : vertige garanti. En bas, on distingue les terrasses de vignes en bandes étroites cultivées à flanc de falaise. À combiner avec Câmara de Lobos, le petit port de pêche aux barques colorées que Churchill venait peindre depuis la terrasse d'un café.",
-   note:'Entrée payante (~2-5€). À combiner avec Monte/luge le même jour — même secteur ouest.',
-   tags:[{l:'Panorama',c:'cult'},{l:'Frissons',c:'fun'},{l:'Court',c:'chill'}]},
-
-  {id:'s07',cat:'Mer — Cétacés',emoji:'🐬',bg:'#08202e',
-   name:'Whale watching — dauphins & baleines',
-   photos:[
-     'https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=800&q=80',
-     'https://images.unsplash.com/photo-1607153333879-c174d265f1d2?w=800&q=80',
-     'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&q=80',
-   ],
-   description:"Madère est l'un des meilleurs spots d'observation des cétacés en Europe, grâce aux eaux profondes de l'Atlantique à quelques miles du port. Des vigies sur les falaises repèrent les animaux par radio en temps réel. Sortie 2h30 en zodiac depuis Calheta avec H2O Madeira. Espèces régulièrement observées : dauphins communs, grands dauphins, globicéphales. Parfois des baleines à bec. Les enfants de tous âges ressortent unanimement subjugués.",
-   note:'⚑ Réservation OBLIGATOIRE — complet plusieurs jours à l\'avance en août. Anti-nausée recommandé.',
-   tags:[{l:'Mer',c:'water'},{l:'Tout âge',c:'chill'},{l:'Inoubliable',c:'fun'}]},
-
-  {id:'s08',cat:'Plage — Sable fin',emoji:'🏖️',bg:'#082828',
-   name:'Plage de Calheta & Jardim do Mar',
-   photos:[
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZOx3_8RzLefOco_wJrMJgRvHH4Zls_y1EfQN-nYhYLSwoxVixpS8Nx-8MwjCnTWhgzkiLbVUAhnFGI4gfz07NWAiQ1K0ccfY_PHtG-LPXTeoznfMRzVYzB9gYY9r3DJd0oqA3oHkeUAUxBdLhU=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZOBKWNZIMuFRiqqAkNQGV6CWXxSRKp5D0bWajV8h_w-bw6gRAlNvQHU-fs0KVckOvCNDNrnQxPAALLb_0FQcPyo40wC5Y60-I5AYrHJ8waJgV-xbSBxbq1nR_afteTg9o0uXGu5zZ0-QNUulQ=s800-w800-h600',
-     'https://lh3.googleusercontent.com/place-photos/AJRVUZMQpkq5L1JwkC1VbkZJ68TynUUTqDpW3MkgnPdFMeeAhOzpjoDTH_HMuUcAyyohRnWLvM_U6pfcH2QtJfPn_oNburJ2rmh8R0kJ6cEmgQtjH82ATagWTR4ux2xTrENRC0wtvkrJ81o3cn_fgg=s800-w800-h600',
-   ],
-   description:"La plage de Calheta est l'une des rares plages de sable fin de Madère — eau calme derrière la digue, idéale pour la petite de 4 ans. Transats, douches, snorkeling. En fin d'après-midi, 5 minutes de route jusqu'au village de Jardim do Mar : ruelles étroites ornées de pierres noires et blanches, maisons couvertes de bougainvillées, ambiance de bout du monde face à l'Atlantique. L'un des plus beaux couchers de soleil de l'île.",
-   note:'Parfaitement combinable avec le whale watching le même jour — même secteur ouest.',
-   tags:[{l:'Plage',c:'water'},{l:'4 ans ✓',c:'chill'},{l:'Coucher de soleil',c:'cult'}]},
-
-  {id:'s09',cat:'Adrénaline — 12 ans +',emoji:'💦',bg:'#102a18',
-   name:'Canyoning Ribeira das Cales',
-   photos:[
-     'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
-     'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80',
-     'https://images.unsplash.com/photo-1455156218388-5e61b526818b?w=800&q=80',
-   ],
-   description:"Canyon de difficulté modérée à 20 minutes de Funchal, parfait pour les débutants. Tout l'équipement fourni (combinaison, casque, baudrier). Au programme : descentes en rappel le long de cascades tropicales, sauts dans des vasques naturelles turquoise, passages à la nage entre des rochers tapissés de fougères. Durée environ 2h30. Les grands ados ressortent euphoriques — c'est souvent l'activité qu'ils mentionnent en rentrant.",
-   note:'Réserver à l\'avance, groupes limités. Idéal si les petits restent à la piscine pendant ce temps.',
-   tags:[{l:'Adrénaline',c:'fun'},{l:'12 ans +',c:'fun'},{l:'Encadré',c:'chill'}]},
-
-  {id:'s10',cat:'Altitude — Option ados',emoji:'🌅',bg:'#181028',
-   name:'Pico Arieiro au lever du soleil (1 818 m)',
-   photos:[
-     'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-     'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-     'https://images.unsplash.com/photo-1531761535209-83234b130a68?w=800&q=80',
-   ],
-   description:"Pour les 14–16 ans et adultes motivés : réveil à 5h, départ en voiture pour le Pico Arieiro accessible directement jusqu'au parking à 1 818 m. Arriver avant le lever pour voir la mer de nuages s'illuminer en rose et orange. En dessous, Madère est enfoui dans les nuages ; au-dessus, ciel dégagé et étoiles encore visibles. Unanimement cité par tous les voyageurs comme l'une des plus belles expériences de leur vie.",
-   note:'⚑ Veste chaude obligatoire — il fait 10–12°C au sommet même en août. Décider la veille selon l\'énergie.',
-   tags:[{l:'14 ans +',c:'fun'},{l:'Lever de soleil',c:'cult'},{l:'Altitude',c:'hike'}]},
+ {
+  id:'s01',cat:'Randonnée ★★ — Incontournable',emoji:'🌋',bg:'#2a1505',
+  name:'Ponta de São Lourenço',
+  hook:'La randonnée la plus spectaculaire de Madère — et pourtant l\'une des plus accessibles.',
+  description:'La pointe est de l\'île est géologiquement distincte du reste de Madère : plus ancienne, plus érodée, elle a pris des teintes ocre, rouge sang et noir volcanique que le reste de l\'île — verte et luxuriante — n\'a pas. Le sentier longe des crêtes étroites avec la mer turquoise des deux côtés simultanément, créant des panoramas à 360° à chaque virage. Les formations rocheuses plongeant dans l\'Atlantique ressemblent à une peinture. 8 km aller-retour, peu de dénivelé : les grands font l\'aller complet jusqu\'à la pointe Casa Sardinha (3h). Pour les plus petits, les premiers 2 km sont déjà spectaculaires — le porte-bébé s\'impose pour la suite. À noter : l\'accès est désormais réglementé et payant (~4,50€).',
+  note:'⚑ Aucun ombre sur tout le sentier — eau et chapeaux absolument obligatoires. Parking complet avant 9h en août.',
+  photos:[
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZM5BSDdwHVIMpUV00yuhi1Kj6YqOQ0PTZm1iZjV0OmCeWQNxx3I7PveJ-H3efyIs5DDVQrGbDXCyqYeQu7wB8GExHdxBXfY6e--DV3bpg_Kz4fUoPspbjOvrz1wMhUlyqUQTabNm9Cbw9FvOKQ=s800-w800-h600',
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZODCaNdjsTvQRpbfRt9yZ6C95e_3e6IVPdeh2VnCughcZkjUXVE-HLQ5hOM-T4z2btEevk6oI-iq8yUIZUhNNUprgLwrYIuoVYILAtMHgKYK1VmsIkcAtss9BNrXcL1jNEkAVznx-4uwVzZVg=s800-w800-h600',
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZNfFAD_00O0YeUupVTY-Og3C8eDmRBuGH0tocDlBmex9CKr4KtW6zoduaN2J0zISWfuC8W1DZgP58IfQwdpO6FC4KuPRwJ06DHev66yfNBDXIymNT88vLfx0-leUdJMunia0XOKlK4IHvsZSg=s800-w800-h600',
+  ],
+  tags:[{l:'Rando',c:'hike'},{l:'Vues incroyables',c:'cult'},{l:'Demi-journée',c:'chill'}]
+ },
+ {
+  id:'s02',cat:'Piscines volcaniques — Road trip nord',emoji:'🌊',bg:'#041520',
+  name:'Porto Moniz — piscines volcaniques',
+  hook:'Des piscines creusées dans la lave noire par l\'Atlantique — un cadre qui ne ressemble à rien d\'autre.',
+  description:'Porto Moniz est à l\'opposé géographique et climatique de Funchal. La route y est en elle-même un spectacle : on traverse l\'île par le col d\'Encumeada (1 000 m), point depuis lequel — par temps clair — on aperçoit simultanément la côte nord brumeuse et la côte sud ensoleillée. Le paysage bascule alors brutalement : fini le soleil, bienvenue dans la végétation dense et humide du nord. Arrêt à Santana pour les palheiros, ces maisons traditionnelles au toit de chaume triangulaire qui descend jusqu\'au sol, habitées jadis par les paysans et toujours debout. Puis Porto Moniz : des bassins naturels creusés dans la roche volcanique noire par des siècles de vagues, remplis et renouvelés en permanence par l\'Atlantique. Eau cristalline, odeur d\'iode, vagues qui éclatent sur les rochers en arrière-plan dans un bruit sourd. L\'entrée coûte environ 1,50€.',
+  note:'Journée longue (~1h45 de route). Prévoir pique-nique pour le déjeuner. Surveiller la petite dans les bassins.',
+  photos:[
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZNSZXR-_U05NnMey_qlHFNYSKSAYdb5pA1Vjo5e626u-J3TEZTh0T_DtUY-GL4QaOGX4U9EpgU0jtE-s8wgi6Do3-pOji6dX9hWucT4IbpWBZjYNtbKS9hsJPQ3jMKG6k8uZ6JScrlgVlst7ck=s800-w800-h600',
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZPkMQCSOq-5cICzgsBggM4x6BYHwGxKt_1Nl0_iD9sJcm1-t8UpgwxE28aoQEDxD0IeKag6RogNJqIW_385AVuNtcQsXQyirsaMqgjIKvnqtks81OBqQFnNVMKEEvJbcGHwjUn8xPxMpx8d=s800-w800-h600',
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZNsMitvbT3G0bG4A0ZM9HKVKzTFEdmmooDh9YVfOpkoqSArM8qwh_xCAQOfvw8tdZ8zTYQUwy08Dsy4xRlghZ_uXAaJi2Iosps6H5jrw-dgGDaelgoClUmN0bgfEaiG1ixdM5oDwGRAOW8d4kM=s800-w800-h600',
+  ],
+  tags:[{l:'Baignade',c:'water'},{l:'Road trip',c:'fun'},{l:'Nature volcanique',c:'hike'}]
+ },
+ {
+  id:'s03',cat:'★ Journée île — Ferry depuis Funchal',emoji:'🏝️',bg:'#201005',
+  name:'Porto Santo — 9 km de plage',
+  hook:'Une île entièrement différente, à 2h15 de ferry : plate, dorée, sans voiture, sans agenda.',
+  description:'Porto Santo est souvent la révélation du séjour pour les familles qui la font. Géologiquement et climatiquement opposée à Madère — plate, sèche, presque désertique — elle offre 9 km de plage de sable fin doré ininterrompus le long de toute sa côte sud. Le sable est réputé dans tout le Portugal pour ses propriétés thérapeutiques : riche en magnésium, calcium et oligo-éléments, il est prescrit en cure médicale dans certains cas. Les eaux sont chaudes, peu profondes et sans vague côté baie. Les enfants ont un espace infini pour courir, creuser et nager. On peut louer des vélos, des petites voiturettes électriques ou se contenter de marcher. Christophe Colomb y a vécu avant de partir vers les Amériques — sa maison est devenue musée. Le ferry Lobo Marinho part tôt le matin et ramène le soir.',
+  note:'⚑ Réserver le ferry à l\'avance — complet des jours avant en août. Départ ~8h, retour ~18h. Anti-nausée si mer agitée.',
+  photos:[
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZMsGlgSv2RH6myykR4_agpp8DE0PNMNG8qDv8Mr8XYHIVK1Y7-l38Dw3FJNs0UoEKSI48Zz_xXKlFddSegVvpSzYZzBNWodk3ze0TmbgH3IgxH9gV6VlUYfkFxM5SW_l8jbHNrnnN1Lib0WV34=s800-w800-h600',
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZND-hZG65ErRrtKrcB-pAH_5NcAkFMwOLK2QXPp9tRrmyZGEnaTMMxymtUPwZZYgievVCod8IJEPNJ1M_kESlyIXQF3uWv7ZQnTLxxxbY3LrQf2tK0pkVhDCyJCvH1mTHmXIGt9hUtOeGNX=s800-w800-h600',
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZNpgOlm5R_04UyTJVgtqO7_rZTlPQvvzQF9903MRwrzxK_meqLn40kfeXOG_ty3-LvVbTjSifDzvw21489gkJeJPOVj5OjNk2OY9yHnRQ7gLmQFgCEduRJY3cS2ELkIy6qWXVgwraSuJatGug=s800-w800-h600',
+  ],
+  tags:[{l:'Plage',c:'water'},{l:'Ferry A/R',c:'cult'},{l:'Tout âge',c:'chill'},{l:'Inoubliable',c:'fun'}]
+ },
+ {
+  id:'s04',cat:'Jardins & Luge — Funchal',emoji:'🌿',bg:'#0a2010',
+  name:'Monte Palace & luge en osier',
+  hook:'Les jardins les plus extravagants du Portugal, suivis de la descente la plus absurde et jouissive de l\'île.',
+  description:'Monte est le quartier de villégiature historique au-dessus de Funchal, où les Britanniques venaient se rafraîchir pendant les grandes chaleurs au XIXe siècle. On y monte en téléphérique depuis le bord de mer avec vue plongeante sur la baie. Les jardins du Monte Palace s\'étendent sur plus de sept hectares de végétation subtropicale : bassins de carpes koï géantes, azulejos monumentaux représentant l\'histoire du Portugal, orchidées, cycas et palmiers centenaires, plus une collection de minéraux et de cristaux dans une grotte souterraine. Puis la grande attraction : le carrinho de cesto. Ce moyen de transport inventé au XIXe siècle consiste en un panier en osier monté sur patins de bois, piloté par deux hommes en costume blanc et chapeau de paille qui freinent avec leurs épaisses semelles de cuir dans les ruelles pavées. Environ 2 km de descente, jusqu\'à deux passagers par panier.',
+  note:'Arriver avant 9h30 pour éviter la file du téléphérique. ~30€/panier, 2 personnes max.',
+  photos:[
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZOhgdcXkaKSQM2_Wrszk9k7NVi8PUCqa77Zc7otLa7G822lBkI0rme0aG_KXmn3snDWwAqTuSwaJ10sOVJUBe_iZcujz0sWzxxDLVMmBQtCphicYkEBLdGawPh5eRfLtkA0ssca_EAgJfAADuI=s800-w800-h600',
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZObcYazEJfrPCaGQoPy4jvdjTJicVbgGBKT40a0VZWsRh0vpehHFX1MRZsmkm_2k9LyD7uuAGtONEsTw33jA3iece9s_8Kb3Q09Vs3A8lX44ez6Op9NwQd1FDw__zGGdQ9UJOMJML8ovpL5Pnk=s800-w800-h600',
+   'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&q=80',
+  ],
+  tags:[{l:'Nature',c:'hike'},{l:'Sensations',c:'fun'},{l:'Tout âge',c:'chill'},{l:'Culture',c:'cult'}]
+ },
+ {
+  id:'s05',cat:'Forêt primaire UNESCO — Rando',emoji:'🌿',bg:'#031208',
+  name:'Levada do Caldeirão Verde',
+  hook:'Entrer dans l\'une des dernières forêts primaires d\'Europe — et traverser ses tunnels dans le noir complet.',
+  description:'La laurisilva de Madère est une forêt subtropicale de l\'ère tertiaire, disparue du reste de l\'Europe lors des glaciations et préservée ici grâce au microclimat de l\'île. Elle est classée au patrimoine mondial UNESCO depuis 1999. Le sentier du Caldeirão Verde longe une levada — l\'un de ces canaux d\'irrigation creusés depuis le XVe siècle qui courent à flanc de montagne pour acheminer l\'eau de pluie des sommets vers les cultures. La végétation est saisissante : fougères arborescentes de plusieurs mètres, lauriers centenaires couverts de mousses, lichens, bruyères géantes. Atmosphère fraîche, presque mystique. Le moment fort : quatre tunnels taillés dans la roche volcanique, jusqu\'à 150 m de long, à traverser à la lampe frontale dans un noir total — l\'eau du canal coule à côté, on entend les gouttes tomber. Les enfants adorent l\'aspect "explorateurs".',
+  note:'⚑ Lampes frontales absolument indispensables pour les tunnels ! Chaussures fermées obligatoires.',
+  photos:[
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZNYWTK5CR4u_BcX7jcHX6hvaIU3-ujIN7puW3UfD11QijplAbssZ0Wpb_BkaTq7magW7A1RYWuHIGshIRdWj-uApK4fefD_SOsYIgnwG-l5VNgk_kAAo941YsIDV26cmvS6aoXR5hyA2rtQ_A=s800-w800-h600',
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZPwFCXDxUEVy75iMfyKSnwIm0m3kHwCPQw_jVCM5oBousN5x0D8QRERy0InZtFdot6vURdrAp4LvmmD4qxo1CfTFm8Hxrnf5oG1lM-VEIdphc4GLqAMXxTMwBih0zngT7CxRdw3_oUuu-Nq_E8=s800-w800-h600',
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZMlhx_uyEgKGKRLJrME8l4ufHQDuGhZsyl9FkCrSymUH3mdV-874aNW3wbqDkjW5QtEj-wJ5FHuWm3lO-jMAvVgHYOwyVzqG8DMtJlW3k8ORycKe4Q3qcDhmWECFM7oEm3GgEj53kWaV_Imaw=s800-w800-h600',
+  ],
+  tags:[{l:'Rando',c:'hike'},{l:'UNESCO',c:'cult'},{l:'Tunnels dans le noir',c:'fun'}]
+ },
+ {
+  id:'s06',cat:'Belvédère & Falaise — Côte ouest',emoji:'🗻',bg:'#101828',
+  name:'Cabo Girão — la plus haute falaise d\'Europe occidentale',
+  hook:'580 m de falaise verticale, un sol vitré dans le vide, et les terrasses de vignes en contrebas : vertige garanti.',
+  description:'Cabo Girão est avec Cabo Anapaka au Kamtchatka l\'une des plus hautes falaises maritimes du monde : 580 m de chute verticale directement dans l\'Atlantique. Le belvédère au sol vitré est installé au bord de la paroi — on marche littéralement dans le vide au-dessus de l\'océan. En bas, on distingue des fajãs, ces minuscules terrasses de vignes cultivées à même la falaise, accessibles uniquement par câble ou bateau. La route vers Cabo Girão passe par Câmara de Lobos, le village de pêcheurs aux barques bleues et jaunes que Winston Churchill venait peindre depuis la terrasse d\'un café pendant ses hivers madériens dans les années 1950. Le village n\'a quasiment pas changé depuis.',
+  note:'Entrée payante ~2-5€. Facile à combiner avec Monte/luge le même jour — même secteur ouest.',
+  photos:[
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZOzq166sY8NY2WVapu4lgg-NnipHKhS_JnZLdmOKNOh3xkKCpgvJ8XPcHaGscxBacusDLBzHsH_5F9g7YA54Vra2ohvOsJPaYD_iBr8BVxbTA_V_OAlg8-qoV6S33ej8ot1yv7o3rAySDyztQ=s800-w800-h600',
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZP4KTtVEf3RrDpla8RToH-nN6xtEzTlhJJMg2n1Du6IJHuZh8jYsIlCkLFMw-tf4IpXfKAzpXk-h2OQSvN9iQ1nPIv1F3PWf2g2DMK1sMSi0zUfMKps_K0oGtnOhukAA0edBtzOOn0pwWyxFQ=s800-w800-h600',
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZNO5v08gfXNsdv1Jb5lJ_Wr_3QG8eVqV3qHkml95BJ1ckKIYvDKCkSj9JnfYgAPbfAM4TVdcqxJlrOCR-f9vL9PkFj5oSfKl5HxP8gzJMCFcp5b6ACZmuizKLeNsqVcp8JFvyC94gSsb7ynfdCL0YrkcQ=s800-w800-h600',
+  ],
+  tags:[{l:'Panorama',c:'cult'},{l:'Vertige',c:'fun'},{l:'Court',c:'chill'}]
+ },
+ {
+  id:'s07',cat:'Cétacés — Mer ouverte',emoji:'🐬',bg:'#041018',
+  name:'Whale watching depuis Calheta',
+  hook:'Madère est l\'un des meilleurs spots d\'observation des baleines en Europe — à quelques miles du port.',
+  description:'Les eaux autour de Madère sont exceptionnellement profondes dès la sortie du port : 3 000 à 4 000 mètres à quelques miles de la côte. Cette bathymétrie attire une faune marine spectaculaire à l\'année. Des vigies situées sur les falaises scrutent la mer aux jumelles et guident les bateaux par radio en temps réel — un système unique en Europe. H2O Madeira, basé à Calheta, est l\'un des opérateurs les plus réputés de l\'île : sorties en zodiac de 8 places, 2h30 en mer. Espèces couramment observées : dauphins communs (troupeaux parfois de plusieurs centaines), grands dauphins, globicéphales noirs. Plus rarement : baleines à bec de Blainville, cachalots, baleines bleues en migration. Les enfants de tous âges ressortent unanimement subjugués — c\'est souvent le moment dont ils parlent encore des semaines après.',
+  note:'⚑ Réservation OBLIGATOIRE — complet des jours à l\'avance en août. Anti-nausée recommandé pour les petits sensibles.',
+  photos:[
+   'https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=800&q=80',
+   'https://images.unsplash.com/photo-1607153333879-c174d265f1d2?w=800&q=80',
+   'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&q=80',
+  ],
+  tags:[{l:'Mer',c:'water'},{l:'Tout âge',c:'chill'},{l:'Inoubliable',c:'fun'}]
+ },
+ {
+  id:'s08',cat:'Plage & Village — Côte ouest',emoji:'🏖️',bg:'#041818',
+  name:'Plage de Calheta & Jardim do Mar',
+  hook:'La plage de sable fin la plus familiale de l\'île, et derrière la digue un village de bout du monde.',
+  description:'Madère n\'a pas naturellement de plages de sable — ses côtes sont rocheuses et escarpées. Calheta fait exception : du sable fin a été importé du Sahara et du Maroc pour créer une plage derrière une digue, et le résultat est une des rares plages vraiment familiales de l\'île. L\'eau est calme, peu profonde, idéale pour la petite de 4 ans. Transats et parasols disponibles, douches sur place, restaurants de poisson directement en bord de mer. En fin d\'après-midi, cinq minutes de route permettent de rejoindre Jardim do Mar, l\'un des villages les plus préservés de l\'île : ruelles étroites pavées de basalte, maisons basses couvertes de bougainvillées mauves et roses, calme absolu, vue sur l\'Atlantique sans infrastructure. L\'un des couchers de soleil les plus beaux de l\'île.',
+  note:'Combinable avec le whale watching — même secteur, même journée.',
+  photos:[
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZOx3_8RzLefOco_wJrMJgRvHH4Zls_y1EfQN-nYhYLSwoxVixpS8Nx-8MwjCnTWhgzkiLbVUAhnFGI4gfz07NWAiQ1K0ccfY_PHtG-LPXTeoznfMRzVYzB9gYY9r3DJd0oqA3oHkeUAUxBdLhU=s800-w800-h600',
+   'https://lh3.googleusercontent.com/place-photos/AJRVUZOBKWNZIMuFRiqqAkNQGV6CWXxSRKp5D0bWajV8h_w-bw6gRAlNvQHU-fs0KVckOvCNDNrnQxPAALLb_0FQcPyo40wC5Y60-I5AYrHJ8waJgV-xbSBxbq1nR_afteTg9o0uXGu5zZ0-QNUulQ=s800-w800-h600',
+   'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',
+  ],
+  tags:[{l:'Plage sable fin',c:'water'},{l:'4 ans ✓',c:'chill'},{l:'Coucher de soleil',c:'cult'}]
+ },
+ {
+  id:'s09',cat:'Adrénaline — Canyoning',emoji:'💦',bg:'#061a0c',
+  name:'Canyoning Ribeira das Cales',
+  hook:'Rappels, sauts et nage en pleine nature tropicale — l\'activité coup de cœur des ados.',
+  description:'Le canyon de la Ribeira das Cales est situé à 20 minutes de Funchal, dans une gorge étroite creusée dans la roche volcanique et couverte de végétation tropicale dense. C\'est l\'itinéraire idéal pour les débutants : difficulté modérée, encadrement professionnel francophone disponible, tout l\'équipement fourni sur place (combinaison néoprène, casque, baudrier, chaussures). Au programme : descentes en rappel le long de cascades qui tombent directement dans des vasques naturelles, sauts depuis des rochers dans des bassins turquoise, passages à la nage entre des parois de roche noire tapissées de fougères et d\'héliconias. Durée totale environ 2h30. Les grands ados (12 ans et +) en ressortent euphoriques — c\'est souvent l\'activité qu\'ils mentionnent en premier quand on leur demande le meilleur moment du séjour.',
+  note:'Réserver à l\'avance — groupes limités à 8 personnes. Tout l\'équipement fourni sur place.',
+  photos:[
+   'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+   'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80',
+   'https://images.unsplash.com/photo-1455156218388-5e61b526818b?w=800&q=80',
+  ],
+  tags:[{l:'Adrénaline',c:'fun'},{l:'12 ans +',c:'fun'},{l:'Encadré',c:'chill'}]
+ },
+ {
+  id:'s10',cat:'Altitude — Lever de soleil',emoji:'🌅',bg:'#0c0c20',
+  name:'Pico Arieiro au lever du soleil (1 818 m)',
+  hook:'Contempler Madère endormie sous une mer de nuages depuis 1 800 m — au-dessus du monde entier.',
+  description:'Le Pico Arieiro est le troisième sommet de l\'île et le seul accessible directement en voiture jusqu\'à 1 818 m d\'altitude, grâce à une route goudronnée qui monte depuis Funchal. L\'expérience du lever de soleil est considérée par des milliers de voyageurs comme la chose la plus belle qu\'ils aient jamais vue. Le principe : partir de Funchal à 5h15, arriver au sommet avant le lever. En dessous : toute l\'île est enfouie dans une mer de nuages blanc et gris qui couvre tout à 1 500 m. Au-dessus : ciel d\'un noir profond virant progressivement au violet, puis au rose, puis à l\'orange. Pendant environ 20 minutes, les nuages s\'illuminent par en dessous et les sommets voisins émergent comme des îles dans un océan de coton. Pour les 14–16 ans et les adultes en forme : veste chaude indispensable même en août (10–12°C au sommet).',
+  note:'⚑ Veste chaude obligatoire. Décider la veille selon l\'énergie du groupe. Pas de rando — juste la voiture et le point de vue.',
+  photos:[
+   'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+   'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
+   'https://images.unsplash.com/photo-1531761535209-83234b130a68?w=800&q=80',
+  ],
+  tags:[{l:'14 ans +',c:'fun'},{l:'Lever de soleil',c:'cult'},{l:'Altitude',c:'hike'}]
+ },
+ {
+  id:'s11',cat:'Plage noire — Côte nord',emoji:'⚫',bg:'#0c0c14',
+  name:'Seixal — plage volcanique & piscines sauvages',
+  hook:'Sable volcanique noir, deux piscines naturelles, et presque personne : le coin secret du nord de l\'île.',
+  description:'Seixal est le coup de cœur discret des familles qui connaissent bien l\'île et évitent les spots les plus courus. Le village est niché à flanc de falaise sur la côte nord, entouré de terrasses de vignes vertigineuses et de forêts de lauriers. La plage de sable volcanique noir est petite mais frappante — la couleur de sable contraste avec le vert intense de la végétation et le bleu de l\'océan. Deux piscines naturelles sont aménagées dans les rochers : une première accessible à tous, calme, idéale quand la mer est fraîche. Une seconde plus sauvage à l\'ouest du village, que les locaux fréquentent le week-end. Fréquentation nettement plus calme que Porto Moniz, surtout en fin de journée. À 15 minutes de Porto Moniz — les deux sont combinables sur la même journée.',
+  note:'Combinable avec Porto Moniz sur la même journée — même axe routier, 15 min de trajet.',
+  photos:[
+   'https://images.unsplash.com/photo-1533760881669-80db4d7b341d?w=800&q=80',
+   'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',
+   'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=800&q=80',
+  ],
+  tags:[{l:'Plage noire',c:'water'},{l:'Moins touristique',c:'chill'},{l:'Nord sauvage',c:'hike'}]
+ },
+ {
+  id:'s12',cat:'Sommet — Toit de l\'île',emoji:'⛰️',bg:'#141424',
+  name:'Pico Ruivo (1 862 m) — panorama au-dessus des nuages',
+  hook:'Le point le plus haut de Madère — 45 min de marche depuis le parking pour voir l\'île entière à ses pieds.',
+  description:'Pico Ruivo est le point culminant de Madère à 1 862 m. Son intérêt par rapport au Pico Arieiro tient à deux choses : il faut marcher pour y accéder (contrairement à Arieiro), ce qui lui confère un côté "conquest" ; et son panorama est encore plus large. Depuis le parking d\'Achada do Teixeira (accessible en voiture à 1 592 m), le sentier monte 270 m en environ 45 minutes dans un paysage de crêtes rocheuses, d\'herbes rases et de bruyères géantes. Au sommet, par temps clair : vue à 360° sur toute l\'île — les vallées vertes, la côte nord brumeuse, la côte sud ensoleillée, les falaises, et au loin les îles Desertas. Le sentiment d\'être littéralement au-dessus du monde est immédiat et saisissant. Accessible aux enfants dès 10 ans si bonne condition physique.',
+  note:'Veste obligatoire. Ne pas cumuler avec Porto Santo le même jour. À combiner avec Arieiro si les deux sont votés.',
+  photos:[
+   'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
+   'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+   'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80',
+  ],
+  tags:[{l:'Rando',c:'hike'},{l:'Panorama 360°',c:'cult'},{l:'10 ans +',c:'fun'}]
+ },
 ];
 
 let prenom=localStorage.getItem('madere_prenom')||null;
 let allVotes=[],customSlots=[],allSlots=[...BASE_SLOTS],pollTimer=null;
 let chatHistory=[];
+const gIdx={};
 
 // IDENTITY
 function setPrenom(){
@@ -441,12 +488,12 @@ async function loadAll(){
       sbFetch('/rest/v1/custom_slots?select=*&order=created_at.asc')
     ]);
     allVotes=votes;customSlots=customs;
-    allSlots=[...BASE_SLOTS,...customs.map(c=>({...c,photos:[c.photo].filter(Boolean),description:c.description||''}))];
+    allSlots=[...BASE_SLOTS,...customs.map(c=>({...c,photos:[c.photo].filter(Boolean),hook:'',description:c.description||''}))];
     const names=[...new Set(votes.map(r=>r.prenom))].slice(0,12);
     if(names.length){document.getElementById('modalNames').innerHTML='<span class="modal-names-label">Déjà présents</span>'+names.map(n=>`<span class="name-chip" onclick="quickJoin('${n}')">${n}</span>`).join('');}
     renderAll();
-    if(!pollTimer){pollTimer=setInterval(async()=>{try{const[v,c]=await Promise.all([sbFetch('/rest/v1/votes?select=slot_id,prenom,choice&order=created_at.asc'),sbFetch('/rest/v1/custom_slots?select=*&order=created_at.asc')]);allVotes=v;customSlots=c;allSlots=[...BASE_SLOTS,...c.map(cs=>({...cs,photos:[cs.photo].filter(Boolean),description:cs.description||''}))];renderAll();}catch(e){}},6000);}
-  }catch(e){document.getElementById('slotsGrid').innerHTML='<div class="loading-spinner" style="color:#e8967a">Erreur de connexion à Supabase.</div>';}
+    if(!pollTimer){pollTimer=setInterval(async()=>{try{const[v,c]=await Promise.all([sbFetch('/rest/v1/votes?select=slot_id,prenom,choice&order=created_at.asc'),sbFetch('/rest/v1/custom_slots?select=*&order=created_at.asc')]);allVotes=v;customSlots=c;allSlots=[...BASE_SLOTS,...c.map(cs=>({...cs,photos:[cs.photo].filter(Boolean),hook:'',description:cs.description||''}))];renderAll();}catch(e){}},6000);}
+  }catch(e){document.getElementById('slotsGrid').innerHTML='<div class="loading-spinner" style="color:#e8967a">Erreur de connexion Supabase.</div>';}
 }
 function quickJoin(n){document.getElementById('prenomInput').value=n;setPrenom();}
 
@@ -458,56 +505,56 @@ async function vote(slotId,choice){
   else{if(ex)ex.choice=choice;else allVotes.push({slot_id:slotId,prenom,choice});renderAll();try{await sbFetch('/rest/v1/votes',{method:'POST',headers:{'Prefer':'resolution=merge-duplicates,return=minimal'},body:JSON.stringify({slot_id:slotId,prenom,choice})});}catch(e){}}
 }
 
-// SCORING
 function summary(id){const sv=allVotes.filter(v=>v.slot_id===id);return{yes:sv.filter(v=>v.choice==='yes'),maybe:sv.filter(v=>v.choice==='maybe'),no:sv.filter(v=>v.choice==='no'),mine:sv.find(v=>v.prenom===prenom)?.choice||null,total:sv.length};}
 function score(id){const s=summary(id);return s.yes.length*3+s.maybe.length-s.no.length*2;}
 
-// RENDER
 function renderAll(){renderSlots();renderPodium();}
 
-const photoIdx={};
-function nextPhoto(slotId,dir,photos){
-  if(!photoIdx[slotId])photoIdx[slotId]=0;
-  photoIdx[slotId]=(photoIdx[slotId]+dir+photos.length)%photos.length;
-  const img=document.getElementById('photo_'+slotId);
-  const dots=document.querySelectorAll(`.pdot_${slotId}`);
-  if(img)img.src=photos[photoIdx[slotId]];
-  dots.forEach((d,i)=>d.classList.toggle('active',i===photoIdx[slotId]));
+// GALLERY
+function setPhoto(slotId,idx){
+  const slot=allSlots.find(s=>s.id===slotId);if(!slot)return;
+  const photos=slot.photos||[];
+  if(!photos.length)return;
+  idx=((idx%photos.length)+photos.length)%photos.length;
+  gIdx[slotId]=idx;
+  const img=document.getElementById('gimg_'+slotId);
+  if(img){img.src=photos[idx];}
+  document.querySelectorAll('.gdot_'+slotId).forEach((d,i)=>d.classList.toggle('on',i===idx));
 }
 
 function renderSlots(){
   const grid=document.getElementById('slotsGrid');grid.innerHTML='';
   const sorted=[...allSlots].sort((a,b)=>score(b.id)-score(a.id));
-  sorted.forEach((slot,idx)=>{
+  sorted.forEach((slot,rank)=>{
     const{yes,maybe,no,mine,total}=summary(slot.id);
     const sc=score(slot.id);
     const pY=total?Math.round(yes.length/total*100):0,pM=total?Math.round(maybe.length/total*100):0,pN=total?Math.round(no.length/total*100):0;
     const chips=[...yes.map(v=>`<span class="who-chip yes">${v.prenom} 👍</span>`),...maybe.map(v=>`<span class="who-chip maybe">${v.prenom} 🤔</span>`),...no.map(v=>`<span class="who-chip no">${v.prenom} 👎</span>`)].join('');
-    const photos=slot.photos||[slot.photo].filter(Boolean);
-    const curPhoto=photos[photoIdx[slot.id]||0]||'';
-    const dots=photos.length>1?`<div class="slot-photos-nav">${photos.map((_,i)=>`<div class="photo-dot pdot_${slot.id}${i===0?' active':''}" onclick="nextPhoto('${slot.id}',${i-(photoIdx[slot.id]||0)},${JSON.stringify(photos)})"></div>`).join('')}</div>`:'';
-    const isTop=total>0&&sc>0&&idx<3;
-    const card=document.createElement('div');card.className='slot'+(isTop?' winner':'');
+    const photos=slot.photos||[];
+    const curIdx=gIdx[slot.id]||0;
+    const curSrc=photos[curIdx]||'';
+    const medals=['🥇','🥈','🥉'];
+    const isTop=total>0&&sc>0&&rank<3;
+    const badgeText=isTop?(medals[rank]||'✓')+' Top '+(rank+1):'';
+    const dotsHtml=photos.length>1?`<div class="gallery-dots">${photos.map((_,i)=>`<div class="gdot gdot_${slot.id}${i===curIdx?' on':''}" onclick="setPhoto('${slot.id}',${i})"></div>`).join('')}</div>`:'';
+    const navHtml=photos.length>1?`<button class="gallery-btn prev" onclick="setPhoto('${slot.id}',(gIdx['${slot.id}']||0)-1)">&#8249;</button><button class="gallery-btn next" onclick="setPhoto('${slot.id}',(gIdx['${slot.id}']||0)+1)">&#8250;</button>`:'';
+    const card=document.createElement('div');
+    card.className='slot'+(isTop?' winner':'');
     card.innerHTML=`
-      <span class="winner-badge">🏆 Top ${idx+1}</span>
-      <div class="slot-photos" style="background:${slot.bg||'#1a3a4a'}">
-        <img id="photo_${slot.id}" class="slot-photo" src="${curPhoto}" alt="${slot.name}" loading="lazy"
-          onerror="this.style.display='none'">
-        ${photos.length>1?`
-        <div style="position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;padding:0 .5rem;pointer-events:none">
-          <button onclick="nextPhoto('${slot.id}',-1,${JSON.stringify(photos)})" style="pointer-events:all;background:rgba(0,0,0,.4);border:none;color:#fff;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.9rem">‹</button>
-          <button onclick="nextPhoto('${slot.id}',1,${JSON.stringify(photos)})" style="pointer-events:all;background:rgba(0,0,0,.4);border:none;color:#fff;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.9rem">›</button>
-        </div>`:''}
-        ${dots}
+      ${isTop?`<span class="winner-badge">${badgeText}</span>`:''}
+      <div class="slot-gallery" style="background:${slot.bg||'#1a3a4a'}">
+        <img id="gimg_${slot.id}" src="${curSrc}" alt="${slot.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.opacity=0">
+        ${navHtml}${dotsHtml}
       </div>
       <div class="slot-body">
-        <p class="slot-cat">${slot.cat||'Activité proposée'}</p>
+        <p class="slot-cat">${slot.cat||'Activité'}</p>
         <h3 class="slot-name">${slot.name}</h3>
+        ${slot.hook?`<p class="slot-hook">${slot.hook}</p>`:''}
         <p class="slot-desc">${slot.description||slot.desc||''}</p>
         ${slot.note?`<p class="slot-note">${slot.note}</p>`:''}
         <div class="slot-tags">${(slot.tags||[]).map(t=>`<span class="stag ${t.c||''}">${t.l||t}</span>`).join('')}</div>
         <div class="vote-section">
-          <p class="vote-label-row">Votre avis${total>0?' · Score: <strong>'+sc+'</strong>':''}</p>
+          <p class="vote-label-row">Votre avis${total>0?' · Score actuel : '+sc+' pts':''}</p>
           <div class="vote-btns">
             <button class="vote-btn yes ${mine==='yes'?'active':''}" onclick="vote('${slot.id}','yes')">👍 Pour <span class="vote-count">${yes.length}</span></button>
             <button class="vote-btn maybe ${mine==='maybe'?'active':''}" onclick="vote('${slot.id}','maybe')">🤔 Peut-être <span class="vote-count">${maybe.length}</span></button>
@@ -526,16 +573,11 @@ function renderPodium(){
   const ranked=[...allSlots].filter(s=>summary(s.id).total>0).sort((a,b)=>score(b.id)-score(a.id)).slice(0,8);
   if(!ranked.length){list.innerHTML='<p style="text-align:center;color:var(--mid);font-style:italic;font-size:.9rem">Les votes détermineront le classement…</p>';return;}
   const medals=['🥇','🥈','🥉'];
-  const rankClass=['gold','silver','bronze'];
   ranked.forEach((slot,i)=>{
     const sc=score(slot.id);
-    const photos=slot.photos||[slot.photo].filter(Boolean);
+    const photos=slot.photos||[];
     const row=document.createElement('div');row.className='podium-row';
-    row.innerHTML=`
-      <div class="podium-rank ${rankClass[i]||''}">${medals[i]||i+1}</div>
-      <img class="podium-thumb" src="${photos[0]||''}" alt="${slot.name}" onerror="this.style.display='none'">
-      <div><div class="podium-name">${slot.name}</div></div>
-      <div class="podium-score">${sc>0?'+':''}${sc} pts</div>`;
+    row.innerHTML=`<div class="podium-rank">${medals[i]||i+1}</div><img class="podium-thumb" src="${photos[0]||''}" alt="${slot.name}" onerror="this.style.display='none'"><div><div class="podium-name">${slot.name}</div></div><div class="podium-score">${sc>0?'+':''}${sc} pts</div>`;
     list.appendChild(row);
   });
 }
@@ -548,7 +590,7 @@ function openChat(){
   document.getElementById('chatOverlay').classList.remove('hidden');
   document.getElementById('chatInput').value='';
   document.getElementById('chatSend').disabled=false;
-  addMsg("Bonjour ! Je vais vous aider à créer une fiche d'activité à soumettre au vote. Quelle activité avez-vous en tête ?",'claude');
+  addMsg("Bonjour ! Je vais vous aider à créer une fiche pour le vote. Quelle activité avez-vous en tête ?",'claude');
 }
 function closeChat(){document.getElementById('chatOverlay').classList.add('hidden');}
 function addMsg(text,type){const msgs=document.getElementById('chatMessages');const div=document.createElement('div');div.className='msg '+type;div.textContent=text;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
@@ -564,8 +606,8 @@ async function sendMessage(){
     const res=await fetch('https://api.anthropic.com/v1/messages',{
       method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',max_tokens:1200,
-        system:`Tu aides à proposer une activité pour un vote familial pour un voyage à Madère du 3 au 10 août 2025 (deux familles, 8 enfants de 4 à 16 ans). Pose exactement 3 questions en français, une par une : 1) quelle activité, 2) pourquoi c'est bien pour le groupe, 3) infos pratiques (tarif, durée, réservation). Après la 3e réponse, génère UNIQUEMENT un JSON valide sans backticks avec : {"name":"...","cat":"Proposé par ${prenom}","description":"3-4 phrases riches","note":"conseil pratique","photo":"https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80","bg":"#1a3040","emoji":"🌊","tags":[{"l":"label","c":"hike"}]}. Adapte la photo Unsplash, bg et emoji à l'activité. Réponds en français, chaleureusement.`,
+        model:'claude-sonnet-4-20250514',max_tokens:1500,
+        system:`Tu aides à proposer une activité pour un voyage à Madère du 3 au 10 août 2025 (deux familles, 8 enfants de 4 à 16 ans). Pose 3 questions une par une : 1) quelle activité, 2) pourquoi c'est bien pour le groupe, 3) infos pratiques. Après la 3e réponse, génère UNIQUEMENT un JSON valide sans backticks avec : {"name":"...","cat":"Proposé par ${prenom}","hook":"Une phrase d'accroche percutante","description":"4-5 phrases riches avec contexte historique ou anecdote si pertinent","note":"conseil pratique concis","photo":"https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80","bg":"#0a1a0a","emoji":"🌊","tags":[{"l":"label","c":"hike"}]}. Adapte la photo Unsplash, bg et emoji à l'activité. Réponds en français.`,
         messages:chatHistory
       })
     });
@@ -584,8 +626,10 @@ async function saveCustomSlot(parsed){
   const slot={id:'c_'+Date.now()+'_'+Math.random().toString(36).slice(2,6),day_id:'any',cat:parsed.cat||'Proposé par '+prenom,name:parsed.name||'Activité proposée',description:parsed.description||'',note:parsed.note||'',photo:parsed.photo||'',bg:parsed.bg||'#1a3a4a',emoji:parsed.emoji||'⭐',tags:parsed.tags||[],created_by:prenom};
   try{
     await sbFetch('/rest/v1/custom_slots',{method:'POST',headers:{'Prefer':'return=minimal'},body:JSON.stringify(slot)});
-    allSlots=[...BASE_SLOTS,...customSlots.map(c=>({...c,photos:[c.photo].filter(Boolean)})),{...slot,photos:[slot.photo].filter(Boolean)}];
-    renderAll();addMsg('✅ "'+slot.name+'" ajouté au vote ! Tout le monde peut maintenant voter pour cette activité.','system');
+    const newEntry={...slot,photos:[slot.photo].filter(Boolean),hook:parsed.hook||''};
+    allSlots=[...allSlots,newEntry];
+    renderAll();
+    addMsg('✅ "'+slot.name+'" ajouté ! Tout le monde peut maintenant voter pour cette activité.','system');
     setTimeout(()=>closeChat(),2500);
   }catch(e){addMsg('Erreur de sauvegarde. Réessayez.','system');}
 }
