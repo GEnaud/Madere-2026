@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madère · Août 2025 · Programme</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --ocean:#1b4f72; --deep:#0e2a38; --lava:#c0392b;
+  --sun:#d4a017; --sand:#f5ede0; --green:#1e8449;
+  --mist:#aed6f1; --white:#fdfaf6; --text:#1a2a35; --mid:#5a7a8a;
+}
+body { font-family:'Lato',sans-serif; background:var(--deep); color:var(--white); }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position:fixed; inset:0; background:rgba(14,42,56,.97);
+  z-index:1000; display:flex; align-items:center; justify-content:center; padding:1.5rem;
+}
+.modal-overlay.hidden { display:none; }
+.modal-box {
+  background:rgba(27,79,114,.25); border:1px solid rgba(255,255,255,.12);
+  padding:2.5rem; max-width:420px; width:100%; text-align:center; border-radius:4px;
+}
+.modal-title { font-family:'Playfair Display',serif; font-size:2rem; font-weight:400; margin-bottom:.5rem; }
+.modal-title em { font-style:italic; color:var(--sun); }
+.modal-sub { font-size:.85rem; color:rgba(255,255,255,.5); font-weight:300; margin-bottom:2rem; line-height:1.7; }
+.modal-input {
+  width:100%; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.2);
+  color:var(--white); font-family:'Lato',sans-serif; font-size:1rem;
+  padding:.9rem 1.2rem; outline:none; margin-bottom:1rem; border-radius:2px;
+}
+.modal-input:focus { border-color:var(--sun); }
+.modal-btn {
+  width:100%; background:var(--ocean); color:var(--white); border:none;
+  font-family:'Lato',sans-serif; font-size:.85rem; letter-spacing:.15em;
+  text-transform:uppercase; padding:1rem; cursor:pointer; transition:background .2s; border-radius:2px;
+}
+.modal-btn:hover { background:#1f5f8a; }
+.modal-names { margin-top:1.5rem; }
+.modal-names-label { font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:.6rem; display:block; }
+.name-chip {
+  display:inline-block; margin:.2rem .25rem; padding:.3rem .8rem;
+  border:1px solid rgba(255,255,255,.15); border-radius:20px;
+  font-size:.75rem; cursor:pointer; transition:all .15s; color:rgba(255,255,255,.6);
+}
+.name-chip:hover { border-color:var(--sun); color:var(--sun); }
+
+/* ── USER PILL ── */
+.user-pill {
+  position:fixed; top:1rem; right:1rem; z-index:200;
+  background:rgba(14,42,56,.92); border:1px solid rgba(255,255,255,.15);
+  padding:.4rem 1rem; border-radius:20px; font-size:.75rem;
+  display:flex; align-items:center; gap:.6rem; cursor:pointer; backdrop-filter:blur(4px);
+}
+.user-pill .dot { width:8px; height:8px; border-radius:50%; background:var(--green); flex-shrink:0; }
+.user-pill.hidden { display:none; }
+
+/* ── HERO ── */
+.hero {
+  position:relative; height:100vh; min-height:500px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; overflow:hidden;
+}
+.hero-img {
+  position:absolute; inset:0;
+  background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/20190520_Madeira_Ponta_de_S%C3%A3o_Louren%C3%A7o_1310_5484.jpg/1280px-20190520_Madeira_Ponta_de_S%C3%A3o_Louren%C3%A7o_1310_5484.jpg') center/cover no-repeat;
+  filter:brightness(.3);
+}
+.hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(14,42,56,.1),rgba(14,42,56,.85)); }
+.hero-content { position:relative; z-index:2; padding:2rem; }
+.hero-eyebrow { font-size:.65rem; letter-spacing:.35em; text-transform:uppercase; color:var(--sun); margin-bottom:1.2rem; font-weight:300; }
+.hero-title { font-family:'Playfair Display',serif; font-size:clamp(3.5rem,10vw,8rem); font-weight:400; line-height:.95; margin-bottom:1.2rem; }
+.hero-title em { font-style:italic; color:var(--sun); }
+.hero-sub { font-size:clamp(.9rem,2vw,1.1rem); font-weight:300; color:rgba(255,255,255,.75); max-width:540px; line-height:1.7; }
+.hero-chips { display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center; margin-top:2rem; }
+.chip { font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; border:1px solid rgba(255,255,255,.3); padding:.35rem .9rem; border-radius:2px; color:rgba(255,255,255,.7); }
+.hero-scroll { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:.5rem; cursor:pointer; z-index:2; }
+.hero-scroll span { font-size:.55rem; letter-spacing:.3em; text-transform:uppercase; opacity:.5; }
+.scroll-arrow { width:1px; height:40px; background:linear-gradient(to bottom,rgba(255,255,255,.6),transparent); animation:pulse 2s infinite; }
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* ── INTRO ── */
+.intro { background:var(--white); color:var(--text); padding:4rem 2rem; text-align:center; }
+.intro-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:400; margin-bottom:1rem; }
+.intro-title em { font-style:italic; color:var(--lava); }
+.intro-body { max-width:620px; margin:0 auto; font-size:1rem; font-weight:300; line-height:1.8; color:#4a6070; }
+.vote-legend { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:2rem; }
+.legend-item { display:flex; align-items:center; gap:.5rem; font-size:.8rem; color:#4a6070; }
+.legend-dot { width:10px; height:10px; border-radius:50%; }
+
+/* ── DAYS HEADER ── */
+.days-header { background:var(--deep); padding:3rem 2rem 0; text-align:center; }
+.days-header h2 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:400; margin-bottom:.5rem; }
+.days-header p { font-size:.85rem; color:rgba(255,255,255,.5); font-weight:300; }
+
+/* ── SLOTS ── */
+.slots-wrapper { background:var(--deep); padding:2rem 1rem 3rem; }
+.day-block { margin-bottom:3rem; }
+.day-label { font-size:.6rem; letter-spacing:.3em; text-transform:uppercase; color:var(--sun); font-weight:700; padding:0 .5rem 1rem; }
+.slots-row {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:1px; background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08); border-radius:4px; overflow:hidden;
+}
+.slot { background:rgba(14,42,56,.95); position:relative; overflow:hidden; }
+.slot-photo { width:100%; height:170px; object-fit:cover; display:block; filter:brightness(.8); transition:filter .3s,transform .3s; }
+.slot:hover .slot-photo { filter:brightness(.95); transform:scale(1.02); }
+.slot-body { padding:1rem 1.25rem 1.25rem; }
+.slot-cat { font-size:.55rem; letter-spacing:.2em; text-transform:uppercase; color:var(--sun); font-weight:700; margin-bottom:.4rem; }
+.slot-name { font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:400; margin-bottom:.4rem; line-height:1.25; }
+.slot-desc { font-size:.8rem; font-weight:300; color:rgba(255,255,255,.6); line-height:1.65; margin-bottom:.9rem; }
+.slot-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1rem; }
+.stag { font-size:.55rem; letter-spacing:.1em; text-transform:uppercase; padding:.2rem .5rem; border-radius:2px; border:1px solid rgba(255,255,255,.2); color:rgba(255,255,255,.5); }
+.stag.water { border-color:rgba(174,214,241,.4); color:#aed6f1; }
+.stag.hike  { border-color:rgba(30,132,73,.5); color:#82e0aa; }
+.stag.fun   { border-color:rgba(192,57,43,.4); color:#e8967a; }
+.stag.chill { border-color:rgba(255,255,255,.2); }
+.stag.cult  { border-color:rgba(212,160,23,.4); color:var(--sun); }
+
+/* ── VOTE ── */
+.vote-section { border-top:1px solid rgba(255,255,255,.08); padding-top:.75rem; }
+.vote-label { font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:.5rem; }
+.vote-btns { display:flex; gap:.4rem; }
+.vote-btn {
+  flex:1; padding:.5rem .3rem; border:1px solid rgba(255,255,255,.15);
+  background:none; color:rgba(255,255,255,.6); font-family:'Lato',sans-serif;
+  font-size:.68rem; cursor:pointer; border-radius:2px; transition:all .15s;
+  display:flex; align-items:center; justify-content:center; gap:.3rem;
+}
+.vote-btn:hover { background:rgba(255,255,255,.08); }
+.vote-btn.yes.active   { background:rgba(30,132,73,.25);   border-color:var(--green); color:#82e0aa; }
+.vote-btn.maybe.active { background:rgba(212,160,23,.15);  border-color:var(--sun);   color:var(--sun); }
+.vote-btn.no.active    { background:rgba(192,57,43,.15);   border-color:var(--lava);  color:#e8967a; }
+.vote-count { font-size:.6rem; opacity:.7; }
+.vote-bar { height:3px; margin-top:.6rem; border-radius:1px; overflow:hidden; display:flex; }
+.vbar-yes   { background:var(--green); transition:width .4s; }
+.vbar-maybe { background:var(--sun);   transition:width .4s; }
+.vbar-no    { background:var(--lava);  transition:width .4s; }
+.who-voted { margin-top:.6rem; display:flex; flex-wrap:wrap; gap:.3rem; min-height:20px; }
+.who-chip { font-size:.6rem; padding:.2rem .55rem; border-radius:10px; font-weight:700; }
+.who-chip.yes   { background:rgba(30,132,73,.3);  color:#82e0aa; }
+.who-chip.maybe { background:rgba(212,160,23,.2); color:var(--sun); }
+.who-chip.no    { background:rgba(192,57,43,.2);  color:#e8967a; }
+.no-votes-yet { font-size:.65rem; opacity:.3; font-style:italic; }
+
+/* ── WINNER BADGE ── */
+.assigned-badge {
+  position:absolute; top:.6rem; right:.6rem; font-size:.55rem; letter-spacing:.12em;
+  text-transform:uppercase; padding:.25rem .65rem; border-radius:2px;
+  background:rgba(30,132,73,.9); color:#fff; font-weight:700; display:none;
+}
+.slot.winner { outline:2px solid var(--green); }
+.slot.winner .assigned-badge { display:block; }
+
+/* ── LOADING ── */
+.loading-spinner { text-align:center; padding:3rem; font-size:.8rem; color:rgba(255,255,255,.35); letter-spacing:.2em; text-transform:uppercase; }
+
+/* ── RETAINED ── */
+.retained { background:var(--sand); color:var(--text); padding:4rem 2rem; }
+.retained h2 { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,4vw,2.5rem); font-weight:400; text-align:center; margin-bottom:.5rem; }
+.retained h2 em { font-style:italic; color:var(--lava); }
+.retained-sub { text-align:center; font-size:.85rem; color:var(--mid); margin-bottom:2.5rem; font-weight:300; }
+.retained-grid { display:grid; gap:.75rem; max-width:900px; margin:0 auto; }
+.ret-row { display:grid; grid-template-columns:90px 1fr; background:var(--white); border-left:3px solid var(--ocean); overflow:hidden; }
+.ret-date { background:var(--ocean); color:var(--white); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:.75rem; text-align:center; }
+.ret-dow { font-size:.55rem; letter-spacing:.2em; text-transform:uppercase; opacity:.7; }
+.ret-day { font-family:'Playfair Display',serif; font-size:1.8rem; line-height:1; }
+.ret-mon { font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; opacity:.7; }
+.ret-body { padding:.75rem 1rem; display:flex; align-items:center; gap:1rem; }
+.ret-thumb { width:56px; height:56px; object-fit:cover; border-radius:2px; flex-shrink:0; }
+.ret-title { font-family:'Playfair Display',serif; font-size:1rem; margin-bottom:.2rem; }
+.ret-desc { font-size:.75rem; color:var(--mid); font-weight:300; line-height:1.5; }
+.ret-pending { color:var(--mid); font-style:italic; font-size:.85rem; }
+
+/* ── PRACTICAL ── */
+.practical { background:var(--deep); padding:4rem 2rem; }
+.practical-inner { max-width:900px; margin:0 auto; }
+.practical h2 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:400; margin-bottom:2rem; text-align:center; }
+.practical h2 em { font-style:italic; color:var(--sun); }
+.prac-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:1px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.08); }
+.pcard { background:rgba(14,42,56,.9); padding:1.5rem; }
+.pcard-title { font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--sun); margin-bottom:1rem; font-weight:700; }
+.pcard ul { list-style:none; font-size:.85rem; font-weight:300; line-height:2; color:rgba(255,255,255,.65); }
+.pcard li::before { content:'— '; color:var(--lava); }
+
+footer { background:rgba(0,0,0,.4); text-align:center; padding:1.5rem; font-size:.65rem; letter-spacing:.15em; color:rgba(255,255,255,.3); text-transform:uppercase; }
+
+@media(max-width:600px){
+  .slots-row { grid-template-columns:1fr; }
+  .ret-row { grid-template-columns:70px 1fr; }
+  .ret-day { font-size:1.4rem; }
+  .vote-btn { font-size:.62rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <h2 class="modal-title"><em>Madère</em> · Août 2025</h2>
+    <p class="modal-sub">Programme de voyage · Deux familles · 8 enfants<br><br>Entrez votre prénom pour voter et voir en temps réel qui a choisi quoi.</p>
+    <input class="modal-input" id="prenomInput" type="text" placeholder="Votre prénom…" maxlength="24" autocomplete="off">
+    <button class="modal-btn" onclick="setPrenom()">Accéder au programme →</button>
+    <div class="modal-names" id="modalNames"></div>
+  </div>
+</div>
+
+<!-- USER PILL -->
+<div class="user-pill hidden" id="userPill" onclick="changeUser()">
+  <div class="dot"></div>
+  <span id="pillName"></span>
+  <span style="opacity:.4;font-size:.65rem">· changer</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Programme · Deux familles · Portugal</p>
+    <h1 class="hero-title"><em>Madère</em></h1>
+    <p class="hero-sub">3 – 10 août 2025 · 7 nuits · 8 enfants (4–16 ans)<br>Votez ensemble pour construire la semaine ↓</p>
+    <div class="hero-chips">
+      <span class="chip">Randonnées</span>
+      <span class="chip">Baignades</span>
+      <span class="chip">Volcanique</span>
+      <span class="chip">2 voitures</span>
+    </div>
+  </div>
+  <div class="hero-scroll" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">
+    <span>Découvrir</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="intro" id="intro">
+  <h2 class="intro-title">On co-construit le <em>programme</em></h2>
+  <p class="intro-body">
+    On a plus d'activités que de jours — à vous de voter. Deux options ou plus par journée.
+    Votez 👍 <strong>Pour</strong>, 🤔 <strong>Peut-être</strong> ou 👎 <strong>Non</strong>.
+    Tout le monde voit les votes en temps réel. Le programme retenu se génère automatiquement en bas de page.
+  </p>
+  <div class="vote-legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Pour (3 pts)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--sun)"></div> Peut-être (1 pt)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--lava)"></div> Non (−2 pts)</div>
+  </div>
+</div>
+
+<!-- SLOTS -->
+<div class="days-header">
+  <h2>Les activités proposées</h2>
+  <p>Plusieurs options par journée · Les votes des deux familles sont visibles en direct</p>
+</div>
+<div class="slots-wrapper" id="slotsArea">
+  <div class="loading-spinner">Connexion à la base de votes…</div>
+</div>
+
+<!-- PROGRAMME RETENU -->
+<div class="retained">
+  <h2>Le programme <em>retenu</em></h2>
+  <p class="retained-sub">Mis à jour en temps réel · L'activité la mieux votée remporte la journée</p>
+  <div class="retained-grid" id="retainedGrid"></div>
+</div>
+
+<!-- PRACTICAL -->
+<div class="practical">
+  <div class="practical-inner">
+    <h2>Infos <em>pratiques</em></h2>
+    <div class="prac-grid">
+      <div class="pcard">
+        <p class="pcard-title">🚗 Voitures (urgent)</p>
+        <ul>
+          <li>2 voitures 7 places (Espace ou équiv.)</li>
+          <li>Réserver maintenant — août = rupture de stock</li>
+          <li>Hertz / Europcar à l'aéroport de Funchal</li>
+          <li>GPS ou Maps.me offline indispensable</li>
+          <li>Routes en lacets — prévoir anti-nausée</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <p class="pcard-title">📋 À réserver à l'avance</p>
+        <ul>
+          <li>Whale watching H2O Madeira (Calheta)</li>
+          <li>Ferry Porto Santo aller-retour</li>
+          <li>2 voitures de location dès maintenant</li>
+          <li>Hébergement (quinta avec piscine)</li>
+          <li>Canyoning Ribeira das Cales (optionnel)</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <p class="pcard-title">🌤️ Météo en août</p>
+        <ul>
+          <li>21–26 °C littoral, ~17 °C en altitude</li>
+          <li>Quasi pas de pluie (~1 jour/mois)</li>
+          <li>8 h de soleil par jour</li>
+          <li>Mer à ~22 °C</li>
+          <li>Veste légère pour les randos en altitude</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <p class="pcard-title">🎒 À emporter</p>
+        <ul>
+          <li>Lampes frontales (tunnels des levadas !)</li>
+          <li>Chaussures de rando fermées pour tous</li>
+          <li>Anti-nausée (ferry + routes en lacets)</li>
+          <li>Crème solaire haute protection</li>
+          <li>Porte-bébé pour la petite en rando</li>
+          <li>Masque/tuba léger</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <p class="pcard-title">🍽️ À goûter absolument</p>
+        <ul>
+          <li>Espada au maracuja (poisson sabre local)</li>
+          <li>Bolo do mel (gâteau de miel épicé)</li>
+          <li>Poncha au citron vert (adultes…)</li>
+          <li>Ananas de Madère — goût incomparable</li>
+          <li>Pastel de nata bien sûr</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <p class="pcard-title">🏠 Hébergement</p>
+        <ul>
+          <li>Quinta (villa typique) recommandée</li>
+          <li>Base idéale : Funchal ou Ribeira Brava</li>
+          <li>Piscine = critère indispensable</li>
+          <li>Prévoir grand séjour / terrasse communs</li>
+          <li>Quinta das Vinhas si vous voulez rural</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>Madère · Août 2025 · Programme co-construit par les deux familles · Votes en temps réel</footer>
+
+<script>
+// ════════════════════════════════
+// SUPABASE CONFIG
+// ════════════════════════════════
+const SB_URL = 'https://ekxsivbtixgvejpwabtd.supabase.co';
+const SB_KEY = 'sb_publishable_mNRPVpyIvZu2-oGlp4X8rg_kMB-rMhJ';
+
+async function sbFetch(path, opts = {}) {
+  const r = await fetch(SB_URL + path, {
+    ...opts,
+    headers: {
+      'apikey': SB_KEY,
+      'Authorization': 'Bearer ' + SB_KEY,
+      'Content-Type': 'application/json',
+      'Prefer': 'return=representation',
+      ...(opts.headers || {})
+    }
+  });
+  const t = await r.text();
+  if (!r.ok) throw new Error(t);
+  return t ? JSON.parse(t) : [];
+}
+
+// ════════════════════════════════
+// DATA
+// ════════════════════════════════
+const DAYS = [
+  { id:'j1', dow:'Lun', day:3,  label:'Lundi 3 août' },
+  { id:'j2', dow:'Mar', day:4,  label:'Mardi 4 août' },
+  { id:'j3', dow:'Mer', day:5,  label:'Mercredi 5 août' },
+  { id:'j4', dow:'Jeu', day:6,  label:'Jeudi 6 août' },
+  { id:'j5', dow:'Ven', day:7,  label:'Vendredi 7 août' },
+  { id:'j6', dow:'Sam', day:8,  label:'Samedi 8 août' },
+  { id:'j7', dow:'Dim', day:9,  label:'Dimanche 9 août' },
+];
+
+const SLOTS = [
+  // J1 — Lundi 3 août (arrivée)
+  { id:'a1', dayId:'j1', cat:'Option arrivée — actif',
+    name:'Monte Palace & téléphérique',
+    desc:'Si arrivée matinale : téléphérique jusqu\'à Monte, jardins avec bassins de carpes koï géantes et azulejos monumentaux. Parfait pour se dégourdir les jambes après le vol.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Monte_Palace_Tropical_Garden_Funchal_Madeira_%286%29.jpg/640px-Monte_Palace_Tropical_Garden_Funchal_Madeira_%286%29.jpg',
+    tags:[{l:'Nature',c:'hike'},{l:'Enfants',c:'fun'},{l:'Téléphérique',c:'cult'}] },
+  { id:'a2', dayId:'j1', cat:'Option arrivée — calme',
+    name:'Balade Funchal & premier dîner',
+    desc:'Ruelles pavées, portes en azulejos, bougainvillées. Poser les bagages, explorer le centre à pied. Premier repas ensemble face au port. Idéal si vol en milieu de journée.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Funchal_Hafen.jpg/640px-Funchal_Hafen.jpg',
+    tags:[{l:'Ville',c:'cult'},{l:'Transition',c:'chill'},{l:'Dîner groupe',c:'chill'}] },
+
+  // J2 — Mardi 4 août
+  { id:'b1', dayId:'j2', cat:'Incontournable',
+    name:'Luge en osier de Monte & Cabo Girão',
+    desc:'Descente en carrinho de cesto dans les ruelles de Monte — deux hommes en blanc poussent le panier à la force des semelles. Puis Câmara de Lobos (village de pêcheurs de Churchill) et le belvédère vitré à 580 m.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Carrinho_de_cesto_Monte%2C_Funchal%2C_Madeira_-_Feb_2019.jpg/640px-Carrinho_de_cesto_Monte%2C_Funchal%2C_Madeira_-_Feb_2019.jpg',
+    tags:[{l:'Sensations',c:'fun'},{l:'Tout âge',c:'chill'},{l:'Panorama 580 m',c:'cult'}] },
+  { id:'b2', dayId:'j2', cat:'Alternative sportive',
+    name:'Canyoning Ribeira das Cales',
+    desc:'Canyon de difficulté modérée près de Funchal : rappels, sauts, natation dans la végétation tropicale. ~2h d\'activité encadrée. Idéal pour les 12 ans et + qui veulent l\'adrénaline dès le début.',
+    photo:'https://live.staticflickr.com/65535/49025852688_2cf9b2f3f0_b.jpg',
+    tags:[{l:'Adrénaline',c:'fun'},{l:'12 ans +',c:'fun'},{l:'Encadré',c:'chill'}] },
+
+  // J3 — Mercredi 5 août
+  { id:'c1', dayId:'j3', cat:'Incontournable',
+    name:'Whale watching — dauphins & baleines',
+    desc:'Sortie 2h30 en zodiac depuis Calheta avec H2O Madeira. Dauphins communs, globicéphales, parfois baleines à bec. Souvent cité comme le moment fort du séjour par toutes les familles qui en reviennent subjuguées.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Bottlenose_Dolphins_jumping.jpg/640px-Bottlenose_Dolphins_jumping.jpg',
+    tags:[{l:'Mer',c:'water'},{l:'Tout âge',c:'chill'},{l:'Inoubliable',c:'fun'}] },
+  { id:'c2', dayId:'j3', cat:'À combiner avec c1',
+    name:'Plage de Calheta & Jardim do Mar',
+    desc:'Après la sortie cétacés : plage de sable fin (rare à Madère) idéale pour la petite. En fin de journée, le village de Jardim do Mar — ruelles fleuries, coucher de soleil sur l\'Atlantique.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Calheta_Beach%2C_Madeira.jpg/640px-Calheta_Beach%2C_Madeira.jpg',
+    tags:[{l:'Plage',c:'water'},{l:'4 ans ✓',c:'chill'},{l:'Snorkeling',c:'water'}] },
+
+  // J4 — Jeudi 6 août
+  { id:'d1', dayId:'j4', cat:'Rando ★★',
+    name:'Ponta de São Lourenço',
+    desc:'La randonnée emblématique : 8 km sur la péninsule est, paysage lunaire de roches volcaniques rouge et ocre, mer turquoise des deux côtés. Panoramas à 360°. Aucun ombre — eau et chapeau obligatoires.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/20190520_Madeira_Ponta_de_S%C3%A3o_Louren%C3%A7o_1310_5484.jpg/640px-20190520_Madeira_Ponta_de_S%C3%A3o_Louren%C3%A7o_1310_5484.jpg',
+    tags:[{l:'Rando',c:'hike'},{l:'Vues spectaculaires',c:'cult'},{l:'Pas d\'ombre',c:'fun'}] },
+  { id:'d2', dayId:'j4', cat:'Option famille',
+    name:'Plage de Machico & côte est',
+    desc:'Vraie plage familiale avec infrastructures, eaux calmes, idéale pour la petite de 4 ans. Peut remplacer ou compléter São Lourenço si météo ou fatigue. Même côté de l\'île.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Machico_beach_Madeira.jpg/640px-Machico_beach_Madeira.jpg',
+    tags:[{l:'Plage',c:'water'},{l:'4 ans ✓',c:'chill'},{l:'Eaux calmes',c:'water'}] },
+
+  // J5 — Vendredi 7 août
+  { id:'e1', dayId:'j5', cat:'Road trip ★',
+    name:'Porto Moniz — piscines volcaniques & côte nord',
+    desc:'Traversée par le col d\'Encumeada (vue des deux côtes), arrêt à Santana (maisons triangulaires). Clou : les piscines naturelles creusées dans la roche noire, remplies par l\'océan avec les vagues en fond. Canon.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Porto_Moniz_Natural_Swimming_Pools_Madeira.jpg/640px-Porto_Moniz_Natural_Swimming_Pools_Madeira.jpg',
+    tags:[{l:'Piscines volcaniques',c:'water'},{l:'Road trip',c:'fun'},{l:'Nature',c:'hike'}] },
+  { id:'e2', dayId:'j5', cat:'Complément ou alternative',
+    name:'Seixal — plage noire & piscines sauvages',
+    desc:'Village du nord moins fréquenté. Plage de sable volcanique noir + deux piscines naturelles. Ambiance plus sauvage, idéal en fin de journée quand Porto Moniz se vide.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Seixal_beach_Madeira.jpg/640px-Seixal_beach_Madeira.jpg',
+    tags:[{l:'Plage noire',c:'water'},{l:'Moins touristique',c:'chill'},{l:'Nord',c:'hike'}] },
+
+  // J6 — Samedi 8 août
+  { id:'f1', dayId:'j6', cat:'Rando ★★★',
+    name:'Levada do Caldeirão Verde — forêt primaire UNESCO',
+    desc:'Sentier en forêt laurifère le long d\'un canal. Fougères géantes, cascades, tunnels dans la roche à traverser avec des lampes frontales. Les enfants adorent l\'aspect explorateurs. Praticable pour tous les âges.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Levada_do_Caldeiro_Verde_-_Queimadas_to_Caldeiro_Verde_-_panoramio_%281%29.jpg/640px-Levada_do_Caldeiro_Verde_-_Queimadas_to_Caldeiro_Verde_-_panoramio_%281%29.jpg',
+    tags:[{l:'Rando',c:'hike'},{l:'UNESCO',c:'cult'},{l:'Lampes frontales !',c:'fun'}] },
+  { id:'f2', dayId:'j6', cat:'Option ados / motivation',
+    name:'Lever de soleil au Pico Arieiro (1 818 m)',
+    desc:'Pour les 14–16 ans et adultes motivés : départ 5h30, mer de nuages, ciel rose au lever. Accessible en voiture jusqu\'au parking. Unanimement cité comme inoubliable. Veste chaude obligatoire.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pico_do_Arieiro%2C_Madeira%2C_Portugal%2C_2012-08-18%2C_DD_02.jpg/640px-Pico_do_Arieiro%2C_Madeira%2C_Portugal%2C_2012-08-18%2C_DD_02.jpg',
+    tags:[{l:'14 ans +',c:'fun'},{l:'Lever de soleil',c:'cult'},{l:'Altitude',c:'hike'}] },
+
+  // J7 — Dimanche 9 août
+  { id:'g1', dayId:'j7', cat:'★ Grand finale',
+    name:'Île de Porto Santo — 9 km de plage dorée',
+    desc:'Ferry 2h15 depuis Funchal. Porto Santo est l\'opposé de Madère : plate, sèche, blonde. 9 km de plage ininterrompus, eau chaude, peu de vagues. Espace infini pour les enfants. La journée "vacances pure" du séjour.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Praia_do_Porto_Santo_001.jpg/640px-Praia_do_Porto_Santo_001.jpg',
+    tags:[{l:'Plage',c:'water'},{l:'Ferry aller-retour',c:'cult'},{l:'Tout âge',c:'chill'},{l:'Inoubliable',c:'fun'}] },
+  { id:'g2', dayId:'j7', cat:'Alternative finale',
+    name:'Pico Ruivo — toit de Madère (1 862 m)',
+    desc:'Depuis le parking d\'Achada do Teixeira (1 592 m), 45 min de montée pour un panorama à 360° au-dessus des nuages. Accessible aux bons marcheurs dès 10 ans. Ne pas cumuler avec Porto Santo.',
+    photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Madeira_-_Pico_Ruivo_%2836552177534%29.jpg/640px-Madeira_-_Pico_Ruivo_%2836552177534%29.jpg',
+    tags:[{l:'Rando',c:'hike'},{l:'Panorama 360°',c:'cult'},{l:'10 ans +',c:'fun'}] },
+];
+
+// ════════════════════════════════
+// STATE
+// ════════════════════════════════
+let prenom = localStorage.getItem('madere_prenom') || null;
+let allVotes = [];
+let pollTimer = null;
+
+// ════════════════════════════════
+// IDENTITY
+// ════════════════════════════════
+function setPrenom() {
+  const v = document.getElementById('prenomInput').value.trim();
+  if (!v) { document.getElementById('prenomInput').focus(); return; }
+  prenom = v;
+  localStorage.setItem('madere_prenom', v);
+  document.getElementById('modalOverlay').classList.add('hidden');
+  document.getElementById('userPill').classList.remove('hidden');
+  document.getElementById('pillName').textContent = v;
+  loadVotes();
+}
+function changeUser() {
+  document.getElementById('prenomInput').value = '';
+  document.getElementById('modalOverlay').classList.remove('hidden');
+}
+document.getElementById('prenomInput').addEventListener('keydown', e => { if (e.key==='Enter') setPrenom(); });
+
+// Init modal
+if (prenom) {
+  document.getElementById('modalOverlay').classList.add('hidden');
+  document.getElementById('userPill').classList.remove('hidden');
+  document.getElementById('pillName').textContent = prenom;
+  loadVotes();
+}
+
+// ════════════════════════════════
+// SUPABASE LOAD
+// ════════════════════════════════
+async function loadVotes() {
+  try {
+    const rows = await sbFetch('/rest/v1/votes?select=slot_id,prenom,choice&order=created_at.asc');
+    allVotes = rows;
+
+    // Suggest existing names in modal
+    const names = [...new Set(rows.map(r => r.prenom))].slice(0, 12);
+    if (names.length) {
+      document.getElementById('modalNames').innerHTML =
+        `<span class="modal-names-label">Déjà présents</span>` +
+        names.map(n => `<span class="name-chip" onclick="quickJoin('${n}')">${n}</span>`).join('');
+    }
+
+    renderAll();
+
+    if (!pollTimer) {
+      pollTimer = setInterval(async () => {
+        try {
+          const fresh = await sbFetch('/rest/v1/votes?select=slot_id,prenom,choice&order=created_at.asc');
+          allVotes = fresh;
+          renderAll();
+        } catch(e) { /* silent */ }
+      }, 6000);
+    }
+  } catch(e) {
+    console.error(e);
+    document.getElementById('slotsArea').innerHTML =
+      `<div class="loading-spinner" style="color:#e8967a">
+        Erreur de connexion. Vérifiez que la table "votes" existe dans Supabase.<br><br>
+        <span style="font-size:.7rem;opacity:.6">Voir le fichier supabase-setup.sql fourni.</span>
+      </div>`;
+  }
+}
+
+function quickJoin(name) {
+  document.getElementById('prenomInput').value = name;
+  setPrenom();
+}
+
+// ════════════════════════════════
+// VOTE ACTION
+// ════════════════════════════════
+async function vote(slotId, choice) {
+  if (!prenom) return;
+  const existing = allVotes.find(v => v.slot_id===slotId && v.prenom===prenom);
+
+  if (existing && existing.choice === choice) {
+    // Toggle off
+    allVotes = allVotes.filter(v => !(v.slot_id===slotId && v.prenom===prenom));
+    renderAll();
+    try {
+      await sbFetch(`/rest/v1/votes?slot_id=eq.${slotId}&prenom=eq.${encodeURIComponent(prenom)}`, { method:'DELETE', headers:{'Prefer':''} });
+    } catch(e) { console.error(e); }
+  } else {
+    if (existing) existing.choice = choice;
+    else allVotes.push({ slot_id:slotId, prenom, choice });
+    renderAll();
+    try {
+      await sbFetch('/rest/v1/votes', {
+        method:'POST',
+        headers:{ 'Prefer':'resolution=merge-duplicates,return=minimal' },
+        body: JSON.stringify({ slot_id:slotId, prenom, choice })
+      });
+    } catch(e) { console.error(e); }
+  }
+}
+
+// ════════════════════════════════
+// SCORING
+// ════════════════════════════════
+function summary(slotId) {
+  const sv = allVotes.filter(v => v.slot_id===slotId);
+  return {
+    yes:   sv.filter(v=>v.choice==='yes'),
+    maybe: sv.filter(v=>v.choice==='maybe'),
+    no:    sv.filter(v=>v.choice==='no'),
+    mine:  sv.find(v=>v.prenom===prenom)?.choice || null,
+    total: sv.length
+  };
+}
+function score(slotId) {
+  const s = summary(slotId);
+  return s.yes.length*3 + s.maybe.length*1 - s.no.length*2;
+}
+function winner(dayId) {
+  const ds = SLOTS.filter(s=>s.dayId===dayId);
+  const withVotes = ds.filter(s=>summary(s.id).total>0);
+  if (!withVotes.length) return null;
+  const sorted = [...withVotes].sort((a,b)=>score(b.id)-score(a.id));
+  return score(sorted[0].id) > 0 ? sorted[0] : null;
+}
+
+// ════════════════════════════════
+// RENDER
+// ════════════════════════════════
+function renderAll() {
+  renderSlots();
+  renderRetained();
+}
+
+function renderSlots() {
+  const area = document.getElementById('slotsArea');
+  area.innerHTML = '';
+
+  DAYS.forEach(day => {
+    const ds = SLOTS.filter(s=>s.dayId===day.id);
+    const w = winner(day.id);
+
+    const block = document.createElement('div');
+    block.className = 'day-block';
+    block.innerHTML = `<p class="day-label">${day.label}</p>`;
+    const row = document.createElement('div');
+    row.className = 'slots-row';
+
+    ds.forEach(slot => {
+      const { yes, maybe, no, mine, total } = summary(slot.id);
+      const isWin = w && w.id===slot.id;
+      const pY = total ? Math.round(yes.length/total*100) : 0;
+      const pM = total ? Math.round(maybe.length/total*100) : 0;
+      const pN = total ? Math.round(no.length/total*100) : 0;
+
+      const chips = [
+        ...yes.map(v=>`<span class="who-chip yes">${v.prenom} 👍</span>`),
+        ...maybe.map(v=>`<span class="who-chip maybe">${v.prenom} 🤔</span>`),
+        ...no.map(v=>`<span class="who-chip no">${v.prenom} 👎</span>`),
+      ].join('');
+
+      const card = document.createElement('div');
+      card.className = 'slot' + (isWin ? ' winner' : '');
+      card.innerHTML = `
+        <span class="assigned-badge">✓ Retenu</span>
+        <img class="slot-photo" src="${slot.photo}" alt="${slot.name}" loading="lazy"
+          onerror="this.style.display='none'">
+        <div class="slot-body">
+          <p class="slot-cat">${slot.cat}</p>
+          <h3 class="slot-name">${slot.name}</h3>
+          <p class="slot-desc">${slot.desc}</p>
+          <div class="slot-tags">${slot.tags.map(t=>`<span class="stag ${t.c}">${t.l}</span>`).join('')}</div>
+          <div class="vote-section">
+            <p class="vote-label">Votre avis</p>
+            <div class="vote-btns">
+              <button class="vote-btn yes ${mine==='yes'?'active':''}" onclick="vote('${slot.id}','yes')">
+                👍 Pour <span class="vote-count">${yes.length}</span>
+              </button>
+              <button class="vote-btn maybe ${mine==='maybe'?'active':''}" onclick="vote('${slot.id}','maybe')">
+                🤔 Peut-être <span class="vote-count">${maybe.length}</span>
+              </button>
+              <button class="vote-btn no ${mine==='no'?'active':''}" onclick="vote('${slot.id}','no')">
+                👎 Non <span class="vote-count">${no.length}</span>
+              </button>
+            </div>
+            <div class="vote-bar">
+              <div class="vbar-yes" style="width:${pY}%"></div>
+              <div class="vbar-maybe" style="width:${pM}%"></div>
+              <div class="vbar-no" style="width:${pN}%"></div>
+            </div>
+            <div class="who-voted">
+              ${chips || '<span class="no-votes-yet">Pas encore de votes</span>'}
+            </div>
+          </div>
+        </div>`;
+      row.appendChild(card);
+    });
+
+    block.appendChild(row);
+    area.appendChild(block);
+  });
+}
+
+function renderRetained() {
+  const grid = document.getElementById('retainedGrid');
+  grid.innerHTML = '';
+
+  // Arrivée fixe
+  addFixed(grid,'Lun',3,'#c0392b',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Funchal_Hafen.jpg/160px-Funchal_Hafen.jpg',
+    'Arrivée à Funchal ✈️','Vol, voitures, installation. Premier dîner de groupe ensemble.');
+
+  DAYS.forEach(day => {
+    const w = winner(day.id);
+    const row = document.createElement('div');
+    row.className = 'ret-row';
+    if (w) {
+      row.innerHTML = `
+        <div class="ret-date">
+          <span class="ret-dow">${day.dow}</span>
+          <span class="ret-day">${day.day}</span>
+          <span class="ret-mon">Août</span>
+        </div>
+        <div class="ret-body">
+          <img class="ret-thumb" src="${w.photo}" alt="${w.name}" onerror="this.style.display='none'">
+          <div><p class="ret-title">${w.name}</p><p class="ret-desc">${w.desc.slice(0,110)}…</p></div>
+        </div>`;
+    } else {
+      row.innerHTML = `
+        <div class="ret-date" style="background:#2a4a5a">
+          <span class="ret-dow">${day.dow}</span>
+          <span class="ret-day">${day.day}</span>
+          <span class="ret-mon">Août</span>
+        </div>
+        <div class="ret-body ret-pending">En attente de votes…</div>`;
+    }
+    grid.appendChild(row);
+  });
+
+  // Départ fixe
+  addFixed(grid,'Lun',10,'#c0392b',null,
+    'Marché de Funchal & départ ✈️',
+    'Mercado dos Lavradores pour les derniers achats. Retour.');
+}
+
+function addFixed(grid, dow, day, bg, thumb, title, desc) {
+  const row = document.createElement('div');
+  row.className = 'ret-row';
+  row.innerHTML = `
+    <div class="ret-date" style="background:${bg}">
+      <span class="ret-dow">${dow}</span><span class="ret-day">${day}</span><span class="ret-mon">Août</span>
+    </div>
+    <div class="ret-body">
+      ${thumb ? `<img class="ret-thumb" src="${thumb}" onerror="this.style.display='none'">` : ''}
+      <div><p class="ret-title">${title}</p><p class="ret-desc">${desc}</p></div>
+    </div>`;
+  grid.appendChild(row);
+}
+</script>
+</body>
+</html>
