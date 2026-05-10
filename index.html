@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Madère · Août 2025</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--ocean:#1b4f72;--deep:#0e2a38;--lava:#c0392b;--sun:#d4a017;--sand:#f5ede0;--green:#1e8449;--white:#fdfaf6;--text:#1a2a35;--mid:#5a7a8a}
@@ -53,10 +55,10 @@ body{font-family:'Lato',sans-serif;background:var(--deep);color:var(--white)}
 .home-name{font-family:‘Playfair Display’,serif;font-size:1rem;margin-bottom:.3rem}
 .home-fam{font-size:.75rem;color:rgba(255,255,255,.45);font-weight:300;line-height:1.7}
 #map{max-width:900px;margin:0 auto;height:460px;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.15)}
-.gm-style .gm-style-iw-c{border-radius:6px!important;padding:12px 16px!important}
-.gm-style .gm-style-iw-d{overflow:hidden!important}
 .map-popup-title{font-family:‘Playfair Display’,serif;font-size:1rem;font-weight:700;color:#1a2a35;margin-bottom:.25rem}
 .map-popup-sub{font-size:.78rem;color:#5a7a8a;line-height:1.5}
+.leaflet-popup-content-wrapper{border-radius:6px!important;padding:4px!important;font-family:‘Lato’,sans-serif}
+.leaflet-popup-content{margin:10px 14px!important;font-size:.82rem;line-height:1.5}
 
 .intro{background:var(–deep);padding:3rem 2rem;text-align:center}
 .intro-title{font-family:‘Playfair Display’,serif;font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:1rem}
@@ -282,71 +284,38 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
 </div>
 <footer>Madère · Août 2025 · Programme co-construit par les deux familles</footer>
 
-<!-- Google Maps JavaScript API -->
-
 <script>
 function initMap(){
-  const map=new google.maps.Map(document.getElementById('map'),{
-    center:{lat:32.72,lng:-16.85},
-    zoom:10,
-    mapTypeId:'roadmap',
-    mapTypeControl:false,
-    streetViewControl:false,
-    fullscreenControl:true,
-    styles:[
-      {featureType:'water',elementType:'geometry',stylers:[{color:'#1a4a6c'}]},
-      {featureType:'landscape',elementType:'geometry',stylers:[{color:'#2d5a27'}]},
-      {featureType:'road',elementType:'geometry',stylers:[{color:'#38566b'},{lightness:10}]},
-      {featureType:'poi',elementType:'labels',stylers:[{visibility:'off'}]},
-      {featureType:'administrative',elementType:'labels.text.fill',stylers:[{color:'#d4a017'}]},
-      {featureType:'road',elementType:'labels.text.fill',stylers:[{color:'#d8d8d8'}]},
-      {featureType:'landscape',elementType:'labels.text.fill',stylers:[{color:'#ccc'}]},
-    ]
-  });
+  const map=L.map('map',{scrollWheelZoom:false}).setView([32.72,-16.85],10);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',maxZoom:18
+  }).addTo(map);
 
-  const infoWindow=new google.maps.InfoWindow();
-
-  function addMarker(lat,lng,emoji,title,subtitle,color){
-    const pin=document.createElement('div');
-    pin.style.cssText=`font-size:1.6rem;cursor:pointer;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5));transition:transform .2s`;
-    pin.textContent=emoji;
-    pin.addEventListener('mouseenter',()=>pin.style.transform='scale(1.3)');
-    pin.addEventListener('mouseleave',()=>pin.style.transform='scale(1)');
-    const marker=new google.maps.marker.AdvancedMarkerElement({
-      position:{lat,lng},map,content:pin,title
+  function mk(lat,lng,emoji,title,desc){
+    const ic=L.divIcon({
+      html:'<div style="font-size:1.5rem;line-height:1;filter:drop-shadow(0 2px 3px rgba(0,0,0,.6));cursor:pointer">'+emoji+'</div>',
+      className:'',iconSize:[30,30],iconAnchor:[15,15],popupAnchor:[0,-15]
     });
-    marker.addListener('click',()=>{
-      infoWindow.setContent(`<div class="map-popup-title">${emoji} ${title}</div><div class="map-popup-sub">${subtitle}</div>`);
-      infoWindow.open(map,marker);
-    });
-    return marker;
+    L.marker([lat,lng],{icon:ic}).addTo(map)
+     .bindPopup('<div class="map-popup-title">'+emoji+' '+title+'</div><div class="map-popup-sub">'+desc+'</div>');
   }
 
-  // Deux maisons
-  addMarker(32.6497,-16.8721,'🏠','Ana & Thibault — Palheiro Village','São Gonçalo · Elsa · Faustine · Azélie','#d4a017');
-  addMarker(32.6419,-16.8558,'🏠','Gaspard & Jennifer — Caniço','Travessa E.B. de Melo · Ulysse · Timothée · Salomé · Isaure · Castille','#d4a017');
-
-  // Activités
-  const acts=[
-    [32.7434,-16.7009,'🌋','Ponta de São Lourenço','Randonnée spectaculaire — 8 km aller-retour'],
-    [32.8686,-17.1706,'🌊','Porto Moniz','Piscines naturelles creusées dans la roche volcanique'],
-    [32.7203,-17.1783,'🏖️','Plage de Calheta','Whale watching & plage de sable fin'],
-    [32.6756,-16.9005,'🌿','Monte Palace','Jardins tropicaux & luge en osier'],
-    [32.7823,-16.9024,'🌿','Levada Caldeirão Verde','Forêt primaire UNESCO — tunnels dans le noir'],
-    [32.6555,-17.0042,'🗻','Cabo Girão','Falaise à 580 m — belvédère vitré dans le vide'],
-    [33.0383,-16.3578,'🏝️','Porto Santo','9 km de plage dorée — ferry 2h15'],
-    [32.6654,-16.9258,'🏙️','Funchal & Musée CR7','Centre historique, marché & Cristiano Ronaldo'],
-    [32.7500,-16.9500,'🌅','Pico Arieiro','Lever de soleil à 1 818 m — mer de nuages'],
-    [32.7630,-16.9700,'⛰️','Pico Ruivo','Toit de Madère à 1 862 m — panorama 360°'],
-    [32.6900,-16.9100,'💦','Canyoning Ribeira das Cales','Rappels, sauts, nage tropicale — 12 ans +'],
-    [32.7950,-17.1500,'⚫','Seixal','Plage de sable noir & piscines sauvages du nord'],
-  ];
-  acts.forEach(([lat,lng,emoji,title,subtitle])=>addMarker(lat,lng,emoji,title,subtitle,'#1b4f72'));
+  mk(32.6497,-16.8721,'🏠','Ana & Thibault — Palheiro Village','São Gonçalo · Elsa · Faustine · Azélie');
+  mk(32.6419,-16.8558,'🏠','Gaspard & Jennifer — Caniço','Ulysse · Timothée · Salomé · Isaure · Castille');
+  mk(32.7434,-16.7009,'🌋','Ponta de São Lourenço','Randonnée spectaculaire — 8 km aller-retour');
+  mk(32.8686,-17.1706,'🌊','Porto Moniz','Piscines naturelles creusées dans la roche volcanique');
+  mk(32.7203,-17.1783,'🏖️','Plage de Calheta','Whale watching & plage de sable fin');
+  mk(32.6756,-16.9005,'🌿','Monte Palace','Jardins tropicaux & luge en osier');
+  mk(32.7823,-16.9024,'🌿','Levada Caldeirão Verde','Forêt primaire UNESCO — tunnels dans le noir');
+  mk(32.6555,-17.0042,'🗻','Cabo Girão','Falaise à 580 m — belvédère vitré dans le vide');
+  mk(33.0383,-16.3578,'🏝️','Porto Santo','9 km de plage dorée — ferry 2h15');
+  mk(32.6654,-16.9258,'🏙️','Funchal & Musée CR7','Centre historique, marché & Cristiano Ronaldo');
+  mk(32.7500,-16.9500,'🌅','Pico Arieiro','Lever de soleil à 1 818 m — mer de nuages');
+  mk(32.7630,-16.9700,'⛰️','Pico Ruivo','Toit de Madère à 1 862 m — panorama 360°');
+  mk(32.6900,-16.9100,'💦','Canyoning Ribeira das Cales','Rappels, sauts, nage tropicale — 12 ans +');
+  mk(32.7950,-17.1500,'⚫','Seixal','Plage de sable noir & piscines sauvages du nord');
 }
-</script>
-
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-xWEzs40VOK8jxfSn22rrFJ078a0m59g&libraries=marker&callback=initMap">
+window.addEventListener('load', initMap);
 </script>
 
 <script>
