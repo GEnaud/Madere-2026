@@ -4,152 +4,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madère · Août 2025 · Programme</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<title>Madère · Août 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-:root { --ocean:#1b4f72; --deep:#0e2a38; --lava:#c0392b; --sun:#d4a017; --sand:#f5ede0; --green:#1e8449; --white:#fdfaf6; --text:#1a2a35; --mid:#5a7a8a; }
-body { font-family:'Lato',sans-serif; background:var(--deep); color:var(--white); }
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ocean:#1b4f72;--deep:#0e2a38;--lava:#c0392b;--sun:#d4a017;--sand:#f5ede0;--green:#1e8449;--white:#fdfaf6;--text:#1a2a35;--mid:#5a7a8a}
+body{font-family:'Lato',sans-serif;background:var(--deep);color:var(--white)}
 
-.modal-overlay { position:fixed; inset:0; background:rgba(14,42,56,.97); z-index:1000; display:flex; align-items:center; justify-content:center; padding:1.5rem; }
-.modal-overlay.hidden { display:none; }
-.modal-box { background:rgba(27,79,114,.25); border:1px solid rgba(255,255,255,.12); padding:2.5rem; max-width:420px; width:100%; text-align:center; border-radius:4px; }
-.modal-title { font-family:‘Playfair Display’,serif; font-size:2rem; margin-bottom:.5rem; }
-.modal-title em { font-style:italic; color:var(–sun); }
-.modal-sub { font-size:.85rem; color:rgba(255,255,255,.5); font-weight:300; margin-bottom:2rem; line-height:1.7; }
-.modal-input { width:100%; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.2); color:var(–white); font-family:‘Lato’,sans-serif; font-size:1rem; padding:.9rem 1.2rem; outline:none; margin-bottom:1rem; border-radius:2px; }
-.modal-input:focus { border-color:var(–sun); }
-.modal-btn { width:100%; background:var(–ocean); color:var(–white); border:none; font-family:‘Lato’,sans-serif; font-size:.85rem; letter-spacing:.15em; text-transform:uppercase; padding:1rem; cursor:pointer; border-radius:2px; }
-.modal-names { margin-top:1.5rem; }
-.modal-names-label { font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:.6rem; display:block; }
-.name-chip { display:inline-block; margin:.2rem .25rem; padding:.3rem .8rem; border:1px solid rgba(255,255,255,.15); border-radius:20px; font-size:.75rem; cursor:pointer; color:rgba(255,255,255,.6); }
-.name-chip:hover { border-color:var(–sun); color:var(–sun); }
-.user-pill { position:fixed; top:1rem; right:1rem; z-index:200; background:rgba(14,42,56,.92); border:1px solid rgba(255,255,255,.15); padding:.4rem 1rem; border-radius:20px; font-size:.75rem; display:flex; align-items:center; gap:.6rem; cursor:pointer; }
-.user-pill .dot { width:8px; height:8px; border-radius:50%; background:var(–green); }
-.user-pill.hidden { display:none; }
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(14,42,56,.97);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+.modal-overlay.hidden{display:none}
+.modal-box{background:rgba(27,79,114,.25);border:1px solid rgba(255,255,255,.12);padding:2.5rem;max-width:420px;width:100%;text-align:center;border-radius:4px}
+.modal-title{font-family:‘Playfair Display’,serif;font-size:2rem;margin-bottom:.5rem}
+.modal-title em{font-style:italic;color:var(–sun)}
+.modal-sub{font-size:.85rem;color:rgba(255,255,255,.5);font-weight:300;margin-bottom:2rem;line-height:1.7}
+.modal-input{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);color:var(–white);font-family:‘Lato’,sans-serif;font-size:1rem;padding:.9rem 1.2rem;outline:none;margin-bottom:1rem;border-radius:2px}
+.modal-input:focus{border-color:var(–sun)}
+.modal-btn{width:100%;background:var(–ocean);color:var(–white);border:none;font-family:‘Lato’,sans-serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;padding:1rem;cursor:pointer;border-radius:2px}
+.modal-names{margin-top:1.5rem}
+.modal-names-label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.6rem;display:block}
+.name-chip{display:inline-block;margin:.2rem .25rem;padding:.3rem .8rem;border:1px solid rgba(255,255,255,.15);border-radius:20px;font-size:.75rem;cursor:pointer;color:rgba(255,255,255,.6)}
+.name-chip:hover{border-color:var(–sun);color:var(–sun)}
 
-.hero { position:relative; height:100vh; min-height:500px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; overflow:hidden; }
-.hero-img { position:absolute; inset:0; background:url(‘https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1400&q=80’) center/cover no-repeat; filter:brightness(.35); }
-.hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(14,42,56,.1),rgba(14,42,56,.85)); }
-.hero-content { position:relative; z-index:2; padding:2rem; }
-.hero-eyebrow { font-size:.65rem; letter-spacing:.35em; text-transform:uppercase; color:var(–sun); margin-bottom:1.2rem; font-weight:300; }
-.hero-title { font-family:‘Playfair Display’,serif; font-size:clamp(3.5rem,10vw,8rem); font-weight:400; line-height:.95; margin-bottom:1.2rem; }
-.hero-title em { font-style:italic; color:var(–sun); }
-.hero-sub { font-size:clamp(.9rem,2vw,1.1rem); font-weight:300; color:rgba(255,255,255,.75); max-width:540px; line-height:1.7; }
-.hero-chips { display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center; margin-top:2rem; }
-.chip { font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; border:1px solid rgba(255,255,255,.3); padding:.35rem .9rem; border-radius:2px; color:rgba(255,255,255,.7); }
-.hero-scroll { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:.5rem; cursor:pointer; z-index:2; }
-.hero-scroll span { font-size:.55rem; letter-spacing:.3em; text-transform:uppercase; opacity:.5; }
-.scroll-arrow { width:1px; height:40px; background:linear-gradient(to bottom,rgba(255,255,255,.6),transparent); animation:pulse 2s infinite; }
+/* USER PILL */
+.user-pill{position:fixed;top:1rem;right:1rem;z-index:200;background:rgba(14,42,56,.92);border:1px solid rgba(255,255,255,.15);padding:.4rem 1rem;border-radius:20px;font-size:.75rem;display:flex;align-items:center;gap:.6rem;cursor:pointer}
+.user-pill .dot{width:8px;height:8px;border-radius:50%;background:var(–green)}
+.user-pill.hidden{display:none}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:500px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-img{position:absolute;inset:0;background:url(‘https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1400&q=80’) center/cover no-repeat;filter:brightness(.32)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(14,42,56,.05),rgba(14,42,56,.85))}
+.hero-content{position:relative;z-index:2;padding:2rem}
+.hero-eyebrow{font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;color:var(–sun);margin-bottom:1.2rem;font-weight:300}
+.hero-title{font-family:‘Playfair Display’,serif;font-size:clamp(3.5rem,10vw,8rem);font-weight:400;line-height:.95;margin-bottom:1.2rem}
+.hero-title em{font-style:italic;color:var(–sun)}
+.hero-sub{font-size:clamp(.9rem,2vw,1.1rem);font-weight:300;color:rgba(255,255,255,.75);max-width:540px;line-height:1.7}
+.hero-chips{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-top:2rem}
+.chip{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(255,255,255,.3);padding:.35rem .9rem;border-radius:2px;color:rgba(255,255,255,.7)}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;cursor:pointer;z-index:2}
+.hero-scroll span{font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;opacity:.5}
+.scroll-arrow{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,.6),transparent);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
 
-.intro { background:var(–white); color:var(–text); padding:4rem 2rem; text-align:center; }
-.intro-title { font-family:‘Playfair Display’,serif; font-size:clamp(1.8rem,4vw,2.8rem); margin-bottom:1rem; }
-.intro-title em { font-style:italic; color:var(–lava); }
-.intro-body { max-width:640px; margin:0 auto; font-size:1rem; font-weight:300; line-height:1.9; color:#4a6070; }
-.vote-legend { display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin-top:2rem; }
-.legend-item { display:flex; align-items:center; gap:.5rem; font-size:.85rem; color:#4a6070; }
-.legend-dot { width:10px; height:10px; border-radius:50%; }
+/* MAP SECTION */
+.map-section{background:var(–white);color:var(–text);padding:3rem 2rem}
+.map-section h2{font-family:‘Playfair Display’,serif;font-size:clamp(1.6rem,4vw,2.5rem);text-align:center;margin-bottom:.5rem}
+.map-section h2 em{font-style:italic;color:var(–lava)}
+.map-section p{text-align:center;font-size:.9rem;color:var(–mid);font-weight:300;margin-bottom:1.5rem}
+.homes-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:700px;margin:0 auto 1.5rem}
+.home-card{background:var(–deep);color:var(–white);padding:1rem 1.25rem;border-radius:4px}
+.home-icon{font-size:1.4rem;margin-bottom:.4rem}
+.home-name{font-family:‘Playfair Display’,serif;font-size:1rem;margin-bottom:.25rem}
+.home-family{font-size:.75rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.6}
+.map-embed{width:100%;height:380px;border:0;border-radius:4px;display:block;max-width:900px;margin:0 auto}
 
-.days-header { background:var(–deep); padding:3rem 2rem 0; text-align:center; }
-.days-header h2 { font-family:‘Playfair Display’,serif; font-size:clamp(1.5rem,3vw,2rem); margin-bottom:.5rem; }
-.days-header p { font-size:.85rem; color:rgba(255,255,255,.5); font-weight:300; }
+/* INTRO */
+.intro{background:var(–deep);padding:3rem 2rem;text-align:center}
+.intro-title{font-family:‘Playfair Display’,serif;font-size:clamp(1.6rem,4vw,2.5rem);margin-bottom:1rem}
+.intro-title em{font-style:italic;color:var(–sun)}
+.intro-body{max-width:640px;margin:0 auto;font-size:.95rem;font-weight:300;line-height:1.9;color:rgba(255,255,255,.65)}
+.vote-legend{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.5rem}
+.legend-item{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:rgba(255,255,255,.55)}
+.legend-dot{width:10px;height:10px;border-radius:50%}
 
-.slots-wrapper { background:var(–deep); padding:2rem 1rem 3rem; }
-.day-block { margin-bottom:3rem; }
-.day-label { font-size:.6rem; letter-spacing:.3em; text-transform:uppercase; color:var(–sun); font-weight:700; padding:0 .5rem 1rem; }
-.slots-row { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.08); border-radius:4px; overflow:hidden; }
-.slot { background:rgba(14,42,56,.95); position:relative; overflow:hidden; }
-.slot-photo { width:100%; height:210px; object-fit:cover; display:block; }
-.slot-photo-fallback { width:100%; height:210px; display:flex; align-items:center; justify-content:center; font-size:4rem; }
-.slot-body { padding:1.25rem 1.5rem 1.5rem; }
-.slot-cat { font-size:.55rem; letter-spacing:.2em; text-transform:uppercase; color:var(–sun); font-weight:700; margin-bottom:.5rem; }
-.slot-name { font-family:‘Playfair Display’,serif; font-size:1.3rem; margin-bottom:.75rem; line-height:1.25; }
-.slot-desc { font-size:.88rem; font-weight:300; color:rgba(255,255,255,.72); line-height:1.8; margin-bottom:.85rem; }
-.slot-note { font-size:.78rem; font-style:italic; color:rgba(255,255,255,.4); margin-bottom:1rem; padding:.6rem .75rem; border-left:2px solid rgba(212,160,23,.4); background:rgba(212,160,23,.05); line-height:1.6; }
-.slot-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.25rem; }
-.stag { font-size:.55rem; letter-spacing:.1em; text-transform:uppercase; padding:.25rem .6rem; border-radius:2px; border:1px solid rgba(255,255,255,.2); color:rgba(255,255,255,.5); }
-.stag.water { border-color:rgba(174,214,241,.4); color:#aed6f1; }
-.stag.hike { border-color:rgba(30,132,73,.5); color:#82e0aa; }
-.stag.fun { border-color:rgba(192,57,43,.4); color:#e8967a; }
-.stag.chill { border-color:rgba(255,255,255,.2); }
-.stag.cult { border-color:rgba(212,160,23,.4); color:var(–sun); }
+/* SLOTS GRID */
+.slots-section{background:var(–deep);padding:2rem 1rem 3rem}
+.slots-section-header{text-align:center;padding:0 1rem 2rem}
+.slots-section-header h2{font-family:‘Playfair Display’,serif;font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:.4rem}
+.slots-section-header p{font-size:.85rem;color:rgba(255,255,255,.45);font-weight:300}
+.slots-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:4px;overflow:hidden;max-width:1200px;margin:0 auto}
 
-.vote-section { border-top:1px solid rgba(255,255,255,.08); padding-top:.9rem; }
-.vote-label { font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:.6rem; }
-.vote-btns { display:flex; gap:.4rem; }
-.vote-btn { flex:1; padding:.6rem .3rem; border:1px solid rgba(255,255,255,.15); background:none; color:rgba(255,255,255,.6); font-family:‘Lato’,sans-serif; font-size:.72rem; cursor:pointer; border-radius:2px; transition:all .15s; display:flex; align-items:center; justify-content:center; gap:.3rem; }
-.vote-btn:hover { background:rgba(255,255,255,.08); }
-.vote-btn.yes.active { background:rgba(30,132,73,.25); border-color:var(–green); color:#82e0aa; }
-.vote-btn.maybe.active { background:rgba(212,160,23,.15); border-color:var(–sun); color:var(–sun); }
-.vote-btn.no.active { background:rgba(192,57,43,.15); border-color:var(–lava); color:#e8967a; }
-.vote-count { font-size:.65rem; opacity:.7; }
-.vote-bar { height:3px; margin-top:.7rem; border-radius:1px; overflow:hidden; display:flex; }
-.vbar-yes { background:var(–green); transition:width .4s; }
-.vbar-maybe { background:var(–sun); transition:width .4s; }
-.vbar-no { background:var(–lava); transition:width .4s; }
-.who-voted { margin-top:.7rem; display:flex; flex-wrap:wrap; gap:.35rem; min-height:22px; }
-.who-chip { font-size:.62rem; padding:.2rem .6rem; border-radius:10px; font-weight:700; }
-.who-chip.yes { background:rgba(30,132,73,.3); color:#82e0aa; }
-.who-chip.maybe { background:rgba(212,160,23,.2); color:var(–sun); }
-.who-chip.no { background:rgba(192,57,43,.2); color:#e8967a; }
-.no-votes-yet { font-size:.65rem; opacity:.3; font-style:italic; }
-.assigned-badge { position:absolute; top:.7rem; right:.7rem; font-size:.55rem; letter-spacing:.12em; text-transform:uppercase; padding:.3rem .7rem; border-radius:2px; background:rgba(30,132,73,.9); color:#fff; font-weight:700; display:none; }
-.slot.winner { outline:2px solid var(–green); }
-.slot.winner .assigned-badge { display:block; }
+/* SLOT CARD */
+.slot{background:rgba(14,42,56,.96);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.slot-photos{position:relative;height:220px;overflow:hidden;flex-shrink:0}
+.slot-photo{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.slot:hover .slot-photo{transform:scale(1.04)}
+.slot-photo-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem}
+.slot-photos-nav{position:absolute;bottom:.5rem;right:.5rem;display:flex;gap:.3rem}
+.photo-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .2s}
+.photo-dot.active{background:var(–white)}
+.slot-body{padding:1.25rem 1.5rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.slot-cat{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(–sun);font-weight:700;margin-bottom:.5rem}
+.slot-name{font-family:‘Playfair Display’,serif;font-size:1.3rem;margin-bottom:.75rem;line-height:1.25}
+.slot-desc{font-size:.87rem;font-weight:300;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:.85rem;flex:1}
+.slot-note{font-size:.77rem;font-style:italic;color:rgba(255,255,255,.38);margin-bottom:1rem;padding:.55rem .75rem;border-left:2px solid rgba(212,160,23,.4);background:rgba(212,160,23,.05);line-height:1.6}
+.slot-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem}
+.stag{font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .6rem;border-radius:2px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5)}
+.stag.water{border-color:rgba(174,214,241,.4);color:#aed6f1}
+.stag.hike{border-color:rgba(30,132,73,.5);color:#82e0aa}
+.stag.fun{border-color:rgba(192,57,43,.4);color:#e8967a}
+.stag.chill{border-color:rgba(255,255,255,.2)}
+.stag.cult{border-color:rgba(212,160,23,.4);color:var(–sun)}
 
-.propose-btn-wrap { padding:.5rem 1rem 2rem; text-align:center; }
-.propose-btn { background:none; border:1px solid rgba(212,160,23,.5); color:var(–sun); font-family:‘Lato’,sans-serif; font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; padding:.75rem 2rem; border-radius:2px; cursor:pointer; transition:all .2s; }
-.propose-btn:hover { background:rgba(212,160,23,.1); }
+/* VOTE */
+.vote-section{border-top:1px solid rgba(255,255,255,.08);padding-top:.9rem}
+.vote-label-row{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.6rem}
+.vote-btns{display:flex;gap:.4rem}
+.vote-btn{flex:1;padding:.6rem .3rem;border:1px solid rgba(255,255,255,.15);background:none;color:rgba(255,255,255,.6);font-family:‘Lato’,sans-serif;font-size:.72rem;cursor:pointer;border-radius:2px;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:.3rem}
+.vote-btn:hover{background:rgba(255,255,255,.08)}
+.vote-btn.yes.active{background:rgba(30,132,73,.25);border-color:var(–green);color:#82e0aa}
+.vote-btn.maybe.active{background:rgba(212,160,23,.15);border-color:var(–sun);color:var(–sun)}
+.vote-btn.no.active{background:rgba(192,57,43,.15);border-color:var(–lava);color:#e8967a}
+.vote-count{font-size:.65rem;opacity:.7}
+.vote-bar{height:3px;margin-top:.7rem;border-radius:1px;overflow:hidden;display:flex}
+.vbar-yes{background:var(–green);transition:width .4s}
+.vbar-maybe{background:var(–sun);transition:width .4s}
+.vbar-no{background:var(–lava);transition:width .4s}
+.who-voted{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.3rem;min-height:20px}
+.who-chip{font-size:.6rem;padding:.18rem .55rem;border-radius:10px;font-weight:700}
+.who-chip.yes{background:rgba(30,132,73,.3);color:#82e0aa}
+.who-chip.maybe{background:rgba(212,160,23,.2);color:var(–sun)}
+.who-chip.no{background:rgba(192,57,43,.2);color:#e8967a}
+.no-votes-yet{font-size:.65rem;opacity:.3;font-style:italic}
 
-.chat-overlay { position:fixed; inset:0; background:rgba(14,42,56,.95); z-index:500; display:flex; align-items:flex-end; justify-content:center; padding:1rem; }
-.chat-overlay.hidden { display:none; }
-.chat-box { background:var(–deep); border:1px solid rgba(255,255,255,.12); border-radius:8px 8px 0 0; width:100%; max-width:580px; max-height:80vh; display:flex; flex-direction:column; overflow:hidden; }
-.chat-header { padding:1rem 1.25rem; border-bottom:1px solid rgba(255,255,255,.08); display:flex; align-items:center; justify-content:space-between; }
-.chat-header-title { font-family:‘Playfair Display’,serif; font-size:1.1rem; }
-.chat-header-title em { font-style:italic; color:var(–sun); }
-.chat-close { background:none; border:none; color:rgba(255,255,255,.4); font-size:1.2rem; cursor:pointer; padding:.25rem .5rem; }
-.chat-messages { flex:1; overflow-y:auto; padding:1rem 1.25rem; display:flex; flex-direction:column; gap:.75rem; }
-.msg { max-width:90%; padding:.75rem 1rem; border-radius:4px; font-size:.88rem; line-height:1.65; }
-.msg.claude { background:rgba(27,79,114,.4); border:1px solid rgba(255,255,255,.08); align-self:flex-start; color:rgba(255,255,255,.85); }
-.msg.user { background:rgba(30,132,73,.2); border:1px solid rgba(30,132,73,.3); align-self:flex-end; color:#82e0aa; }
-.msg.system { background:rgba(212,160,23,.1); border:1px solid rgba(212,160,23,.2); align-self:center; color:var(–sun); font-size:.78rem; text-align:center; font-style:italic; }
-.chat-input-row { padding:.75rem 1rem; border-top:1px solid rgba(255,255,255,.08); display:flex; gap:.5rem; }
-.chat-input { flex:1; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); color:var(–white); font-family:‘Lato’,sans-serif; font-size:.9rem; padding:.7rem 1rem; border-radius:2px; outline:none; }
-.chat-input:focus { border-color:var(–sun); }
-.chat-send { background:var(–ocean); color:var(–white); border:none; font-family:‘Lato’,sans-serif; font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; padding:.7rem 1.2rem; cursor:pointer; border-radius:2px; white-space:nowrap; }
-.chat-send:disabled { opacity:.4; cursor:not-allowed; }
-.chat-typing { font-size:.75rem; color:rgba(255,255,255,.3); font-style:italic; padding:0 .25rem; }
+/* WINNER BADGE */
+.winner-badge{position:absolute;top:.7rem;left:.7rem;font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border-radius:2px;background:rgba(30,132,73,.9);color:#fff;font-weight:700;display:none;z-index:2}
+.slot.winner{outline:2px solid var(–green)}
+.slot.winner .winner-badge{display:block}
 
-.loading-spinner { text-align:center; padding:3rem; font-size:.8rem; color:rgba(255,255,255,.35); letter-spacing:.2em; text-transform:uppercase; }
+/* PROPOSE BTN */
+.propose-section{padding:2rem;text-align:center;background:var(–deep)}
+.propose-big-btn{background:none;border:1px solid rgba(212,160,23,.6);color:var(–sun);font-family:‘Lato’,sans-serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;padding:1rem 2.5rem;border-radius:2px;cursor:pointer;transition:all .2s}
+.propose-big-btn:hover{background:rgba(212,160,23,.1)}
 
-.retained { background:var(–sand); color:var(–text); padding:4rem 2rem; }
-.retained h2 { font-family:‘Playfair Display’,serif; font-size:clamp(1.8rem,4vw,2.5rem); text-align:center; margin-bottom:.5rem; }
-.retained h2 em { font-style:italic; color:var(–lava); }
-.retained-sub { text-align:center; font-size:.85rem; color:var(–mid); margin-bottom:2.5rem; font-weight:300; }
-.retained-grid { display:grid; gap:.75rem; max-width:900px; margin:0 auto; }
-.ret-row { display:grid; grid-template-columns:90px 1fr; background:var(–white); border-left:3px solid var(–ocean); overflow:hidden; }
-.ret-date { background:var(–ocean); color:var(–white); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:.75rem; text-align:center; }
-.ret-dow { font-size:.55rem; letter-spacing:.2em; text-transform:uppercase; opacity:.7; }
-.ret-day { font-family:‘Playfair Display’,serif; font-size:1.8rem; line-height:1; }
-.ret-mon { font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; opacity:.7; }
-.ret-body { padding:.9rem 1.1rem; display:flex; align-items:center; gap:1rem; }
-.ret-thumb { width:60px; height:60px; object-fit:cover; border-radius:2px; flex-shrink:0; }
-.ret-title { font-family:‘Playfair Display’,serif; font-size:1rem; margin-bottom:.25rem; }
-.ret-desc { font-size:.78rem; color:var(–mid); font-weight:300; line-height:1.5; }
-.ret-pending { color:var(–mid); font-style:italic; font-size:.85rem; display:flex; align-items:center; padding:0 1rem; }
+/* PODIUM */
+.podium-section{background:var(–sand);color:var(–text);padding:3.5rem 2rem}
+.podium-section h2{font-family:‘Playfair Display’,serif;font-size:clamp(1.6rem,4vw,2.3rem);text-align:center;margin-bottom:.4rem}
+.podium-section h2 em{font-style:italic;color:var(–lava)}
+.podium-sub{text-align:center;font-size:.85rem;color:var(–mid);margin-bottom:2rem;font-weight:300}
+.podium-list{display:grid;gap:.6rem;max-width:800px;margin:0 auto}
+.podium-row{background:var(–white);display:grid;grid-template-columns:44px 60px 1fr auto;align-items:center;gap:.75rem;padding:.6rem 1rem;border-left:3px solid var(–ocean)}
+.podium-rank{font-family:‘Playfair Display’,serif;font-size:1.4rem;color:var(–mid);text-align:center}
+.podium-rank.gold{color:#d4a017}
+.podium-rank.silver{color:#9aa5b0}
+.podium-rank.bronze{color:#b87333}
+.podium-thumb{width:52px;height:52px;object-fit:cover;border-radius:2px;flex-shrink:0}
+.podium-name{font-family:‘Playfair Display’,serif;font-size:.95rem;line-height:1.2}
+.podium-score{font-family:‘Lato’,sans-serif;font-size:.8rem;font-weight:700;color:var(–green);white-space:nowrap}
 
-.practical { background:var(–deep); padding:4rem 2rem; }
-.practical-inner { max-width:900px; margin:0 auto; }
-.practical h2 { font-family:‘Playfair Display’,serif; font-size:clamp(1.5rem,3vw,2rem); margin-bottom:2rem; text-align:center; }
-.practical h2 em { font-style:italic; color:var(–sun); }
-.prac-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:1px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.08); }
-.pcard { background:rgba(14,42,56,.9); padding:1.5rem; }
-.pcard-title { font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(–sun); margin-bottom:1rem; font-weight:700; }
-.pcard ul { list-style:none; font-size:.88rem; font-weight:300; line-height:2.1; color:rgba(255,255,255,.65); }
-.pcard li::before { content:’— ’; color:var(–lava); }
-footer { background:rgba(0,0,0,.4); text-align:center; padding:1.5rem; font-size:.65rem; letter-spacing:.15em; color:rgba(255,255,255,.3); text-transform:uppercase; }
-@media(max-width:600px){ .slots-row{grid-template-columns:1fr;} .ret-row{grid-template-columns:70px 1fr;} .ret-day{font-size:1.4rem;} }
+/* PRACTICAL */
+.practical{background:var(–deep);padding:3.5rem 2rem}
+.practical-inner{max-width:900px;margin:0 auto}
+.practical h2{font-family:‘Playfair Display’,serif;font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:2rem;text-align:center}
+.practical h2 em{font-style:italic;color:var(–sun)}
+.prac-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08)}
+.pcard{background:rgba(14,42,56,.9);padding:1.5rem}
+.pcard-title{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(–sun);margin-bottom:1rem;font-weight:700}
+.pcard ul{list-style:none;font-size:.87rem;font-weight:300;line-height:2.1;color:rgba(255,255,255,.65)}
+.pcard li::before{content:’— ’;color:var(–lava)}
+
+/* CHAT */
+.chat-overlay{position:fixed;inset:0;background:rgba(14,42,56,.95);z-index:500;display:flex;align-items:flex-end;justify-content:center;padding:1rem}
+.chat-overlay.hidden{display:none}
+.chat-box{background:var(–deep);border:1px solid rgba(255,255,255,.12);border-radius:8px 8px 0 0;width:100%;max-width:580px;max-height:80vh;display:flex;flex-direction:column;overflow:hidden}
+.chat-header{padding:1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between}
+.chat-header-title{font-family:‘Playfair Display’,serif;font-size:1.1rem}
+.chat-header-title em{font-style:italic;color:var(–sun)}
+.chat-close{background:none;border:none;color:rgba(255,255,255,.4);font-size:1.2rem;cursor:pointer;padding:.25rem .5rem}
+.chat-messages{flex:1;overflow-y:auto;padding:1rem 1.25rem;display:flex;flex-direction:column;gap:.75rem}
+.msg{max-width:90%;padding:.75rem 1rem;border-radius:4px;font-size:.87rem;line-height:1.65}
+.msg.claude{background:rgba(27,79,114,.4);border:1px solid rgba(255,255,255,.08);align-self:flex-start;color:rgba(255,255,255,.85)}
+.msg.user{background:rgba(30,132,73,.2);border:1px solid rgba(30,132,73,.3);align-self:flex-end;color:#82e0aa}
+.msg.system{background:rgba(212,160,23,.1);border:1px solid rgba(212,160,23,.2);align-self:center;color:var(–sun);font-size:.78rem;text-align:center;font-style:italic}
+.chat-input-row{padding:.75rem 1rem;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:.5rem}
+.chat-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:var(–white);font-family:‘Lato’,sans-serif;font-size:.9rem;padding:.7rem 1rem;border-radius:2px;outline:none}
+.chat-input:focus{border-color:var(–sun)}
+.chat-send{background:var(–ocean);color:var(–white);border:none;font-family:‘Lato’,sans-serif;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.2rem;cursor:pointer;border-radius:2px;white-space:nowrap}
+.chat-send:disabled{opacity:.4;cursor:not-allowed}
+.chat-typing{font-size:.75rem;color:rgba(255,255,255,.3);font-style:italic;padding:0 .25rem}
+
+footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65rem;letter-spacing:.15em;color:rgba(255,255,255,.3);text-transform:uppercase}
+.loading-spinner{text-align:center;padding:3rem;font-size:.8rem;color:rgba(255,255,255,.35);letter-spacing:.2em;text-transform:uppercase}
+@media(max-width:600px){.slots-grid{grid-template-columns:1fr}.homes-row{grid-template-columns:1fr}.podium-row{grid-template-columns:36px 48px 1fr auto}}
 </style>
 
 </head>
@@ -158,7 +185,7 @@ footer { background:rgba(0,0,0,.4); text-align:center; padding:1.5rem; font-size
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal-box">
     <h2 class="modal-title"><em>Madère</em> · Août 2025</h2>
-    <p class="modal-sub">Programme de voyage · Deux familles · 8 enfants (4–16 ans)<br><br>Entrez votre prénom pour voter et voir en temps réel qui a choisi quoi.</p>
+    <p class="modal-sub">Programme de voyage · Deux familles · 8 enfants (4–16 ans)<br><br>Entrez votre prénom pour voter et voir qui a choisi quoi.</p>
     <input class="modal-input" id="prenomInput" type="text" placeholder="Votre prénom…" maxlength="24" autocomplete="off">
     <button class="modal-btn" onclick="setPrenom()">Accéder au programme →</button>
     <div class="modal-names" id="modalNames"></div>
@@ -190,20 +217,41 @@ footer { background:rgba(0,0,0,.4); text-align:center; padding:1.5rem; font-size
   <div class="hero-content">
     <p class="hero-eyebrow">Programme · Deux familles · Portugal</p>
     <h1 class="hero-title"><em>Madère</em></h1>
-    <p class="hero-sub">3 – 10 août 2025 · 7 nuits · 8 enfants (4–16 ans)<br>Votez ensemble pour construire la semaine ↓</p>
+    <p class="hero-sub">3 – 10 août 2025 · 7 nuits · 8 enfants (4–16 ans)<br>Votez ensemble pour choisir vos activités ↓</p>
     <div class="hero-chips">
       <span class="chip">Randonnées</span><span class="chip">Baignades</span>
-      <span class="chip">Île volcanique</span><span class="chip">2 voitures</span>
+      <span class="chip">Île volcanique</span><span class="chip">2 maisons</span>
     </div>
   </div>
-  <div class="hero-scroll" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">
+  <div class="hero-scroll" onclick="document.getElementById('map-section').scrollIntoView({behavior:'smooth'})">
     <span>Découvrir</span><div class="scroll-arrow"></div>
   </div>
 </section>
 
-<div class="intro" id="intro">
-  <h2 class="intro-title">On co-construit le <em>programme</em></h2>
-  <p class="intro-body">On a plus d'activités que de jours — à vous de choisir. Pour chaque journée, des options sont proposées avec photos et descriptions. Votez 👍 <strong>Pour</strong>, 🤔 <strong>Peut-être</strong> ou 👎 <strong>Non</strong>. Les votes sont visibles en temps réel. Vous pouvez aussi proposer vos propres activités via le bouton ✨ en bas de chaque journée — Claude vous guidera.</p>
+<div class="map-section" id="map-section">
+  <h2>Nos deux <em>maisons</em></h2>
+  <p>À 8 km l'une de l'autre · Côté est de l'île · 15 min de Funchal</p>
+  <div class="homes-row">
+    <div class="home-card">
+      <div class="home-icon">🏠</div>
+      <div class="home-name">Ana & Thibault</div>
+      <div class="home-family">Palheiro Village · São Gonçalo<br>Elsa · Faustine · Azélie</div>
+    </div>
+    <div class="home-card">
+      <div class="home-icon">🏠</div>
+      <div class="home-name">Gaspard & Jennifer</div>
+      <div class="home-family">Caniço · Travessa E.B. de Melo<br>Ulysse · Timothée · Salomé · Isaure · Castille</div>
+    </div>
+  </div>
+  <iframe class="map-embed"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=Madeira+Island+Portugal&center=32.72,-16.85&zoom=10"
+    allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+<div class="intro">
+  <h2 class="intro-title">Votez pour construire le <em>programme</em></h2>
+  <p class="intro-body">Pas de planning imposé — juste une liste d'activités à trier ensemble. Votez 👍 Pour, 🤔 Peut-être ou 👎 Non. Les scores déterminent le classement final. Vous pouvez aussi proposer vos propres idées via le bouton ✨ en bas.</p>
   <div class="vote-legend">
     <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Pour (3 pts)</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--sun)"></div> Peut-être (1 pt)</div>
@@ -211,18 +259,24 @@ footer { background:rgba(0,0,0,.4); text-align:center; padding:1.5rem; font-size
   </div>
 </div>
 
-<div class="days-header">
-  <h2>Les activités proposées</h2>
-  <p>Options par journée · Votes visibles par tous · Proposez les vôtres ✨</p>
-</div>
-<div class="slots-wrapper" id="slotsArea">
-  <div class="loading-spinner">Connexion à la base de votes…</div>
+<div class="slots-section">
+  <div class="slots-section-header">
+    <h2>Les activités proposées</h2>
+    <p>Votes de toutes les familles visibles en direct · Plusieurs photos par activité</p>
+  </div>
+  <div class="slots-grid" id="slotsGrid">
+    <div class="loading-spinner">Connexion à la base de votes…</div>
+  </div>
 </div>
 
-<div class="retained">
-  <h2>Le programme <em>retenu</em></h2>
-  <p class="retained-sub">Mis à jour en temps réel · L'activité la mieux votée remporte la journée</p>
-  <div class="retained-grid" id="retainedGrid"></div>
+<div class="propose-section">
+  <button class="propose-big-btn" onclick="openChat()">✨ Proposer une nouvelle activité</button>
+</div>
+
+<div class="podium-section">
+  <h2>Le <em>classement</em></h2>
+  <p class="podium-sub">Mis à jour en temps réel · Les activités les mieux votées en tête</p>
+  <div class="podium-list" id="podiumList"></div>
 </div>
 
 <div class="practical">
@@ -231,10 +285,10 @@ footer { background:rgba(0,0,0,.4); text-align:center; padding:1.5rem; font-size
     <div class="prac-grid">
       <div class="pcard"><p class="pcard-title">🚗 Voitures (urgent)</p><ul><li>2 voitures 7 places minimum</li><li>Réserver maintenant — août = rupture</li><li>Hertz / Europcar à l'aéroport Funchal</li><li>GPS ou Maps.me offline indispensable</li><li>Routes en lacets — prévoir anti-nausée</li></ul></div>
       <div class="pcard"><p class="pcard-title">📋 À réserver à l'avance</p><ul><li>Whale watching H2O Madeira (Calheta)</li><li>Ferry Porto Santo aller-retour</li><li>2 voitures de location dès maintenant</li><li>Hébergement quinta avec piscine</li><li>Canyoning Ribeira das Cales (optionnel)</li></ul></div>
-      <div class="pcard"><p class="pcard-title">🌤️ Météo en août</p><ul><li>21–26°C littoral, ~17°C en altitude</li><li>Quasi pas de pluie (~1 jour/mois)</li><li>8h de soleil par jour</li><li>Mer à ~22°C</li><li>Veste légère pour les randos en altitude</li></ul></div>
+      <div class="pcard"><p class="pcard-title">🌤️ Météo en août</p><ul><li>21–26°C littoral, ~17°C en altitude</li><li>Quasi pas de pluie (~1 jour/mois)</li><li>8h de soleil par jour · Mer à ~22°C</li><li>Veste légère pour les randos en altitude</li></ul></div>
       <div class="pcard"><p class="pcard-title">🎒 À emporter</p><ul><li>Lampes frontales (tunnels des levadas !)</li><li>Chaussures de rando fermées pour tous</li><li>Anti-nausée ferry + routes en lacets</li><li>Crème solaire haute protection</li><li>Porte-bébé pour la petite en rando</li><li>Masque et tuba léger</li></ul></div>
       <div class="pcard"><p class="pcard-title">🍽️ À goûter absolument</p><ul><li>Espada au maracuja — poisson sabre local</li><li>Bolo do mel — gâteau de miel épicé</li><li>Poncha au citron vert (adultes…)</li><li>Ananas de Madère — goût incomparable</li><li>Pastel de nata bien sûr</li></ul></div>
-      <div class="pcard"><p class="pcard-title">🏠 Hébergement</p><ul><li>Quinta (villa typique) recommandée</li><li>Base idéale : Funchal ou Ribeira Brava</li><li>Piscine = critère indispensable</li><li>Grand séjour / terrasse communs</li><li>Quinta das Vinhas si vous voulez rural</li></ul></div>
+      <div class="pcard"><p class="pcard-title">🏠 Les maisons</p><ul><li>Palheiro Village — Ana & Thibault</li><li>Caniço — Gaspard & Jennifer</li><li>8 km l'une de l'autre</li><li>15 min de Funchal en voiture</li><li>Côté est, proche de l'aéroport</li></ul></div>
     </div>
   </div>
 </div>
@@ -248,37 +302,124 @@ async function sbFetch(path,opts={}){
   const t=await r.text();if(!r.ok)throw new Error(t);return t?JSON.parse(t):[];
 }
 
-const DAYS=[
-  {id:'j1',dow:'Lun',day:3,label:'Lundi 3 août — Arrivée'},
-  {id:'j2',dow:'Mar',day:4,label:'Mardi 4 août'},
-  {id:'j3',dow:'Mer',day:5,label:'Mercredi 5 août'},
-  {id:'j4',dow:'Jeu',day:6,label:'Jeudi 6 août'},
-  {id:'j5',dow:'Ven',day:7,label:'Vendredi 7 août'},
-  {id:'j6',dow:'Sam',day:8,label:'Samedi 8 août'},
-  {id:'j7',dow:'Dim',day:9,label:'Dimanche 9 août'},
-];
-
+// Real Google Places photos for each slot
 const BASE_SLOTS=[
-  {id:'a1',dayId:'j1',cat:'Option arrivée — actif',emoji:'🌿',bg:'#1a4030',name:'Monte Palace & téléphérique',photo:'https://images.unsplash.com/photo-1548625149-720754963012?w=800&q=80',description:"Si le vol arrive le matin, inutile de perdre la journée. Téléphérique depuis le Zona Velha de Funchal jusqu'au quartier de Monte, avec vue plongeante sur la baie et les toits orange de la ville. En haut : les jardins tropicaux du Monte Palace, classés parmi les plus beaux du Portugal. Bassins remplis de carpes koï géantes, azulejos monumentaux, orchidées et cycas centenaires. Les enfants adorent courir sur les passerelles au-dessus des bassins.",note:"⚑ Arriver avant 9h30 pour éviter la file du téléphérique.",tags:[{l:'Nature',c:'hike'},{l:'Enfants',c:'fun'},{l:'Téléphérique',c:'cult'}]},
-  {id:'a2',dayId:'j1',cat:'Option arrivée — calme',emoji:'🏙️',bg:'#1a2840',name:'Balade dans Funchal & premier dîner',photo:'https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=800&q=80',description:"Poser les valises, respirer, prendre le pouls de l'île. Funchal se découvre à pied : la Rua de Santa Maria et ses centaines de portes décorées par des artistes, le Mercado dos Lavradores et ses fruits tropicaux insolites, les ruelles pavées de galets noirs et blancs. Le soir, premier grand dîner ensemble face au port — l'occasion de présenter le programme et de lever un verre de poncha.",note:"Recommandé si vol en milieu de journée ou enfants fatigués.",tags:[{l:'Ville',c:'cult'},{l:'Transition',c:'chill'},{l:'Dîner groupe',c:'chill'}]},
-  {id:'b1',dayId:'j2',cat:'Incontournable',emoji:'🛷',bg:'#2a2010',name:'Luge en osier de Monte & Cabo Girão',photo:'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&q=80',description:"L'activité la plus emblématique de Madère. Deux hommes en costume blanc poussent un grand panier en osier dans les ruelles pentues de Monte, freinant avec leurs semelles en cuir. Environ 2 km de descente à vive allure. L'après-midi : Câmara de Lobos, le port de pêche que Churchill venait peindre. Puis Cabo Girão — l'une des plus hautes falaises d'Europe à 580 m, avec belvédère vitré suspendu dans le vide.",note:"~30€/panier, 2 personnes max. File longue en août — arriver avant 9h30.",tags:[{l:'Sensations',c:'fun'},{l:'Tout âge',c:'chill'},{l:'Panorama 580m',c:'cult'}]},
-  {id:'b2',dayId:'j2',cat:'Alternative sportive',emoji:'🏞️',bg:'#102a18',name:'Canyoning Ribeira das Cales',photo:'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',description:"Canyon de difficulté modérée à 20 minutes de Funchal, parfait pour les débutants. Tout l'équipement fourni. Au programme : descentes en rappel le long de cascades tropicales, sauts dans des vasques naturelles turquoise, passages à la nage entre des rochers tapissés de fougères. Durée environ 2h30. Les grands ados (12 ans et +) en ressortent euphoriques.",note:"Réserver à l'avance, groupes limités. Idéal si les petits restent à la piscine.",tags:[{l:'Adrénaline',c:'fun'},{l:'12 ans +',c:'fun'},{l:'Encadré',c:'chill'}]},
-  {id:'c1',dayId:'j3',cat:'Incontournable',emoji:'🐬',bg:'#08202e',name:'Whale watching — dauphins & baleines',photo:'https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=800&q=80',description:"Madère est l'un des meilleurs spots d'observation des cétacés en Europe. Des vigies sur les falaises repèrent les animaux par radio et guident le bateau en temps réel. Sortie 2h30 en zodiac depuis Calheta avec H2O Madeira. Espèces régulièrement observées : dauphins communs, grands dauphins, globicéphales. Parfois des baleines à bec. Les enfants de tous âges ressortent unanimement subjugués — souvent le moment fort du séjour.",note:"⚑ Réservation OBLIGATOIRE — complet plusieurs jours à l'avance en août. Anti-nausée recommandé.",tags:[{l:'Mer',c:'water'},{l:'Tout âge',c:'chill'},{l:'Inoubliable',c:'fun'}]},
-  {id:'c2',dayId:'j3',cat:'À combiner avec le whale watching',emoji:'🏖️',bg:'#082828',name:'Plage de Calheta & Jardim do Mar',photo:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',description:"Après la sortie en mer, l'après-midi sur la plage de Calheta — l'une des rares plages de sable fin de Madère. Eau calme derrière la digue, idéale pour la petite de 4 ans. En fin d'après-midi, 5 minutes de route jusqu'au village de Jardim do Mar : ruelles fleuries de bougainvillées, ambiance de bout du monde face à l'Atlantique. L'un des plus beaux couchers de soleil de l'île.",note:"Calheta et Jardim do Mar à 5 min — combinables avec la matinée en mer.",tags:[{l:'Plage',c:'water'},{l:'4 ans ✓',c:'chill'},{l:'Snorkeling',c:'water'}]},
-  {id:'d1',dayId:'j4',cat:'Rando ★★ — La plus belle de l\'île',emoji:'🌋',bg:'#301808',name:'Ponta de São Lourenço',photo:'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80',description:"La péninsule est de Madère est un autre monde : aride, ocre et rouge, avec la mer turquoise des deux côtés simultanément. Le sentier (8 km aller-retour, peu de dénivelé) longe des crêtes étroites avec panoramas à 360° à chaque virage. Les formations rocheuses rouges et noires plongeant dans l'eau bleue sont à couper le souffle. Les grands font l'aller-retour complet (3h). Pour la petite, les premiers 2 km sont déjà spectaculaires.",note:"⚑ Aucun ombre — eau et chapeaux obligatoires. Parking complet avant 9h en août.",tags:[{l:'Rando',c:'hike'},{l:'Vues spectaculaires',c:'cult'},{l:'Aucun ombre',c:'fun'}]},
-  {id:'d2',dayId:'j4',cat:'Option famille & baignade',emoji:'🏊',bg:'#082030',name:'Plage de Machico & côte est',photo:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',description:"Machico possède la plus belle plage familiale de l'île côté est : sable fin, eaux calmes et peu profondes parfaites pour la petite de 4 ans, transats, douches, restaurants de poisson grillé sur le front de mer. Ambiance village portugais authentique, sans tourisme de masse. Option de repli parfaite si la météo ou la fatigue ne se prête pas à São Lourenço.",note:"Machico est dans le même secteur que São Lourenço — combinables si départ très tôt.",tags:[{l:'Plage',c:'water'},{l:'4 ans ✓',c:'chill'},{l:'Eaux calmes',c:'water'}]},
-  {id:'e1',dayId:'j5',cat:'Road trip ★ — Grande traversée',emoji:'🌊',bg:'#081828',name:'Porto Moniz — piscines volcaniques & côte nord',photo:'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&q=80',description:"La grande traversée de l'île par le col d'Encumeada (1 000 m) : par temps clair, on voit les deux côtes simultanément. Arrêt à Santana pour les palheiros — maisons au toit de chaume triangulaire qui descend jusqu'au sol. Puis Porto Moniz : des piscines naturelles creusées dans la roche volcanique noire, remplies par les vagues de l'Atlantique. Eau cristalline, vagues qui éclatent sur les rochers en arrière-plan — un cadre unique.",note:"Journée longue (~1h45 de route). Prévoir pique-nique. Surveiller la petite dans les bassins.",tags:[{l:'Piscines volcaniques',c:'water'},{l:'Road trip',c:'fun'},{l:'Nature',c:'hike'}]},
-  {id:'e2',dayId:'j5',cat:'Complément ou alternative',emoji:'⚫',bg:'#181820',name:'Seixal — plage noire & piscines sauvages',photo:'https://images.unsplash.com/photo-1533760881669-80db4d7b341d?w=800&q=80',description:"À 15 minutes de Porto Moniz, Seixal est le coup de cœur des familles qui connaissent bien l'île. Plage de sable volcanique noir magnifique, deux piscines naturelles dont une idéale quand la mer est fraîche. Fréquentation nettement moindre qu'à Porto Moniz, surtout en fin de journée. Les habitants y viennent en famille le week-end.",note:"Parfaitement combinable avec Porto Moniz — même axe routier, 15 min de trajet.",tags:[{l:'Plage noire',c:'water'},{l:'Moins touristique',c:'chill'},{l:'Nord',c:'hike'}]},
-  {id:'f1',dayId:'j6',cat:'Rando ★★★ — Forêt primaire UNESCO',emoji:'🌿',bg:'#081e10',name:'Levada do Caldeirão Verde',photo:'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80',description:"La laurisilva de Madère est l'une des dernières forêts primaires subtropicales d'Europe, classée UNESCO. Le sentier longe un canal d'irrigation sur 8 km dans une végétation de fougères arborescentes, lauriers centenaires et mousses. Atmosphère fraîche et mystique. Le clou : quatre tunnels dans la roche à traverser à la lampe frontale dans le noir complet. Les enfants adorent l'aspect 'explorateurs'. Au bout : une cascade qui plonge dans un lac naturel.",note:"⚑ Lampes frontales indispensables pour les tunnels ! Chaussures fermées obligatoires.",tags:[{l:'Rando',c:'hike'},{l:'UNESCO',c:'cult'},{l:'Lampes frontales !',c:'fun'}]},
-  {id:'f2',dayId:'j6',cat:'Option ados — lever de soleil',emoji:'🌅',bg:'#181028',name:'Pico Arieiro au lever du soleil (1 818 m)',photo:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',description:"Pour les 14–16 ans et adultes motivés : réveil à 5h, départ en voiture pour le Pico Arieiro, accessible directement jusqu'au parking à 1 818 m. Arriver avant le lever pour voir la mer de nuages s'illuminer en rose et orange. En dessous, Madère est enfoui dans les nuages ; au-dessus, ciel dégagé et étoiles encore visibles. Unanimement cité comme inoubliable.",note:"⚑ Veste chaude obligatoire — il fait 10–12°C au sommet même en août.",tags:[{l:'14 ans +',c:'fun'},{l:'Lever de soleil',c:'cult'},{l:'Altitude',c:'hike'}]},
-  {id:'g1',dayId:'j7',cat:'★ Grand finale recommandé',emoji:'🏝️',bg:'#281808',name:'Île de Porto Santo — 9 km de plage dorée',photo:'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80',description:"Porto Santo est l'île voisine à 2h15 de ferry : plate, sèche, dorée. 9 km de plage de sable fin ininterrompus, réputée dans tout le Portugal. Eau chaude et peu de vagues, idéale pour tous les âges. Les enfants ont un espace infini pour courir et construire. On peut louer des vélos ou des buggies électriques. Souvent la journée préférée du séjour — sans voiture, sans planning, juste la plage.",note:"⚑ Réserver le ferry à l'avance — complet plusieurs jours avant en août. Départ ~8h, retour ~18h.",tags:[{l:'Plage',c:'water'},{l:'Ferry aller-retour',c:'cult'},{l:'Tout âge',c:'chill'},{l:'Inoubliable',c:'fun'}]},
-  {id:'g2',dayId:'j7',cat:'Alternative finale — toit de l\'île',emoji:'⛰️',bg:'#202028',name:'Pico Ruivo (1 862 m) — au-dessus des nuages',photo:'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',description:"Le point culminant de Madère. Depuis le parking d'Achada do Teixeira (1 592 m en voiture), 45 minutes de montée pour un panorama à 360° au-dessus de la mer de nuages. Vue sur toutes les côtes de l'île. Le sentiment d'être au-dessus du monde est saisissant. Accessible aux bons marcheurs dès 10 ans.",note:"Ne pas cumuler avec Porto Santo le même jour. Veste obligatoire au sommet.",tags:[{l:'Rando',c:'hike'},{l:'Panorama 360°',c:'cult'},{l:'10 ans +',c:'fun'}]},
+  {id:'s01',cat:'Randonnée ★★ — Incontournable',emoji:'🌋',bg:'#301808',
+   name:'Ponta de São Lourenço',
+   photos:[
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZM5BSDdwHVIMpUV00yuhi1Kj6YqOQ0PTZm1iZjV0OmCeWQNxx3I7PveJ-H3efyIs5DDVQrGbDXCyqYeQu7wB8GExHdxBXfY6e--DV3bpg_Kz4fUoPspbjOvrz1wMhUlyqUQTabNm9Cbw9FvOKQ=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZODCaNdjsTvQRpbfRt9yZ6C95e_3e6IVPdeh2VnCughcZkjUXVE-HLQ5hOM-T4z2btEevk6oI-iq8yUIZUhNNUprgLwrYIuoVYILAtMHgKYK1VmsIkcAtss9BNrXcL1jNEkAVznx-4uwVzZVg=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZNfFAD_00O0YeUupVTY-Og3C8eDmRBuGH0tocDlBmex9CKr4KtW6zoduaN2J0zISWfuC8W1DZgP58IfQwdpO6FC4KuPRwJ06DHev66yfNBDXIymNT88vLfx0-leUdJMunia0XOKlK4IHvsZSg=s800-w800-h600',
+   ],
+   description:"La péninsule est de Madère est un autre monde : aride, ocre et rouge, avec la mer turquoise des deux côtés simultanément. Le sentier (8 km aller-retour, peu de dénivelé) longe des crêtes étroites avec panoramas à 360° à chaque virage. Les formations rocheuses rouges et noires plongeant dans l'eau bleue sont à couper le souffle. Les grands font l'aller-retour complet (3h). Pour la petite, les premiers 2 km sont déjà spectaculaires — porte-bébé recommandé.",
+   note:'⚑ Aucun ombre — eau et chapeaux obligatoires. Parking complet avant 9h en août.',
+   tags:[{l:'Rando',c:'hike'},{l:'Vues spectaculaires',c:'cult'},{l:'Tout âge adapté',c:'chill'}]},
+
+  {id:'s02',cat:'Piscines naturelles — Road trip',emoji:'🌊',bg:'#081828',
+   name:'Porto Moniz — piscines volcaniques',
+   photos:[
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZNSZXR-_U05NnMey_qlHFNYSKSAYdb5pA1Vjo5e626u-J3TEZTh0T_DtUY-GL4QaOGX4U9EpgU0jtE-s8wgi6Do3-pOji6dX9hWucT4IbpWBZjYNtbKS9hsJPQ3jMKG6k8uZ6JScrlgVlst7ck=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZPkMQCSOq-5cICzgsBggM4x6BYHwGxKt_1Nl0_iD9sJcm1-t8UpgwxE28aoQEDxD0IeKag6RogNJqIW_385AVuNtcQsXQyirsaMqgjIKvnqtks81OBqQFnNVMKEEvJbcGHwjUn8xPxMpx8d=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZOAZDqm_DU-pFdvinjSObbOc4sztMGHiU9qaWo8ONa6qZ20oMycW0RNFLCuvERbBeNivv0glUDuzEP3kIwIA__G2bOvt-sHYe9Kf84eaTmqlnu0gTiH4LcAQ=s800-w800-h600',
+   ],
+   description:"La grande traversée de l'île par le col d'Encumeada (1 000 m), arrêt à Santana pour les palheiros — les maisons au toit de chaume triangulaire. Puis Porto Moniz : des piscines naturelles creusées dans la roche volcanique noire, remplies par les vagues de l'Atlantique. Eau cristalline, vagues qui éclatent sur les rochers en arrière-plan. Un cadre absolument unique qui ne ressemble à rien d'autre.",
+   note:'Journée longue (~1h45 de route depuis Funchal). Prévoir pique-nique. Surveiller la petite dans les bassins.',
+   tags:[{l:'Baignade',c:'water'},{l:'Road trip',c:'fun'},{l:'Nature',c:'hike'}]},
+
+  {id:'s03',cat:'★ Grande journée — Ferry',emoji:'🏝️',bg:'#281808',
+   name:'Île de Porto Santo — 9 km de plage',
+   photos:[
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZMsGlgSv2RH6myykR4_agpp8DE0PNMNG8qDv8Mr8XYHIVK1Y7-l38Dw3FJNs0UoEKSI48Zz_xXKlFddSegVvpSzYZzBNWodk3ze0TmbgH3IgxH9gV6VlUYfkFxM5SW_l8jbHNrnnN1Lib0WV34=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZND-hZG65ErRrtKrcB-pAH_5NcAkFMwOLK2QXPp9tRrmyZGEnaTMMxymtUPwZZYgievVCod8IJEPNJ1M_kESlyIXQF3uWv7ZQnTLxxxbY3LrQf2tK0pkVhDCyJCvH1mTHmXIGt9hUtOeGNX=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZNpgOlm5R_04UyTJVgtqO7_rZTlPQvvzQF9903MRwrzxK_meqLn40kfeXOG_ty3-LvVbTjSifDzvw21489gkJeJPOVj5OjNk2OY9yHnRQ7gLmQFgCEduRJY3cS2ELkIy6qWXVgwraSuJatGug=s800-w800-h600',
+   ],
+   description:"Porto Santo est l'île voisine à 2h15 de ferry : plate, sèche, dorée. 9 km de plage de sable fin ininterrompus, réputée dans tout le Portugal pour ses propriétés thérapeutiques. Eau chaude et peu de vagues, idéale pour tous les âges. Les enfants ont un espace infini pour courir et construire. On peut louer des vélos ou des buggies électriques. Souvent citée comme la journée préférée du séjour — sans voiture, sans planning, juste la plage.",
+   note:'⚑ Réserver le ferry à l\'avance — complet plusieurs jours avant en août. Départ ~8h, retour ~18h.',
+   tags:[{l:'Plage',c:'water'},{l:'Ferry aller-retour',c:'cult'},{l:'Tout âge',c:'chill'},{l:'Inoubliable',c:'fun'}]},
+
+  {id:'s04',cat:'Jardins & Téléphérique',emoji:'🌿',bg:'#1a4030',
+   name:'Monte Palace & luge en osier',
+   photos:[
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZOhgdcXkaKSQM2_Wrszk9k7NVi8PUCqa77Zc7otLa7G822lBkI0rme0aG_KXmn3snDWwAqTuSwaJ10sOVJUBe_iZcujz0sWzxxDLVMmBQtCphicYkEBLdGawPh5eRfLtkA0ssca_EAgJfAADuI=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZObcYazEJfrPCaGQoPy4jvdjTJicVbgGBKT40a0VZWsRh0vpehHFX1MRZsmkm_2k9LyD7uuAGtONEsTw33jA3iece9s_8Kb3Q09Vs3A8lX44ez6Op9NwQd1FDw__zGGdQ9UJOMJML8ovpL5Pnk=s800-w800-h600',
+     'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&q=80',
+   ],
+   description:"Téléphérique depuis le Zona Velha de Funchal jusqu'au quartier de Monte, avec vue plongeante sur la baie. En haut : les jardins tropicaux du Monte Palace, parmi les plus beaux du Portugal. Bassins de carpes koï géantes, azulejos monumentaux, orchidées. Puis la descente en carrinho de cesto — deux hommes en blanc poussent un panier en osier dans les ruelles pentues, freinant avec leurs semelles en cuir. 2 km de descente à vive allure — la grande attraction de l'île.",
+   note:'Arriver avant 9h30 pour éviter la file du téléphérique. ~30€/panier, 2 personnes max.',
+   tags:[{l:'Nature',c:'hike'},{l:'Sensations',c:'fun'},{l:'Tout âge',c:'chill'}]},
+
+  {id:'s05',cat:'Forêt primaire UNESCO — Rando',emoji:'🌿',bg:'#081e10',
+   name:'Levada do Caldeirão Verde',
+   photos:[
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZNYWTK5CR4u_BcX7jcHX6hvaIU3-ujIN7puW3UfD11QijplAbssZ0Wpb_BkaTq7magW7A1RYWuHIGshIRdWj-uApK4fefD_SOsYIgnwG-l5VNgk_kAAo941YsIDV26cmvS6aoXR5hyA2rtQ_A=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZPwFCXDxUEVy75iMfyKSnwIm0m3kHwCPQw_jVCM5oBousN5x0D8QRERy0InZtFdot6vURdrAp4LvmmD4qxo1CfTFm8Hxrnf5oG1lM-VEIdphc4GLqAMXxTMwBih0zngT7CxRdw3_oUuu-Nq_E8=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZMlhx_uyEgKGKRLJrME8l4ufHQDuGhZsyl9FkCrSymUH3mdV-874aNW3wbqDkjW5QtEj-wJ5FHuWm3lO-jMAvVgHYOwyVzqG8DMtJlW3k8ORycKe4Q3qcDhmWECFM7oEm3GgEj53kWaV_Imaw=s800-w800-h600',
+   ],
+   description:"La laurisilva de Madère est l'une des dernières forêts primaires subtropicales d'Europe, classée UNESCO. Le sentier longe un canal d'irrigation sur 8 km dans une végétation de fougères arborescentes géantes, lauriers centenaires et mousses. Atmosphère fraîche et mystique — dépaysement total. Le clou : quatre tunnels creusés dans la roche à traverser à la lampe frontale dans le noir complet. Les enfants adorent l'aspect explorateurs. Au bout : une cascade dans un lac naturel.",
+   note:'⚑ Lampes frontales INDISPENSABLES ! Chaussures fermées obligatoires. Praticable pour tous les âges.',
+   tags:[{l:'Rando',c:'hike'},{l:'UNESCO',c:'cult'},{l:'Lampes frontales !',c:'fun'}]},
+
+  {id:'s06',cat:'Panorama — Belvédère',emoji:'🗻',bg:'#202028',
+   name:'Cabo Girão — falaise à 580 m',
+   photos:[
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZOzq166sY8NY2WVapu4lgg-NnipHKhS_JnZLdmOKNOh3xkKCpgvJ8XPcHaGscxBacusDLBzHsH_5F9g7YA54Vra2ohvOsJPaYD_iBr8BVxbTA_V_OAlg8-qoV6S33ej8ot1yv7o3rAySDyztQ=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZP4KTtVEf3RrDpla8RToH-nN6xtEzTlhJJMg2n1Du6IJHuZh8jYsIlCkLFMw-tf4IpXfKAzpXk-h2OQSvN9iQ1nPIv1F3PWf2g2DMK1sMSi0zUfMKps_K0oGtnOhukAA0edBtzOOn0pwWyxFQ=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZNO5v08gfXNsdv1Jb5lJ_Wr_3QG8eVqV3qHkml95BJ1ckKIYvDKCkSj9JnfYgAPbfAM4TVdcqxJlrOCR-f9vL9PkFj5oSfKl5HxP8gzJMCFcp5b6ACZmuizKLeNsqVcp8JFvyC94gSsb7ynfdCL0YrkcQ=s800-w800-h600',
+   ],
+   description:"Cabo Girão est l'une des plus hautes falaises d'Europe à 580 m au-dessus de l'Atlantique. Le belvédère au sol vitré est suspendu dans le vide — les photos et la réalité font le même effet : vertige garanti. En bas, on distingue les terrasses de vignes en bandes étroites cultivées à flanc de falaise. À combiner avec Câmara de Lobos, le petit port de pêche aux barques colorées que Churchill venait peindre depuis la terrasse d'un café.",
+   note:'Entrée payante (~2-5€). À combiner avec Monte/luge le même jour — même secteur ouest.',
+   tags:[{l:'Panorama',c:'cult'},{l:'Frissons',c:'fun'},{l:'Court',c:'chill'}]},
+
+  {id:'s07',cat:'Mer — Cétacés',emoji:'🐬',bg:'#08202e',
+   name:'Whale watching — dauphins & baleines',
+   photos:[
+     'https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=800&q=80',
+     'https://images.unsplash.com/photo-1607153333879-c174d265f1d2?w=800&q=80',
+     'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&q=80',
+   ],
+   description:"Madère est l'un des meilleurs spots d'observation des cétacés en Europe, grâce aux eaux profondes de l'Atlantique à quelques miles du port. Des vigies sur les falaises repèrent les animaux par radio en temps réel. Sortie 2h30 en zodiac depuis Calheta avec H2O Madeira. Espèces régulièrement observées : dauphins communs, grands dauphins, globicéphales. Parfois des baleines à bec. Les enfants de tous âges ressortent unanimement subjugués.",
+   note:'⚑ Réservation OBLIGATOIRE — complet plusieurs jours à l\'avance en août. Anti-nausée recommandé.',
+   tags:[{l:'Mer',c:'water'},{l:'Tout âge',c:'chill'},{l:'Inoubliable',c:'fun'}]},
+
+  {id:'s08',cat:'Plage — Sable fin',emoji:'🏖️',bg:'#082828',
+   name:'Plage de Calheta & Jardim do Mar',
+   photos:[
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZOx3_8RzLefOco_wJrMJgRvHH4Zls_y1EfQN-nYhYLSwoxVixpS8Nx-8MwjCnTWhgzkiLbVUAhnFGI4gfz07NWAiQ1K0ccfY_PHtG-LPXTeoznfMRzVYzB9gYY9r3DJd0oqA3oHkeUAUxBdLhU=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZOBKWNZIMuFRiqqAkNQGV6CWXxSRKp5D0bWajV8h_w-bw6gRAlNvQHU-fs0KVckOvCNDNrnQxPAALLb_0FQcPyo40wC5Y60-I5AYrHJ8waJgV-xbSBxbq1nR_afteTg9o0uXGu5zZ0-QNUulQ=s800-w800-h600',
+     'https://lh3.googleusercontent.com/place-photos/AJRVUZMQpkq5L1JwkC1VbkZJ68TynUUTqDpW3MkgnPdFMeeAhOzpjoDTH_HMuUcAyyohRnWLvM_U6pfcH2QtJfPn_oNburJ2rmh8R0kJ6cEmgQtjH82ATagWTR4ux2xTrENRC0wtvkrJ81o3cn_fgg=s800-w800-h600',
+   ],
+   description:"La plage de Calheta est l'une des rares plages de sable fin de Madère — eau calme derrière la digue, idéale pour la petite de 4 ans. Transats, douches, snorkeling. En fin d'après-midi, 5 minutes de route jusqu'au village de Jardim do Mar : ruelles étroites ornées de pierres noires et blanches, maisons couvertes de bougainvillées, ambiance de bout du monde face à l'Atlantique. L'un des plus beaux couchers de soleil de l'île.",
+   note:'Parfaitement combinable avec le whale watching le même jour — même secteur ouest.',
+   tags:[{l:'Plage',c:'water'},{l:'4 ans ✓',c:'chill'},{l:'Coucher de soleil',c:'cult'}]},
+
+  {id:'s09',cat:'Adrénaline — 12 ans +',emoji:'💦',bg:'#102a18',
+   name:'Canyoning Ribeira das Cales',
+   photos:[
+     'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+     'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80',
+     'https://images.unsplash.com/photo-1455156218388-5e61b526818b?w=800&q=80',
+   ],
+   description:"Canyon de difficulté modérée à 20 minutes de Funchal, parfait pour les débutants. Tout l'équipement fourni (combinaison, casque, baudrier). Au programme : descentes en rappel le long de cascades tropicales, sauts dans des vasques naturelles turquoise, passages à la nage entre des rochers tapissés de fougères. Durée environ 2h30. Les grands ados ressortent euphoriques — c'est souvent l'activité qu'ils mentionnent en rentrant.",
+   note:'Réserver à l\'avance, groupes limités. Idéal si les petits restent à la piscine pendant ce temps.',
+   tags:[{l:'Adrénaline',c:'fun'},{l:'12 ans +',c:'fun'},{l:'Encadré',c:'chill'}]},
+
+  {id:'s10',cat:'Altitude — Option ados',emoji:'🌅',bg:'#181028',
+   name:'Pico Arieiro au lever du soleil (1 818 m)',
+   photos:[
+     'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+     'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
+     'https://images.unsplash.com/photo-1531761535209-83234b130a68?w=800&q=80',
+   ],
+   description:"Pour les 14–16 ans et adultes motivés : réveil à 5h, départ en voiture pour le Pico Arieiro accessible directement jusqu'au parking à 1 818 m. Arriver avant le lever pour voir la mer de nuages s'illuminer en rose et orange. En dessous, Madère est enfoui dans les nuages ; au-dessus, ciel dégagé et étoiles encore visibles. Unanimement cité par tous les voyageurs comme l'une des plus belles expériences de leur vie.",
+   note:'⚑ Veste chaude obligatoire — il fait 10–12°C au sommet même en août. Décider la veille selon l\'énergie.',
+   tags:[{l:'14 ans +',c:'fun'},{l:'Lever de soleil',c:'cult'},{l:'Altitude',c:'hike'}]},
 ];
 
 let prenom=localStorage.getItem('madere_prenom')||null;
-let allVotes=[],customSlots=[],pollTimer=null,allSlots=[...BASE_SLOTS];
-let chatHistory=[],chatDayId=null;
+let allVotes=[],customSlots=[],allSlots=[...BASE_SLOTS],pollTimer=null;
+let chatHistory=[];
 
+// IDENTITY
 function setPrenom(){
   const v=document.getElementById('prenomInput').value.trim();
   if(!v){document.getElementById('prenomInput').focus();return;}
@@ -292,21 +433,24 @@ function changeUser(){document.getElementById('prenomInput').value='';document.g
 document.getElementById('prenomInput').addEventListener('keydown',e=>{if(e.key==='Enter')setPrenom();});
 if(prenom){document.getElementById('modalOverlay').classList.add('hidden');document.getElementById('userPill').classList.remove('hidden');document.getElementById('pillName').textContent=prenom;loadAll();}
 
+// LOAD
 async function loadAll(){
   try{
     const[votes,customs]=await Promise.all([
       sbFetch('/rest/v1/votes?select=slot_id,prenom,choice&order=created_at.asc'),
       sbFetch('/rest/v1/custom_slots?select=*&order=created_at.asc')
     ]);
-    allVotes=votes;customSlots=customs;allSlots=[...BASE_SLOTS,...customs];
+    allVotes=votes;customSlots=customs;
+    allSlots=[...BASE_SLOTS,...customs.map(c=>({...c,photos:[c.photo].filter(Boolean),description:c.description||''}))];
     const names=[...new Set(votes.map(r=>r.prenom))].slice(0,12);
     if(names.length){document.getElementById('modalNames').innerHTML='<span class="modal-names-label">Déjà présents</span>'+names.map(n=>`<span class="name-chip" onclick="quickJoin('${n}')">${n}</span>`).join('');}
     renderAll();
-    if(!pollTimer){pollTimer=setInterval(async()=>{try{const[v,c]=await Promise.all([sbFetch('/rest/v1/votes?select=slot_id,prenom,choice&order=created_at.asc'),sbFetch('/rest/v1/custom_slots?select=*&order=created_at.asc')]);allVotes=v;customSlots=c;allSlots=[...BASE_SLOTS,...c];renderAll();}catch(e){}},6000);}
-  }catch(e){document.getElementById('slotsArea').innerHTML='<div class="loading-spinner" style="color:#e8967a">Erreur de connexion à Supabase.</div>';}
+    if(!pollTimer){pollTimer=setInterval(async()=>{try{const[v,c]=await Promise.all([sbFetch('/rest/v1/votes?select=slot_id,prenom,choice&order=created_at.asc'),sbFetch('/rest/v1/custom_slots?select=*&order=created_at.asc')]);allVotes=v;customSlots=c;allSlots=[...BASE_SLOTS,...c.map(cs=>({...cs,photos:[cs.photo].filter(Boolean),description:cs.description||''}))];renderAll();}catch(e){}},6000);}
+  }catch(e){document.getElementById('slotsGrid').innerHTML='<div class="loading-spinner" style="color:#e8967a">Erreur de connexion à Supabase.</div>';}
 }
 function quickJoin(n){document.getElementById('prenomInput').value=n;setPrenom();}
 
+// VOTE
 async function vote(slotId,choice){
   if(!prenom)return;
   const ex=allVotes.find(v=>v.slot_id===slotId&&v.prenom===prenom);
@@ -314,115 +458,136 @@ async function vote(slotId,choice){
   else{if(ex)ex.choice=choice;else allVotes.push({slot_id:slotId,prenom,choice});renderAll();try{await sbFetch('/rest/v1/votes',{method:'POST',headers:{'Prefer':'resolution=merge-duplicates,return=minimal'},body:JSON.stringify({slot_id:slotId,prenom,choice})});}catch(e){}}
 }
 
+// SCORING
 function summary(id){const sv=allVotes.filter(v=>v.slot_id===id);return{yes:sv.filter(v=>v.choice==='yes'),maybe:sv.filter(v=>v.choice==='maybe'),no:sv.filter(v=>v.choice==='no'),mine:sv.find(v=>v.prenom===prenom)?.choice||null,total:sv.length};}
 function score(id){const s=summary(id);return s.yes.length*3+s.maybe.length-s.no.length*2;}
-function winner(dayId){const ds=allSlots.filter(s=>s.dayId===dayId),wv=ds.filter(s=>summary(s.id).total>0);if(!wv.length)return null;const sorted=[...wv].sort((a,b)=>score(b.id)-score(a.id));return score(sorted[0].id)>0?sorted[0]:null;}
 
-function renderAll(){renderSlots();renderRetained();}
+// RENDER
+function renderAll(){renderSlots();renderPodium();}
+
+const photoIdx={};
+function nextPhoto(slotId,dir,photos){
+  if(!photoIdx[slotId])photoIdx[slotId]=0;
+  photoIdx[slotId]=(photoIdx[slotId]+dir+photos.length)%photos.length;
+  const img=document.getElementById('photo_'+slotId);
+  const dots=document.querySelectorAll(`.pdot_${slotId}`);
+  if(img)img.src=photos[photoIdx[slotId]];
+  dots.forEach((d,i)=>d.classList.toggle('active',i===photoIdx[slotId]));
+}
 
 function renderSlots(){
-  const area=document.getElementById('slotsArea');area.innerHTML='';
-  DAYS.forEach(day=>{
-    const ds=allSlots.filter(s=>s.dayId===day.id),w=winner(day.id);
-    const block=document.createElement('div');block.className='day-block';
-    block.innerHTML=`<p class="day-label">${day.label}</p>`;
-    const row=document.createElement('div');row.className='slots-row';
-    ds.forEach(slot=>{
-      const{yes,maybe,no,mine,total}=summary(slot.id);
-      const isWin=w&&w.id===slot.id;
-      const pY=total?Math.round(yes.length/total*100):0,pM=total?Math.round(maybe.length/total*100):0,pN=total?Math.round(no.length/total*100):0;
-      const chips=[...yes.map(v=>`<span class="who-chip yes">${v.prenom} 👍</span>`),...maybe.map(v=>`<span class="who-chip maybe">${v.prenom} 🤔</span>`),...no.map(v=>`<span class="who-chip no">${v.prenom} 👎</span>`)].join('');
-      const desc=slot.description||slot.desc||'';
-      const card=document.createElement('div');card.className='slot'+(isWin?' winner':'');
-      card.innerHTML=`<span class="assigned-badge">✓ Retenu</span><img class="slot-photo" src="${slot.photo||''}" alt="${slot.name}" loading="lazy" onerror="this.outerHTML='<div class=\\'slot-photo-fallback\\' style=\\'background:${slot.bg||'#1a3a4a'}\\'>${slot.emoji||'⭐'}</div>'"><div class="slot-body"><p class="slot-cat">${slot.cat||'Activité proposée'}</p><h3 class="slot-name">${slot.name}</h3><p class="slot-desc">${desc}</p>${slot.note?`<p class="slot-note">${slot.note}</p>`:''}<div class="slot-tags">${(slot.tags||[]).map(t=>`<span class="stag ${t.c||''}">${t.l||t}</span>`).join('')}</div><div class="vote-section"><p class="vote-label">Votre avis</p><div class="vote-btns"><button class="vote-btn yes ${mine==='yes'?'active':''}" onclick="vote('${slot.id}','yes')">👍 Pour <span class="vote-count">${yes.length}</span></button><button class="vote-btn maybe ${mine==='maybe'?'active':''}" onclick="vote('${slot.id}','maybe')">🤔 Peut-être <span class="vote-count">${maybe.length}</span></button><button class="vote-btn no ${mine==='no'?'active':''}" onclick="vote('${slot.id}','no')">👎 Non <span class="vote-count">${no.length}</span></button></div><div class="vote-bar"><div class="vbar-yes" style="width:${pY}%"></div><div class="vbar-maybe" style="width:${pM}%"></div><div class="vbar-no" style="width:${pN}%"></div></div><div class="who-voted">${chips||'<span class="no-votes-yet">Pas encore de votes</span>'}</div></div></div>`;
-      row.appendChild(card);
-    });
-    block.appendChild(row);
-    const propWrap=document.createElement('div');propWrap.className='propose-btn-wrap';
-    propWrap.innerHTML=`<button class="propose-btn" onclick="openChat('${day.id}','${day.label}')">✨ Proposer une activité pour ${day.label.split('—')[0].trim()}</button>`;
-    block.appendChild(propWrap);
-    area.appendChild(block);
+  const grid=document.getElementById('slotsGrid');grid.innerHTML='';
+  const sorted=[...allSlots].sort((a,b)=>score(b.id)-score(a.id));
+  sorted.forEach((slot,idx)=>{
+    const{yes,maybe,no,mine,total}=summary(slot.id);
+    const sc=score(slot.id);
+    const pY=total?Math.round(yes.length/total*100):0,pM=total?Math.round(maybe.length/total*100):0,pN=total?Math.round(no.length/total*100):0;
+    const chips=[...yes.map(v=>`<span class="who-chip yes">${v.prenom} 👍</span>`),...maybe.map(v=>`<span class="who-chip maybe">${v.prenom} 🤔</span>`),...no.map(v=>`<span class="who-chip no">${v.prenom} 👎</span>`)].join('');
+    const photos=slot.photos||[slot.photo].filter(Boolean);
+    const curPhoto=photos[photoIdx[slot.id]||0]||'';
+    const dots=photos.length>1?`<div class="slot-photos-nav">${photos.map((_,i)=>`<div class="photo-dot pdot_${slot.id}${i===0?' active':''}" onclick="nextPhoto('${slot.id}',${i-(photoIdx[slot.id]||0)},${JSON.stringify(photos)})"></div>`).join('')}</div>`:'';
+    const isTop=total>0&&sc>0&&idx<3;
+    const card=document.createElement('div');card.className='slot'+(isTop?' winner':'');
+    card.innerHTML=`
+      <span class="winner-badge">🏆 Top ${idx+1}</span>
+      <div class="slot-photos" style="background:${slot.bg||'#1a3a4a'}">
+        <img id="photo_${slot.id}" class="slot-photo" src="${curPhoto}" alt="${slot.name}" loading="lazy"
+          onerror="this.style.display='none'">
+        ${photos.length>1?`
+        <div style="position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;padding:0 .5rem;pointer-events:none">
+          <button onclick="nextPhoto('${slot.id}',-1,${JSON.stringify(photos)})" style="pointer-events:all;background:rgba(0,0,0,.4);border:none;color:#fff;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.9rem">‹</button>
+          <button onclick="nextPhoto('${slot.id}',1,${JSON.stringify(photos)})" style="pointer-events:all;background:rgba(0,0,0,.4);border:none;color:#fff;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.9rem">›</button>
+        </div>`:''}
+        ${dots}
+      </div>
+      <div class="slot-body">
+        <p class="slot-cat">${slot.cat||'Activité proposée'}</p>
+        <h3 class="slot-name">${slot.name}</h3>
+        <p class="slot-desc">${slot.description||slot.desc||''}</p>
+        ${slot.note?`<p class="slot-note">${slot.note}</p>`:''}
+        <div class="slot-tags">${(slot.tags||[]).map(t=>`<span class="stag ${t.c||''}">${t.l||t}</span>`).join('')}</div>
+        <div class="vote-section">
+          <p class="vote-label-row">Votre avis${total>0?' · Score: <strong>'+sc+'</strong>':''}</p>
+          <div class="vote-btns">
+            <button class="vote-btn yes ${mine==='yes'?'active':''}" onclick="vote('${slot.id}','yes')">👍 Pour <span class="vote-count">${yes.length}</span></button>
+            <button class="vote-btn maybe ${mine==='maybe'?'active':''}" onclick="vote('${slot.id}','maybe')">🤔 Peut-être <span class="vote-count">${maybe.length}</span></button>
+            <button class="vote-btn no ${mine==='no'?'active':''}" onclick="vote('${slot.id}','no')">👎 Non <span class="vote-count">${no.length}</span></button>
+          </div>
+          <div class="vote-bar"><div class="vbar-yes" style="width:${pY}%"></div><div class="vbar-maybe" style="width:${pM}%"></div><div class="vbar-no" style="width:${pN}%"></div></div>
+          <div class="who-voted">${chips||'<span class="no-votes-yet">Pas encore de votes</span>'}</div>
+        </div>
+      </div>`;
+    grid.appendChild(card);
   });
 }
 
-function renderRetained(){
-  const grid=document.getElementById('retainedGrid');grid.innerHTML='';
-  addFixed(grid,'Lun',3,'#c0392b','https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=160&q=80','Arrivée à Funchal ✈️','Vol, récupération des voitures, installation. Premier dîner de groupe ensemble.');
-  DAYS.forEach(day=>{
-    const w=winner(day.id),row=document.createElement('div');row.className='ret-row';
-    if(w){const d=(w.description||w.desc||'');row.innerHTML=`<div class="ret-date"><span class="ret-dow">${day.dow}</span><span class="ret-day">${day.day}</span><span class="ret-mon">Août</span></div><div class="ret-body"><img class="ret-thumb" src="${w.photo||''}" onerror="this.style.display='none'"><div><p class="ret-title">${w.name}</p><p class="ret-desc">${d.slice(0,120)}…</p></div></div>`;}
-    else{row.innerHTML=`<div class="ret-date" style="background:#2a4a5a"><span class="ret-dow">${day.dow}</span><span class="ret-day">${day.day}</span><span class="ret-mon">Août</span></div><div class="ret-pending">En attente de votes…</div>`;}
-    grid.appendChild(row);
+function renderPodium(){
+  const list=document.getElementById('podiumList');list.innerHTML='';
+  const ranked=[...allSlots].filter(s=>summary(s.id).total>0).sort((a,b)=>score(b.id)-score(a.id)).slice(0,8);
+  if(!ranked.length){list.innerHTML='<p style="text-align:center;color:var(--mid);font-style:italic;font-size:.9rem">Les votes détermineront le classement…</p>';return;}
+  const medals=['🥇','🥈','🥉'];
+  const rankClass=['gold','silver','bronze'];
+  ranked.forEach((slot,i)=>{
+    const sc=score(slot.id);
+    const photos=slot.photos||[slot.photo].filter(Boolean);
+    const row=document.createElement('div');row.className='podium-row';
+    row.innerHTML=`
+      <div class="podium-rank ${rankClass[i]||''}">${medals[i]||i+1}</div>
+      <img class="podium-thumb" src="${photos[0]||''}" alt="${slot.name}" onerror="this.style.display='none'">
+      <div><div class="podium-name">${slot.name}</div></div>
+      <div class="podium-score">${sc>0?'+':''}${sc} pts</div>`;
+    list.appendChild(row);
   });
-  addFixed(grid,'Lun',10,'#c0392b',null,'Marché de Funchal & départ ✈️','Mercado dos Lavradores pour les derniers achats, puis aéroport.');
-}
-function addFixed(grid,dow,day,bg,thumb,title,desc){
-  const row=document.createElement('div');row.className='ret-row';
-  row.innerHTML=`<div class="ret-date" style="background:${bg}"><span class="ret-dow">${dow}</span><span class="ret-day">${day}</span><span class="ret-mon">Août</span></div><div class="ret-body">${thumb?`<img class="ret-thumb" src="${thumb}" onerror="this.style.display='none'">`:''}<div><p class="ret-title">${title}</p><p class="ret-desc">${desc}</p></div></div>`;
-  grid.appendChild(row);
 }
 
-// ── CHAT ──
-function openChat(dayId,dayLabel){
+// CHAT
+function openChat(){
   if(!prenom){alert('Entrez votre prénom d\'abord !');return;}
-  chatDayId=dayId;chatHistory=[];
+  chatHistory=[];
   document.getElementById('chatMessages').innerHTML='';
   document.getElementById('chatOverlay').classList.remove('hidden');
   document.getElementById('chatInput').value='';
   document.getElementById('chatSend').disabled=false;
-  addMsg("Bonjour ! Je vais vous aider à créer une fiche d'activité pour "+dayLabel+". Quelle activité avez-vous en tête ?","claude");
+  addMsg("Bonjour ! Je vais vous aider à créer une fiche d'activité à soumettre au vote. Quelle activité avez-vous en tête ?",'claude');
 }
 function closeChat(){document.getElementById('chatOverlay').classList.add('hidden');}
-
-function addMsg(text,type){
-  const msgs=document.getElementById('chatMessages');
-  const div=document.createElement('div');div.className='msg '+type;div.textContent=text;
-  msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
-}
+function addMsg(text,type){const msgs=document.getElementById('chatMessages');const div=document.createElement('div');div.className='msg '+type;div.textContent=text;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
 
 async function sendMessage(){
-  const input=document.getElementById('chatInput');
-  const text=input.value.trim();
+  const input=document.getElementById('chatInput');const text=input.value.trim();
   if(!text||document.getElementById('chatSend').disabled)return;
-  input.value='';addMsg(text,'user');
-  chatHistory.push({role:'user',content:text});
+  input.value='';addMsg(text,'user');chatHistory.push({role:'user',content:text});
   document.getElementById('chatSend').disabled=true;
   const typing=document.createElement('div');typing.className='chat-typing';typing.id='typingEl';typing.textContent='Claude réfléchit…';
-  document.getElementById('chatMessages').appendChild(typing);
-  document.getElementById('chatMessages').scrollTop=999999;
+  document.getElementById('chatMessages').appendChild(typing);document.getElementById('chatMessages').scrollTop=999999;
   try{
     const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
+      method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:1200,
-        system:`Tu aides une famille à proposer une nouvelle activité pour leur voyage à Madère du 3 au 10 août 2025. La journée concernée : ${chatDayId}. Pose exactement 3 questions en français, une par une : 1) quelle activité, 2) pourquoi c'est bien pour le groupe (enfants 4-16 ans, deux familles), 3) infos pratiques (tarif, durée, réservation). Après la 3e réponse de l'utilisateur, génère UNIQUEMENT un objet JSON valide sans backticks ni markdown avec ces champs : {"name":"...","cat":"Proposé par ${prenom}","description":"3-4 phrases riches et concrètes","note":"conseil pratique concis","photo":"https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80","bg":"#1a3040","emoji":"🌊","tags":[{"l":"label","c":"hike"}]}. Adapte la photo, le bg et l'emoji à l'activité proposée. Réponds en français, de façon chaleureuse et concise.`,
+        model:'claude-sonnet-4-20250514',max_tokens:1200,
+        system:`Tu aides à proposer une activité pour un vote familial pour un voyage à Madère du 3 au 10 août 2025 (deux familles, 8 enfants de 4 à 16 ans). Pose exactement 3 questions en français, une par une : 1) quelle activité, 2) pourquoi c'est bien pour le groupe, 3) infos pratiques (tarif, durée, réservation). Après la 3e réponse, génère UNIQUEMENT un JSON valide sans backticks avec : {"name":"...","cat":"Proposé par ${prenom}","description":"3-4 phrases riches","note":"conseil pratique","photo":"https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80","bg":"#1a3040","emoji":"🌊","tags":[{"l":"label","c":"hike"}]}. Adapte la photo Unsplash, bg et emoji à l'activité. Réponds en français, chaleureusement.`,
         messages:chatHistory
       })
     });
     const data=await res.json();
     document.getElementById('typingEl')?.remove();
-    const reply=(data.content?.[0]?.text||'Désolé, une erreur est survenue.').trim();
+    const reply=(data.content?.[0]?.text||'Désolé, erreur.').trim();
     chatHistory.push({role:'assistant',content:reply});
-    if(reply.startsWith('{')){
-      try{const parsed=JSON.parse(reply);await saveCustomSlot(parsed);}
-      catch(e){addMsg('Erreur lors de la création de la fiche. Réessayez.','system');}
-    }else{addMsg(reply,'claude');}
-  }catch(e){document.getElementById('typingEl')?.remove();addMsg('Erreur de connexion. Réessayez.','system');}
-  document.getElementById('chatSend').disabled=false;
-  document.getElementById('chatInput').focus();
+    if(reply.startsWith('{')){try{await saveCustomSlot(JSON.parse(reply));}catch(e){addMsg('Erreur JSON. Réessayez.','system');}}
+    else{addMsg(reply,'claude');}
+  }catch(e){document.getElementById('typingEl')?.remove();addMsg('Erreur de connexion.','system');}
+  document.getElementById('chatSend').disabled=false;document.getElementById('chatInput').focus();
 }
 document.getElementById('chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendMessage();});
 
 async function saveCustomSlot(parsed){
-  const slot={id:'c_'+Date.now()+'_'+Math.random().toString(36).slice(2,6),day_id:chatDayId,cat:parsed.cat||'Proposé par '+prenom,name:parsed.name||'Activité proposée',description:parsed.description||'',note:parsed.note||'',photo:parsed.photo||'',bg:parsed.bg||'#1a3a4a',emoji:parsed.emoji||'⭐',tags:parsed.tags||[],created_by:prenom};
+  const slot={id:'c_'+Date.now()+'_'+Math.random().toString(36).slice(2,6),day_id:'any',cat:parsed.cat||'Proposé par '+prenom,name:parsed.name||'Activité proposée',description:parsed.description||'',note:parsed.note||'',photo:parsed.photo||'',bg:parsed.bg||'#1a3a4a',emoji:parsed.emoji||'⭐',tags:parsed.tags||[],created_by:prenom};
   try{
     await sbFetch('/rest/v1/custom_slots',{method:'POST',headers:{'Prefer':'return=minimal'},body:JSON.stringify(slot)});
-    customSlots.push(slot);allSlots=[...BASE_SLOTS,...customSlots];renderAll();
-    addMsg('✅ "'+slot.name+'" a été ajouté ! Visible et votable par tout le monde maintenant.','system');
+    allSlots=[...BASE_SLOTS,...customSlots.map(c=>({...c,photos:[c.photo].filter(Boolean)})),{...slot,photos:[slot.photo].filter(Boolean)}];
+    renderAll();addMsg('✅ "'+slot.name+'" ajouté au vote ! Tout le monde peut maintenant voter pour cette activité.','system');
     setTimeout(()=>closeChat(),2500);
-  }catch(e){addMsg('Erreur lors de la sauvegarde. Réessayez.','system');}
+  }catch(e){addMsg('Erreur de sauvegarde. Réessayez.','system');}
 }
 </script>
 
