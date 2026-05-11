@@ -177,10 +177,23 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
       <span class="chat-hdr-title">Proposer une <em>activit&eacute;</em></span>
       <button class="chat-close-btn" id="ccb">&#x2715;</button>
     </div>
-    <div class="chat-msgs" id="cm"></div>
+    <div style="padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.9rem;overflow-y:auto;flex:1">
+      <div>
+        <label style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sun);display:block;margin-bottom:.4rem">Nom de l&#x27;activit&eacute; *</label>
+        <input id="f-name" type="text" placeholder="Ex: Surf &agrave; Jardim do Mar" maxlength="60" style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);color:var(--white);font-family:Lato,sans-serif;font-size:.9rem;padding:.7rem 1rem;border-radius:2px;outline:none">
+      </div>
+      <div>
+        <label style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sun);display:block;margin-bottom:.4rem">Description *</label>
+        <textarea id="f-desc" placeholder="Pourquoi cette activit&eacute; ? Ce qu&#x27;on y fait, pourquoi c&#x27;est bien pour le groupe..." rows="4" style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);color:var(--white);font-family:Lato,sans-serif;font-size:.87rem;padding:.7rem 1rem;border-radius:2px;outline:none;resize:vertical"></textarea>
+      </div>
+      <div>
+        <label style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sun);display:block;margin-bottom:.4rem">Infos pratiques</label>
+        <input id="f-note" type="text" placeholder="Tarif, dur&eacute;e, r&eacute;servation..." maxlength="120" style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);color:var(--white);font-family:Lato,sans-serif;font-size:.87rem;padding:.7rem 1rem;border-radius:2px;outline:none">
+      </div>
+      <div id="f-msg" style="font-size:.8rem;color:var(--sun);font-style:italic;min-height:1.2rem;text-align:center"></div>
+    </div>
     <div class="chat-inp-row">
-      <input class="chat-inp" id="ci" type="text" placeholder="Votre r&eacute;ponse..." autocomplete="off">
-      <button class="chat-send-btn" id="csb">Envoyer</button>
+      <button class="chat-send-btn" id="f-submit" style="width:100%;padding:.9rem">Proposer cette activit&eacute; &#x2728;</button>
     </div>
   </div>
 </div>
@@ -303,7 +316,7 @@ var SLOTS=[
    hook:"Entrer dans l\u2019une des derni\u00e8res for\u00eats primaires d\u2019Europe \u2014 et traverser ses tunnels dans le noir.",
    desc:"La laurisilva de Mad\u00e8re est une for\u00eat subtropicale de l\u2019\u00e8re tertiaire, class\u00e9e UNESCO depuis 1999. Le sentier longe une levada \u2014 canal d\u2019irrigation du XVe si\u00e8cle. V\u00e9g\u00e9tation saisissante : foug\u00e8res arborescentes g\u00e9antes, lauriers centenaires couverts de mousses, ambiance fra\u00eeche et mystique. Le moment fort : quatre tunnels taill\u00e9s dans la roche volcanique, jusqu\u2019\u00e0 150 m de long, \u00e0 traverser \u00e0 la lampe frontale dans le noir complet. Les enfants adorent l\u2019aspect explorateurs. Au bout : une cascade dans un lac naturel.",
    note:"Lampes frontales absolument indispensables ! Chaussures ferm\u00e9es obligatoires.",
-   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Levada_do_Caldeiro_Verde_-_Queimadas_to_Caldeiro_Verde_-_panoramio_%281%29.jpg/1280px-Levada_do_Caldeiro_Verde_-_Queimadas_to_Caldeiro_Verde_-_panoramio_%281%29.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Levada_do_Caldeiro_Verde_tunnel.jpg/1280px-Levada_do_Caldeiro_Verde_tunnel.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Caldeirao_verde_waterfall.jpg/800px-Caldeirao_verde_waterfall.jpg"],
+   photos:["https://lh3.googleusercontent.com/place-photos/AJRVUZNYWTK5CR4u_BcX7jcHX6hvaIU3-ujIN7puW3UfD11QijplAbssZ0Wpb_BkaTq7magW7A1RYWuHIGshIRdWj-uApK4fefD_SOsYIgnwG-l5VNgk_kAAo941YsIDV26cmvS6aoXR5hyA2rtQ_A=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZPwFCXDxUEVy75iMfyKSnwIm0m3kHwCPQw_jVCM5oBousN5x0D8QRERy0InZtFdot6vURdrAp4LvmmD4qxo1CfTFm8Hxrnf5oG1lM-VEIdphc4GLqAMXxTMwBih0zngT7CxRdw3_oUuu-Nq_E8=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZMlhx_uyEgKGKRLJrME8l4ufHQDuGhZsyl9FkCrSymUH3mdV-874aNW3wbqDkjW5QtEj-wJ5FHuWm3lO-jMAvVgHYOwyVzqG8DMtJlW3k8ORycKe4Q3qcDhmWECFM7oEm3GgEj53kWaV_Imaw=s800-w800-h600"],
    tags:[{l:"Rando",c:"hike"},{l:"UNESCO",c:"cult"},{l:"Tunnels dans le noir",c:"fun"}]},
   {id:"s06",cat:"Belv\u00e9d\u00e8re \u2014 C\u00f4te ouest",emoji:"&#128507;",bg:"#101828",
    name:"Cabo Gir\u00e3o \u2014 falaise \u00e0 580 m",
@@ -317,7 +330,7 @@ var SLOTS=[
    hook:"Mad\u00e8re est l\u2019un des meilleurs spots d\u2019observation des baleines en Europe.",
    desc:"Les eaux autour de Mad\u00e8re sont exceptionnellement profondes d\u00e8s la sortie du port : 3000 \u00e0 4000 m\u00e8tres \u00e0 quelques miles de la c\u00f4te. Des vigies sur les falaises rep\u00e8rent les animaux aux jumelles et guident les bateaux par radio en temps r\u00e9el \u2014 syst\u00e8me unique en Europe. Sorties en zodiac 2h30 avec H2O Madeira. Esp\u00e8ces : dauphins communs, grands dauphins, globic\u00e9phales. Parfois baleines \u00e0 bec ou cachalots. Les enfants de tous \u00e2ges ressortent unanimement subjugu\u00e9s.",
    note:"R\u00e9servation OBLIGATOIRE \u2014 complet des jours \u00e0 l\u2019avance en ao\u00fbt. Anti-naus\u00e9e recommand\u00e9.",
-   photos:["https://lh3.googleusercontent.com/place-photos/AJRVUZMFa6XS5CUy7LiYaVjMp1EZQJiqOKN4dNVH3dEYYg6EBkJKFZ0kpGQBLO8HHVbkuQ3Yfb9xbwxJe2fFEzrL_wMPJf8W2d5w8UMj6Z5ZO4YPH8R65gVsxzN9V-k1vRTwMDAJFJ6yBvWBx0T64=s800-w800-h600","https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=800&q=80","https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=800&q=80"],
+   photos:["https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=800&q=80","https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80","https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=800&q=80"],
    tags:[{l:"Mer",c:"water"},{l:"Tout \u00e2ge",c:"chill"},{l:"Inoubliable",c:"fun"}]},
   {id:"s08",cat:"Plage et Village \u2014 C\u00f4te ouest",emoji:"&#127958;",bg:"#041818",
    name:"Plage de Calheta et Jardim do Mar",
@@ -331,35 +344,35 @@ var SLOTS=[
    hook:"Rappels, sauts et nage dans les gorges tropicales \u2014 l\u2019activit\u00e9 coup de coeur des ados.",
    desc:"Le canyon de la Ribeira das Cales est \u00e0 20 minutes de Funchal, dans une gorge creus\u00e9e dans la roche volcanique couverte de v\u00e9g\u00e9tation tropicale dense. Id\u00e9al pour les d\u00e9butants : difficult\u00e9 mod\u00e9r\u00e9e, encadrement professionnel, tout l\u2019\u00e9quipement fourni (combinaison n\u00e9opr\u00e8ne, casque, baudrier). Au programme : rappels le long de cascades tropicales, sauts dans des vasques turquoise, passages \u00e0 la nage entre des parois couvertes de foug\u00e8res. Dur\u00e9e 2h30. Les grands ados en ressortent euphoriques.",
    note:"R\u00e9server \u00e0 l\u2019avance \u2014 groupes limit\u00e9s. Tout l\u2019\u00e9quipement fourni.",
-   photos:["https://lh3.googleusercontent.com/place-photos/AJRVUZPQHzU2XL5yI9C3TgGGaGVl1uX7mZwFqzxKbsHUPT3Ol9e_qmqNf4YNF8HVB6tLDEauzJwdJBVvvqZNKCNyFLXEOqOJXYW1xqmKKFNf1bGFTtlqUkCf2vCBQyF3NVjTqH5K2N2nT6M=s800-w800-h600","https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80","https://images.unsplash.com/photo-1467632499275-7a693a761056?w=800&q=80"],
+   photos:["https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80","https://images.unsplash.com/photo-1467632499275-7a693a761056?w=800&q=80","https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=800&q=80"],
    tags:[{l:"Adr\u00e9naline",c:"fun"},{l:"12 ans +",c:"fun"},{l:"Encadr\u00e9",c:"chill"}]},
   {id:"s10",cat:"Altitude \u2014 Lever de soleil",emoji:"&#127749;",bg:"#0c0c20",
    name:"Pico Arieiro au lever du soleil (1818 m)",
    hook:"Contempler Mad\u00e8re endormie sous une mer de nuages depuis 1800 m.",
    desc:"Le Pico Arieiro est le troisi\u00e8me sommet de l\u2019\u00eele et le seul accessible directement en voiture jusqu\u2019\u00e0 1818 m d\u2019altitude. L\u2019exp\u00e9rience du lever de soleil est consid\u00e9r\u00e9e par des milliers de voyageurs comme la chose la plus belle qu\u2019ils aient jamais vue. D\u00e9part de Funchal \u00e0 5h15. En dessous : toute l\u2019\u00eele enfouie dans une mer de nuages. Au-dessus : ciel noir virant au violet, puis rose, puis orange.",
    note:"Veste chaude obligatoire \u2014 10-12 degr\u00e9s au sommet en ao\u00fbt.",
-   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pico_do_Arieiro%2C_Madeira%2C_Portugal%2C_2012-08-18%2C_DD_02.jpg/1280px-Pico_do_Arieiro%2C_Madeira%2C_Portugal%2C_2012-08-18%2C_DD_02.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Pico_Arieiro.jpg/1280px-Pico_Arieiro.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Pico_do_Arieiro_above_clouds.jpg/1280px-Pico_do_Arieiro_above_clouds.jpg"],
+   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pico_do_Arieiro%2C_Madeira%2C_Portugal%2C_2012-08-18%2C_DD_02.jpg/1280px-Pico_do_Arieiro%2C_Madeira%2C_Portugal%2C_2012-08-18%2C_DD_02.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Pico_do_Arieiro_summit_views.jpg/1280px-Pico_do_Arieiro_summit_views.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/P_do_Arieiro.jpg/1280px-P_do_Arieiro.jpg"],
    tags:[{l:"14 ans +",c:"fun"},{l:"Lever de soleil",c:"cult"},{l:"Altitude",c:"hike"}]},
   {id:"s11",cat:"Plage noire \u2014 C\u00f4te nord",emoji:"&#9899;",bg:"#0c0c14",
    name:"Seixal \u2014 plage volcanique et piscines",
    hook:"Sable volcanique noir, piscines naturelles sauvages \u2014 le coin secret du nord.",
    desc:"Seixal est le coup de coeur des familles qui connaissent bien l\u2019\u00eele. Village nich\u00e9 \u00e0 flanc de falaise sur la c\u00f4te nord, entour\u00e9 de terrasses de vignes et de for\u00eats de lauriers. La plage de sable volcanique noir contraste avec le vert intense de la v\u00e9g\u00e9tation. Deux piscines naturelles : une calme id\u00e9ale quand la mer est fra\u00eeche, une plus sauvage fr\u00e9quent\u00e9e par les locaux. Nettement moins touristique que Porto Moniz.",
    note:"Combinable avec Porto Moniz \u2014 m\u00eame axe routier, 15 min.",
-   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Seixal_beach_Madeira.jpg/1280px-Seixal_beach_Madeira.jpg","https://lh3.googleusercontent.com/place-photos/AJRVUZPFsKJNQB4Oe3kXNVzqrDlAWLfuLkL6m9yB9N3kh5U9XkMT_0G4fT9kVFuDh_r2cA8YkMWR4K8BdwMJHHfO9y7Kp5U8V7q6n9A=s800-w800-h600","https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Seixal_natural_pools_Madeira.jpg/1280px-Seixal_natural_pools_Madeira.jpg"],
+   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Seixal_beach_Madeira.jpg/1280px-Seixal_beach_Madeira.jpg","https://lh3.googleusercontent.com/place-photos/AJRVUZNtf0aD4q6L9EKbsT8nUxVLODhHwSSmzP8NJpR5YXi8CRpvFfRs8kJqm6dFj5aSVAK4TrMz9Z2N-dMuG7T4K_oeS=s800-w800-h600","https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Seixal_natural_pools.jpg/1280px-Seixal_natural_pools.jpg"],
    tags:[{l:"Plage noire",c:"water"},{l:"Moins touristique",c:"chill"},{l:"Nord sauvage",c:"hike"}]},
   {id:"s12",cat:"Sommet \u2014 Toit de l\u2019\u00eele",emoji:"&#9968;",bg:"#141424",
    name:"Pico Ruivo (1862 m) \u2014 panorama 360\u00b0",
    hook:"Le point le plus haut de Mad\u00e8re \u2014 45 min de marche pour voir toute l\u2019\u00eele.",
    desc:"Pico Ruivo est le point culminant de Mad\u00e8re \u00e0 1862 m. Depuis le parking d\u2019Achada do Teixeira (voiture jusqu\u2019\u00e0 1592 m), le sentier monte 270 m en 45 minutes dans un paysage de cr\u00eates rocheuses et de bruy\u00e8res g\u00e9antes. Au sommet par temps clair : vue \u00e0 360\u00b0 sur toute l\u2019\u00eele. Le sentiment d\u2019\u00eatre au-dessus du monde est imm\u00e9diat et saisissant. Accessible d\u00e8s 10 ans.",
    note:"Veste obligatoire. Ne pas cumuler avec Porto Santo le m\u00eame jour.",
-   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Madeira_-_Pico_Ruivo_%2836552177534%29.jpg/1280px-Madeira_-_Pico_Ruivo_%2836552177534%29.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Pico_Ruivo%2C_Madeira%2C_Portugal.jpg/1280px-Pico_Ruivo%2C_Madeira%2C_Portugal.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Pico_Ruivo_view.jpg/1280px-Pico_Ruivo_view.jpg"],
+   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Madeira_-_Pico_Ruivo_%2836552177534%29.jpg/1280px-Madeira_-_Pico_Ruivo_%2836552177534%29.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Aerial_View_from_Pico_Ruivo.jpg/1280px-Aerial_View_from_Pico_Ruivo.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Pico_Ruivo_-_Madeira.jpg/1280px-Pico_Ruivo_-_Madeira.jpg"],
    tags:[{l:"Rando",c:"hike"},{l:"Panorama 360\u00b0",c:"cult"},{l:"10 ans +",c:"fun"}]},
   {id:"s13",cat:"Culture et Histoire \u2014 Funchal",emoji:"&#127961;",bg:"#1a1020",
    name:"Funchal : ville, march\u00e9 et Mus\u00e9e CR7",
    hook:"La capitale la plus agr\u00e9able de l\u2019Atlantique \u2014 et la ville natale de Cristiano Ronaldo.",
    desc:"Funchal m\u00e9rite qu\u2019on s\u2019y attarde. La Rua de Santa Maria et ses centaines de portes peintes par des artistes locaux. Le Mercado dos Lavradores : strelitzias, fruits tropicaux, t\u00eates de peixe espada et stands de poncha. Et le Mus\u00e9e CR7 : Cristiano Ronaldo est n\u00e9 \u00e0 Funchal en 1985. Cinq Ballons d\u2019Or originaux expos\u00e9s. Statue en bronze devant l\u2019entr\u00e9e \u2014 incontournable pour les enfants fans de foot.",
    note:"Mus\u00e9e CR7 : file raisonnable t\u00f4t le matin. March\u00e9 ouvert en matin\u00e9e.",
-   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Funchal_zona_velha.jpg/1280px-Funchal_zona_velha.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/CR7_museum_Funchal_Madeira.jpg/1280px-CR7_museum_Funchal_Madeira.jpg","https://lh3.googleusercontent.com/place-photos/AJRVUZMqKL3n9T5V8kP5N_mT5d0TGn1jW7yPF0dqP9xNZJB1VPOvRkn3P5ek8kJ8kMnH5NV8nZfM=s800-w800-h600"],
+   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Funchal_Hafen.jpg/1280px-Funchal_Hafen.jpg","https://lh3.googleusercontent.com/place-photos/AJRVUZMqHL2z5c4y3kQ2LsVdW0HJfQ2k5Hf_T8qZ9YfK2dZ4P2mT5dVnY8wT5k=s800-w800-h600","https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Mercado_dos_Lavradores_Funchal.jpg/1280px-Mercado_dos_Lavradores_Funchal.jpg"],
    tags:[{l:"Culture",c:"cult"},{l:"Foot",c:"fun"},{l:"March\u00e9",c:"chill"},{l:"Tout \u00e2ge",c:"chill"}]}
 ];
 
@@ -381,8 +394,7 @@ document.getElementById("up").addEventListener("click",function(){document.getEl
 document.getElementById("hs").addEventListener("click",function(){document.getElementById("mapsec").scrollIntoView({behavior:"smooth"});});
 document.getElementById("propbtn").addEventListener("click",openChat);
 document.getElementById("ccb").addEventListener("click",closeChat);
-document.getElementById("csb").addEventListener("click",sendMsg);
-document.getElementById("ci").addEventListener("keydown",function(e){if(e.key==="Enter")sendMsg();});
+document.getElementById("f-submit").addEventListener("click",sendMsg);
 if(prenom){document.getElementById("mo").classList.add("hidden");document.getElementById("up").classList.remove("hidden");document.getElementById("pn").textContent=prenom;loadAll();}
 
 function initMap(){
@@ -492,33 +504,35 @@ function renderPodium(){
 }
 function openChat(){
   if(!prenom)return;
-  chatHistory=[];document.getElementById("cm").innerHTML="";document.getElementById("co").classList.remove("hidden");document.getElementById("ci").value="";document.getElementById("csb").disabled=false;
-  addMsg("Bonjour ! Je vais vous aider &agrave; cr&eacute;er une fiche. Quelle activit&eacute; avez-vous en t&ecirc;te ?","claude");
+  document.getElementById("f-name").value="";
+  document.getElementById("f-desc").value="";
+  document.getElementById("f-note").value="";
+  document.getElementById("f-msg").textContent="";
+  document.getElementById("co").classList.remove("hidden");
 }
 function closeChat(){document.getElementById("co").classList.add("hidden");}
-function addMsg(text,type){var msgs=document.getElementById("cm");var div=document.createElement("div");div.className="msg "+type;div.innerHTML=text;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
 function sendMsg(){
-  var inp=document.getElementById("ci");var text=inp.value.trim();
-  if(!text||document.getElementById("csb").disabled)return;
-  inp.value="";var d=document.createElement("div");d.className="msg user";d.textContent=text;document.getElementById("cm").appendChild(d);document.getElementById("cm").scrollTop=99999;
-  chatHistory.push({role:"user",content:text});document.getElementById("csb").disabled=true;
-  var typing=document.createElement("div");typing.className="chat-typing";typing.id="tel";typing.textContent="Claude r&eacute;fl&eacute;chit...";document.getElementById("cm").appendChild(typing);document.getElementById("cm").scrollTop=99999;
-  fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1500,system:"Tu aides a proposer une activite pour un vote familial voyage a Madere aout 2026 deux familles 8 enfants 4 a 16 ans. Pose 3 questions une par une. Apres la 3e reponse genere UNIQUEMENT un JSON valide sans backticks avec ces champs : name cat hook description note photo bg emoji tags. Reponds en francais.",messages:chatHistory})})
-  .then(function(r){return r.json();}).then(function(data){
-    var el=document.getElementById("tel");if(el)el.remove();
-    var reply=(data.content&&data.content[0]?data.content[0].text:"Erreur.").trim();
-    chatHistory.push({role:"assistant",content:reply});
-    if(reply.charAt(0)==="{"){try{saveSlot(JSON.parse(reply));}catch(e){addMsg("Erreur JSON. Reessayez.","sys");}}
-    else{addMsg(reply,"claude");}
-    document.getElementById("csb").disabled=false;document.getElementById("ci").focus();
-  }).catch(function(){var el=document.getElementById("tel");if(el)el.remove();addMsg("Erreur de connexion.","sys");document.getElementById("csb").disabled=false;});
+  var name=document.getElementById("f-name").value.trim();
+  var desc=document.getElementById("f-desc").value.trim();
+  var note=document.getElementById("f-note").value.trim();
+  if(!name||!desc){document.getElementById("f-msg").textContent="Nom et description obligatoires.";return;}
+  document.getElementById("f-submit").disabled=true;
+  document.getElementById("f-msg").textContent="Envoi en cours...";
+  var slot={id:"c"+Date.now(),day_id:"any",
+    cat:"Propos&eacute; par "+prenom,
+    name:name,description:desc,note:note,
+    photo:"",bg:"#1a3a4a",emoji:"&#11088;",tags:[],created_by:prenom};
+  saveSlot({name:name,description:desc,note:note,cat:"Propos&eacute; par "+prenom,hook:"",photo:"",bg:"#1a3a4a",emoji:"&#11088;",tags:[]});
 }
 function saveSlot(parsed){
   var slot={id:"c"+Date.now(),day_id:"any",cat:parsed.cat||"Propos&eacute;",name:parsed.name||"Activit&eacute;",description:parsed.description||"",note:parsed.note||"",photo:parsed.photo||"",bg:parsed.bg||"#1a3a4a",emoji:parsed.emoji||"&#11088;",tags:parsed.tags||[],created_by:prenom};
   sbFetch("/rest/v1/custom_slots",{method:"POST",headers:{Prefer:"return=minimal"},body:JSON.stringify(slot)}).then(function(){
     allSlots.push({id:slot.id,cat:slot.cat,emoji:slot.emoji,bg:slot.bg,name:slot.name,hook:parsed.hook||"",desc:slot.description,note:slot.note,photos:slot.photo?[slot.photo]:[],tags:slot.tags});
-    renderAll();addMsg(slot.name+" ajout&eacute; ! Tout le monde peut maintenant voter.","sys");setTimeout(closeChat,2500);
-  }).catch(function(){addMsg("Erreur de sauvegarde.","sys");});
+    renderAll();document.getElementById("f-msg").textContent="Ajout\u00e9 ! Visible par tout le monde.";setTimeout(function(){closeChat();document.getElementById("f-submit").disabled=false;},1500);
+  }).catch(function(){
+    document.getElementById("f-msg").textContent="Erreur de sauvegarde. Reessayez.";
+    document.getElementById("f-submit").disabled=false;
+  });
 }
 </script>
 
