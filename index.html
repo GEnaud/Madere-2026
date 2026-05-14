@@ -397,14 +397,14 @@ document.getElementById("f-submit").addEventListener("click",sendMsg);
 if(prenom){document.getElementById("mo").classList.add("hidden");document.getElementById("up").classList.remove("hidden");document.getElementById("pn").textContent=prenom;loadAll();}
 
 function initMap(){
-  var map=new google.maps.Map(document.getElementById("map"),{center:{lat:32.72,lng:-16.85},zoom:10,disableDefaultUI:true,zoomControl:true});
+  var map=new google.maps.Map(document.getElementById("map"),{center:{lat:32.72,lng:-16.85},zoom:10,disableDefaultUI:true,zoomControl:true,mapId:"DEMO_MAP_ID"});
   var iw=new google.maps.InfoWindow();
   function mk(lat,lng,em,ti,su){
     var el=document.createElement("div");
-    el.style.cssText="font-size:1.5rem;cursor:pointer;filter:drop-shadow(0 2px 3px rgba(0,0,0,.6))";
+    el.style.cssText="font-size:1.6rem;cursor:pointer;line-height:1;filter:drop-shadow(0 2px 3px rgba(0,0,0,.7))";
     el.innerHTML=em;
     var m=new google.maps.marker.AdvancedMarkerElement({position:{lat:lat,lng:lng},map:map,content:el,title:ti});
-    m.addListener("click",function(){iw.setContent("<strong>"+ti+"</strong><br><small>"+su+"</small>");iw.open(map,m);});
+    m.addListener("click",function(){iw.setContent("<div style=\"font-family:sans-serif;padding:4px\"><strong>"+ti+"</strong><br><small style=\"color:#666\">"+su+"</small></div>");iw.open(map,m);});
   }
   mk(32.6497,-16.8721,"&#127968;","Anna et Thibault - Palheiro Village","Elsa, Faustine, Az&eacute;lie");
   mk(32.6419,-16.8558,"&#127968;","Gaspard et Jennifer - Cani&ccedil;o","Ulysse, Timoth&eacute;e, Salom&eacute;, Isaure, Castille");
