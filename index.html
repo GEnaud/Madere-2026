@@ -397,14 +397,11 @@ document.getElementById("f-submit").addEventListener("click",sendMsg);
 if(prenom){document.getElementById("mo").classList.add("hidden");document.getElementById("up").classList.remove("hidden");document.getElementById("pn").textContent=prenom;loadAll();}
 
 function initMap(){
-  var map=new google.maps.Map(document.getElementById("map"),{center:{lat:32.72,lng:-16.85},zoom:10,disableDefaultUI:true,zoomControl:true,mapId:"DEMO_MAP_ID"});
+  var map=new google.maps.Map(document.getElementById("map"),{center:{lat:32.72,lng:-16.85},zoom:10,disableDefaultUI:true,zoomControl:true});
   var iw=new google.maps.InfoWindow();
-  function mk(lat,lng,em,ti,su){
-    var el=document.createElement("div");
-    el.style.cssText="font-size:1.6rem;cursor:pointer;line-height:1;filter:drop-shadow(0 2px 3px rgba(0,0,0,.7))";
-    el.innerHTML=em;
-    var m=new google.maps.marker.AdvancedMarkerElement({position:{lat:lat,lng:lng},map:map,content:el,title:ti});
-    m.addListener("click",function(){iw.setContent("<div style=\"font-family:sans-serif;padding:4px\"><strong>"+ti+"</strong><br><small style=\"color:#666\">"+su+"</small></div>");iw.open(map,m);});
+  function mk(lat,lng,label,ti,su){
+    var marker=new google.maps.Marker({position:{lat:lat,lng:lng},map:map,title:ti,label:{text:label,fontSize:"20px"},icon:{path:google.maps.SymbolPath.CIRCLE,scale:0}});
+    marker.addListener("click",function(){iw.setContent("<div style=\"font-family:sans-serif;padding:6px 8px\"><strong>"+ti+"</strong><br><small style=\"color:#666\">"+su+"</small></div>");iw.open(map,marker);});
   }
   mk(32.6497,-16.8721,"&#127968;","Anna et Thibault - Palheiro Village","Elsa, Faustine, Az&eacute;lie");
   mk(32.6419,-16.8558,"&#127968;","Gaspard et Jennifer - Cani&ccedil;o","Ulysse, Timoth&eacute;e, Salom&eacute;, Isaure, Castille");
@@ -540,7 +537,7 @@ function saveSlot(parsed){
   var p2="HEIOgwQrszfvXT7";
   var p3="JuHDh81pA";
   var s=document.createElement("script");
-  s.src="https://maps.googleapis.com/maps/api/js?key="+p1+p2+p3+"&libraries=marker&callback=initMap&loading=async";
+  s.src="https://maps.googleapis.com/maps/api/js?key="+p1+p2+p3+"&callback=initMap&loading=async";
   s.async=true;s.defer=true;
   document.head.appendChild(s);
 })();
