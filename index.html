@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -155,7 +154,7 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
 </style>
 </head>
 <body>
-
+ 
 <div class="modal-overlay" id="mo">
   <div class="modal-box">
     <h2 class="modal-title"><em>Mad&egrave;re</em> &middot; Ao&ucirc;t 2026</h2>
@@ -165,12 +164,12 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
     <div class="modal-names" id="mn"></div>
   </div>
 </div>
-
+ 
 <div class="user-pill hidden" id="up">
   <div class="dot"></div><span id="pn"></span>
   <span style="opacity:.4;font-size:.65rem">&nbsp;&middot; changer</span>
 </div>
-
+ 
 <div class="chat-overlay hidden" id="co">
   <div class="chat-box">
     <div class="chat-hdr">
@@ -197,7 +196,7 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
     </div>
   </div>
 </div>
-
+ 
 <section class="hero">
   <div class="hero-img"></div>
   <div class="hero-overlay"></div>
@@ -212,7 +211,7 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
   </div>
   <div class="hero-scroll" id="hs"><span>D&eacute;couvrir</span><div class="scroll-arrow"></div></div>
 </section>
-
+ 
 <div class="map-section" id="mapsec">
   <h2>Nos deux <em>maisons</em> &amp; les activit&eacute;s</h2>
   <p class="map-sub">C&ocirc;t&eacute; est de l&rsquo;&icirc;le &middot; 8 km l&rsquo;une de l&rsquo;autre &middot; Cliquez sur les marqueurs</p>
@@ -230,7 +229,7 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
   </div>
   <div id="map"></div>
 </div>
-
+ 
 <div class="intro">
   <h2 class="intro-title">Votez pour construire le <em>programme</em></h2>
   <p class="intro-body">Pas de planning impos&eacute; &mdash; une liste d&rsquo;activit&eacute;s &agrave; trier ensemble. Votez Pour, Peut-&ecirc;tre ou Non. Les cartes se r&eacute;organisent selon les scores.</p>
@@ -240,22 +239,22 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
     <div class="legend-item"><div class="legend-dot" style="background:var(--lava)"></div> Non (-2 pts)</div>
   </div>
 </div>
-
+ 
 <div class="slots-section">
   <div class="slots-header"><h2>Les activit&eacute;s propos&eacute;es</h2><p>Plusieurs photos &middot; Votes en direct &middot; Tri&eacute;es par score</p></div>
   <div class="slots-grid" id="sg"><div class="loading">Connexion...</div></div>
 </div>
-
+ 
 <div class="propose-section">
   <button class="propose-btn" id="propbtn">&#10024; Proposer une nouvelle activit&eacute;</button>
 </div>
-
+ 
 <div class="podium-section">
   <h2>Le <em>classement</em></h2>
   <p class="podium-sub">Mis &agrave; jour en temps r&eacute;el</p>
   <div class="podium-list" id="pl"></div>
 </div>
-
+ 
 <div class="practical">
   <div class="practical-inner">
     <h2>Infos <em>pratiques</em></h2>
@@ -270,7 +269,7 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
   </div>
 </div>
 <footer>Mad&egrave;re &middot; Ao&ucirc;t 2026 &middot; Programme co-construit par les deux familles</footer>
-
+ 
 <script>
 var SBU="https://ekxsivbtixgvejpwabtd.supabase.co";
 var SBK="sb_publishable_mNRPVpyIvZu2-oGlp4X8rg_kMB-rMhJ";
@@ -281,104 +280,104 @@ function sbFetch(path,opts){
   opts.headers=h;
   return fetch(SBU+path,opts).then(function(r){return r.text().then(function(t){if(!r.ok)throw new Error(t);return t?JSON.parse(t):[];});});
 }
-
+ 
 var SLOTS=[
   {id:"s01",cat:"Randonn\u00e9e \u2605\u2605",emoji:"&#127755;",bg:"#2a1505",
    name:"Ponta de S\u00e3o Louren\u00e7o",
    hook:"La randonn\u00e9e la plus spectaculaire de Mad\u00e8re.",
    desc:"La pointe est de l\u2019\u00eele est g\u00e9ologiquement distincte : plus ancienne, plus \u00e9rod\u00e9e, teintes ocre, rouge sang et noir volcanique. Le sentier longe des cr\u00eates \u00e9troites avec la mer turquoise des deux c\u00f4t\u00e9s simultan\u00e9ment, panoramas \u00e0 360\u00b0 \u00e0 chaque virage. 8 km aller-retour, peu de d\u00e9nivel\u00e9 : les grands font l\u2019aller complet en 3h. Pour les plus petits les premiers 2 km sont d\u00e9j\u00e0 spectaculaires. Acc\u00e8s payant (4,50 euros).",
    note:"Aucun ombre \u2014 eau et chapeaux absolument obligatoires. Parking complet avant 9h en ao\u00fbt.",
-   photos:["https://lh3.googleusercontent.com/place-photos/AJRVUZM5BSDdwHVIMpUV00yuhi1Kj6YqOQ0PTZm1iZjV0OmCeWQNxx3I7PveJ-H3efyIs5DDVQrGbDXCyqYeQu7wB8GExHdxBXfY6e--DV3bpg_Kz4fUoPspbjOvrz1wMhUlyqUQTabNm9Cbw9FvOKQ=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZODCaNdjsTvQRpbfRt9yZ6C95e_3e6IVPdeh2VnCughcZkjUXVE-HLQ5hOM-T4z2btEevk6oI-iq8yUIZUhNNUprgLwrYIuoVYILAtMHgKYK1VmsIkcAtss9BNrXcL1jNEkAVznx-4uwVzZVg=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZP2xf0S_NYmU67vRnZSUzWMGEKxf9jRvBZWniJK6AKl5SUCiLUu4ToalvyjOl6uakvK_eaYLJvhW2jNiJ6hYm0cN2FGiFqSvfoe_3lNZJ0YhOCGfIpT4mfx7CWt6f6ni3HGzlIOQWo3qo__oZg=s800-w800-h600"],
+   photos:["https://genaud.github.io/Madere-2026/img/Ponta-de-Sao-Lourenco_1.jpg","https://genaud.github.io/Madere-2026/img/Ponta-de-Sao-Lourenco_4.jpg","https://genaud.github.io/Madere-2026/img/Ponta-de-Sao-Lourenco_6.jpg"],
    tags:[{l:"Rando",c:"hike"},{l:"Vues incroyables",c:"cult"},{l:"Demi-journ\u00e9e",c:"chill"}]},
   {id:"s02",cat:"Piscines volcaniques \u2014 Nord",emoji:"&#127754;",bg:"#041520",
    name:"Porto Moniz \u2014 piscines volcaniques",
    hook:"Des piscines creus\u00e9es dans la lave noire par l\u2019Atlantique.",
    desc:"Porto Moniz se m\u00e9rite : 1h45 de route en traversant l\u2019\u00eele par le col d\u2019Encumeada (1000 m), d\u2019o\u00f9 l\u2019on voit les deux c\u00f4tes simultan\u00e9ment. Arr\u00eat \u00e0 Santana pour les palheiros, maisons au toit de chaume triangulaire qui descend jusqu\u2019au sol. Puis Porto Moniz : bassins naturels creus\u00e9s dans la roche volcanique noire, remplis et renouvel\u00e9s par les vagues de l\u2019Atlantique. Eau cristalline, odeur d\u2019iode, vagues qui \u00e9clatent sur les rochers en arri\u00e8re-plan. Entr\u00e9e 1,50 euros.",
    note:"Journ\u00e9e longue (1h45 de route). Pr\u00e9voir pique-nique. Surveiller la petite dans les bassins.",
-   photos:["https://lh3.googleusercontent.com/place-photos/AJRVUZNSZXR-_U05NnMey_qlHFNYSKSAYdb5pA1Vjo5e626u-J3TEZTh0T_DtUY-GL4QaOGX4U9EpgU0jtE-s8wgi6Do3-pOji6dX9hWucT4IbpWBZjYNtbKS9hsJPQ3jMKG6k8uZ6JScrlgVlst7ck=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZPkMQCSOq-5cICzgsBggM4x6BYHwGxKt_1Nl0_iD9sJcm1-t8UpgwxE28aoQEDxD0IeKag6RogNJqIW_385AVuNtcQsXQyirsaMqgjIKvnqtks81OBqQFnNVMKEEvJbcGHwjUn8xPxMpx8d=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZNsMitvbT3G0bG4A0ZM9HKVKzTFEdmmooDh9YVfOpkoqSArM8qwh_xCAQOfvw8tdZ8zTYQUwy08Dsy4xRlghZ_uXAaJi2Iosps6H5jrw-dgGDaelgoClUmN0bgfEaiG1ixdM5oDwGRAOW8d4kM=s800-w800-h600"],
+   photos:["https://genaud.github.io/Madere-2026/img/piscinas-naturais-porto-moniz-1.jpg","https://genaud.github.io/Madere-2026/img/piscinas-naturais-porto-moniz-4.jpg","https://genaud.github.io/Madere-2026/img/piscinas-naturais-porto-moniz-5.jpg"],
    tags:[{l:"Baignade",c:"water"},{l:"Road trip",c:"fun"},{l:"Nature volcanique",c:"hike"}]},
   {id:"s03",cat:"\u2605 Journ\u00e9e \u00eele \u2014 Ferry",emoji:"&#127965;",bg:"#201005",
    name:"Porto Santo \u2014 9 km de plage dor\u00e9e",
    hook:"Une \u00eele enti\u00e8rement diff\u00e9rente, \u00e0 2h15 de ferry : plate, dor\u00e9e, sans voiture, sans agenda.",
    desc:"Porto Santo est souvent la r\u00e9v\u00e9lation du s\u00e9jour. Plate, s\u00e8che, dor\u00e9e \u2014 \u00e0 l\u2019oppos\u00e9 total de Mad\u00e8re. 9 km de plage de sable fin ininterrompus, r\u00e9put\u00e9s pour leurs propri\u00e9t\u00e9s th\u00e9rapeutiques (riche en magn\u00e9sium et calcium). Eaux chaudes, peu profondes, sans vague. Les enfants ont un espace infini. Christophe Colomb y a v\u00e9cu avant de partir vers les Am\u00e9riques \u2014 sa maison est devenue mus\u00e9e. Le ferry Lobo Marinho part t\u00f4t et ram\u00e8ne le soir.",
    note:"R\u00e9server le ferry \u00e0 l\u2019avance \u2014 complet des jours avant en ao\u00fbt. D\u00e9part 8h, retour 18h.",
-   photos:["https://lh3.googleusercontent.com/place-photos/AJRVUZMsGlgSv2RH6myykR4_agpp8DE0PNMNG8qDv8Mr8XYHIVK1Y7-l38Dw3FJNs0UoEKSI48Zz_xXKlFddSegVvpSzYZzBNWodk3ze0TmbgH3IgxH9gV6VlUYfkFxM5SW_l8jbHNrnnN1Lib0WV34=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZND-hZG65ErRrtKrcB-pAH_5NcAkFMwOLK2QXPp9tRrmyZGEnaTMMxymtUPwZZYgievVCod8IJEPNJ1M_kESlyIXQF3uWv7ZQnTLxxxbY3LrQf2tK0pkVhDCyJCvH1mTHmXIGt9hUtOeGNX=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZNpgOlm5R_04UyTJVgtqO7_rZTlPQvvzQF9903MRwrzxK_meqLn40kfeXOG_ty3-LvVbTjSifDzvw21489gkJeJPOVj5OjNk2OY9yHnRQ7gLmQFgCEduRJY3cS2ELkIy6qWXVgwraSuJatGug=s800-w800-h600"],
+   photos:["https://genaud.github.io/Madere-2026/img/Ile-de-Porto-Santo-1.png","https://genaud.github.io/Madere-2026/img/Ile-de-Porto-Santo-4.jpg","https://genaud.github.io/Madere-2026/img/Ile-de-Porto-Santo-5.jpg"],
    tags:[{l:"Plage",c:"water"},{l:"Ferry A/R",c:"cult"},{l:"Tout \u00e2ge",c:"chill"},{l:"Inoubliable",c:"fun"}]},
   {id:"s04",cat:"Jardins et Luge \u2014 Monte",emoji:"&#127807;",bg:"#0a2010",
    name:"Monte Palace et luge en osier",
    hook:"Les jardins les plus extravagants du Portugal, suivis de la descente la plus jouissive de l\u2019\u00eele.",
    desc:"Monte est le quartier de villegiature historique au-dessus de Funchal, o\u00f9 les Britanniques venaient se fra\u00eecher au XIXe si\u00e8cle. T\u00e9l\u00e9ph\u00e9rique depuis le bord de mer. Sept hectares de v\u00e9g\u00e9tation subtropicale, bassins de carpes ko\u00ef, azulejos monumentaux, collection de min\u00e9raux en grotte souterraine. Puis le carrinho de cesto \u2014 panier en osier sur patins pilot\u00e9 par deux hommes en blanc qui freinent avec leurs semelles en cuir dans les ruelles pav\u00e9es. 2 km de descente.",
    note:"Arriver avant 9h30 pour \u00e9viter la file. 30 euros par panier, 2 personnes max.",
-   photos:["https://lh3.googleusercontent.com/place-photos/AJRVUZOhgdcXkaKSQM2_Wrszk9k7NVi8PUCqa77Zc7otLa7G822lBkI0rme0aG_KXmn3snDWwAqTuSwaJ10sOVJUBe_iZcujz0sWzxxDLVMmBQtCphicYkEBLdGawPh5eRfLtkA0ssca_EAgJfAADuI=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZObcYazEJfrPCaGQoPy4jvdjTJicVbgGBKT40a0VZWsRh0vpehHFX1MRZsmkm_2k9LyD7uuAGtONEsTw33jA3iece9s_8Kb3Q09Vs3A8lX44ez6Op9NwQd1FDw__zGGdQ9UJOMJML8ovpL5Pnk=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZPOLswxcnFMFCL_5Gsnl-e94i4_c_icx2Swa6V3ebGT9ompQqW8EpuqOO-AfI1il4-NgmQgBy0LgHyUT6Mpz4YxuL3javvAxAgxYwjSGtAvIGgnkJQfAcfIDbNUThOU1cZLTY_muyCaUsfc=s800-w800-h600"],
+   photos:["https://genaud.github.io/Madere-2026/img/carro-de-cesto-1.webp","https://genaud.github.io/Madere-2026/img/carro-de-cesto-3.jpg","https://genaud.github.io/Madere-2026/img/carro-de-cesto-5.jpg"],
    tags:[{l:"Nature",c:"hike"},{l:"Sensations",c:"fun"},{l:"Tout \u00e2ge",c:"chill"},{l:"Culture",c:"cult"}]},
   {id:"s05",cat:"For\u00eat primaire UNESCO \u2014 Levada",emoji:"&#127807;",bg:"#031208",
    name:"Levada do Caldei\u00e3o Verde",
    hook:"Entrer dans l\u2019une des derni\u00e8res for\u00eats primaires d\u2019Europe \u2014 et traverser ses tunnels dans le noir.",
    desc:"La laurisilva de Mad\u00e8re est une for\u00eat subtropicale de l\u2019\u00e8re tertiaire, class\u00e9e UNESCO depuis 1999. Le sentier longe une levada \u2014 canal d\u2019irrigation du XVe si\u00e8cle. V\u00e9g\u00e9tation saisissante : foug\u00e8res arborescentes g\u00e9antes, lauriers centenaires couverts de mousses, ambiance fra\u00eeche et mystique. Le moment fort : quatre tunnels taill\u00e9s dans la roche volcanique, jusqu\u2019\u00e0 150 m de long, \u00e0 traverser \u00e0 la lampe frontale dans le noir complet. Les enfants adorent l\u2019aspect explorateurs. Au bout : une cascade dans un lac naturel.",
    note:"Lampes frontales absolument indispensables ! Chaussures ferm\u00e9es obligatoires.",
-   photos:["https://lh3.googleusercontent.com/place-photos/AJRVUZNYWTK5CR4u_BcX7jcHX6hvaIU3-ujIN7puW3UfD11QijplAbssZ0Wpb_BkaTq7magW7A1RYWuHIGshIRdWj-uApK4fefD_SOsYIgnwG-l5VNgk_kAAo941YsIDV26cmvS6aoXR5hyA2rtQ_A=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZPwFCXDxUEVy75iMfyKSnwIm0m3kHwCPQw_jVCM5oBousN5x0D8QRERy0InZtFdot6vURdrAp4LvmmD4qxo1CfTFm8Hxrnf5oG1lM-VEIdphc4GLqAMXxTMwBih0zngT7CxRdw3_oUuu-Nq_E8=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZMlhx_uyEgKGKRLJrME8l4ufHQDuGhZsyl9FkCrSymUH3mdV-874aNW3wbqDkjW5QtEj-wJ5FHuWm3lO-jMAvVgHYOwyVzqG8DMtJlW3k8ORycKe4Q3qcDhmWECFM7oEm3GgEj53kWaV_Imaw=s800-w800-h600"],
+   photos:["https://genaud.github.io/Madere-2026/img/Levada-Caldeirao-Verde-4.jpg","https://genaud.github.io/Madere-2026/img/Levada-Caldeirao-Verde-5.jpg","https://genaud.github.io/Madere-2026/img/Levada-Caldeirao-Verde-6.jpg"],
    tags:[{l:"Rando",c:"hike"},{l:"UNESCO",c:"cult"},{l:"Tunnels dans le noir",c:"fun"}]},
   {id:"s06",cat:"Belv\u00e9d\u00e8re \u2014 C\u00f4te ouest",emoji:"&#128507;",bg:"#101828",
    name:"Cabo Gir\u00e3o \u2014 falaise \u00e0 580 m",
    hook:"580 m de falaise verticale et un sol vitr\u00e9 dans le vide \u2014 vertige garanti.",
    desc:"Cabo Gir\u00e3o est l\u2019une des plus hautes falaises maritimes d\u2019Europe : 580 m de chute verticale dans l\u2019Atlantique. Le belv\u00e9d\u00e8re au sol vitr\u00e9 est install\u00e9 au bord de la paroi \u2014 on marche dans le vide au-dessus de l\u2019oc\u00e9an. En bas, des faj\u00e3s, minuscules terrasses de vignes accessibles uniquement par c\u00e2ble ou bateau. La route passe par C\u00e2mara de Lobos, le village de p\u00eacheurs que Winston Churchill venait peindre dans les ann\u00e9es 1950 \u2014 quasiment inchang\u00e9 depuis.",
    note:"Entr\u00e9e 2-5 euros. Combinable avec Monte et luge le m\u00eame jour.",
-   photos:["https://lh3.googleusercontent.com/place-photos/AJRVUZOzq166sY8NY2WVapu4lgg-NnipHKhS_JnZLdmOKNOh3xkKCpgvJ8XPcHaGscxBacusDLBzHsH_5F9g7YA54Vra2ohvOsJPaYD_iBr8BVxbTA_V_OAlg8-qoV6S33ej8ot1yv7o3rAySDyztQ=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZP4KTtVEf3RrDpla8RToH-nN6xtEzTlhJJMg2n1Du6IJHuZh8jYsIlCkLFMw-tf4IpXfKAzpXk-h2OQSvN9iQ1nPIv1F3PWf2g2DMK1sMSi0zUfMKps_K0oGtnOhukAA0edBtzOOn0pwWyxFQ=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZNO5v08gfXNsdv1Jb5lJ_Wr_3QG8eVqV3qHkml95BJ1ckKIYvDKCkSj9JnfYgAPbfAM4TVdcqxJlrOCR-f9vL9PkFj5oSfKl5HxP8gzJMCFcp5b6ACZmuizKLeNsqVcp8JFvyC94gSsb7ynfdCL0YrkcQ=s800-w800-h600"],
+   photos:["https://genaud.github.io/Madere-2026/img/Cabo-Girao-skywalk-1.jpg","https://genaud.github.io/Madere-2026/img/Cabo-Girao-skywalk-2.jpg","https://genaud.github.io/Madere-2026/img/Cabo-Girao-skywalk-4.jpg"],
    tags:[{l:"Panorama",c:"cult"},{l:"Vertige",c:"fun"},{l:"Court",c:"chill"}]},
   {id:"s07",cat:"C\u00e9tac\u00e9s \u2014 Mer ouverte",emoji:"&#128044;",bg:"#041018",
    name:"Whale watching depuis Calheta",
    hook:"Mad\u00e8re est l\u2019un des meilleurs spots d\u2019observation des baleines en Europe.",
    desc:"Les eaux autour de Mad\u00e8re sont exceptionnellement profondes d\u00e8s la sortie du port : 3000 \u00e0 4000 m\u00e8tres \u00e0 quelques miles de la c\u00f4te. Des vigies sur les falaises rep\u00e8rent les animaux aux jumelles et guident les bateaux par radio en temps r\u00e9el \u2014 syst\u00e8me unique en Europe. Sorties en zodiac 2h30 avec H2O Madeira. Esp\u00e8ces : dauphins communs, grands dauphins, globic\u00e9phales. Parfois baleines \u00e0 bec ou cachalots. Les enfants de tous \u00e2ges ressortent unanimement subjugu\u00e9s.",
    note:"R\u00e9servation OBLIGATOIRE \u2014 complet des jours \u00e0 l\u2019avance en ao\u00fbt. Anti-naus\u00e9e recommand\u00e9.",
-   photos:["https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=800&q=80","https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80","https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=800&q=80"],
+   photos:["https://genaud.github.io/Madere-2026/img/whale-watching-1.jpg","https://genaud.github.io/Madere-2026/img/whale-watching-2.jpg","https://genaud.github.io/Madere-2026/img/whale-watching-3.jpg"],
    tags:[{l:"Mer",c:"water"},{l:"Tout \u00e2ge",c:"chill"},{l:"Inoubliable",c:"fun"}]},
   {id:"s08",cat:"Plage et Village \u2014 C\u00f4te ouest",emoji:"&#127958;",bg:"#041818",
    name:"Plage de Calheta et Jardim do Mar",
    hook:"La plage de sable fin la plus familiale de l\u2019\u00eele.",
    desc:"Mad\u00e8re n\u2019a pas naturellement de plages de sable \u2014 ses c\u00f4tes sont rocheuses. Calheta fait exception : du sable fin import\u00e9 du Sahara cr\u00e9e une vraie plage familiale. Eau calme et peu profonde, id\u00e9ale pour la petite de 4 ans. En fin d\u2019apr\u00e8s-midi, cinq minutes de route rejoignent Jardim do Mar : ruelles pav\u00e9es de basalte, maisons couvertes de bougainvill\u00e9es mauves, calme absolu face \u00e0 l\u2019Atlantique. L\u2019un des plus beaux couchers de soleil de l\u2019\u00eele.",
    note:"Combinable avec le whale watching \u2014 m\u00eame secteur Calheta.",
-   photos:["https://lh3.googleusercontent.com/place-photos/AJRVUZOx3_8RzLefOco_wJrMJgRvHH4Zls_y1EfQN-nYhYLSwoxVixpS8Nx-8MwjCnTWhgzkiLbVUAhnFGI4gfz07NWAiQ1K0ccfY_PHtG-LPXTeoznfMRzVYzB9gYY9r3DJd0oqA3oHkeUAUxBdLhU=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZOBKWNZIMuFRiqqAkNQGV6CWXxSRKp5D0bWajV8h_w-bw6gRAlNvQHU-fs0KVckOvCNDNrnQxPAALLb_0FQcPyo40wC5Y60-I5AYrHJ8waJgV-xbSBxbq1nR_afteTg9o0uXGu5zZ0-QNUulQ=s800-w800-h600","https://lh3.googleusercontent.com/place-photos/AJRVUZPLEnxkYM9aoAt8yYw3n9UJyCVBkEZ-GICN5SnWx4_Qi7qg9Rx58L6704DFA4RefCPEvzOP80p2_0FQcErjR4gTV4EkcR3z4Hp9XVG6vXlbjv09-zp9ISwBjVhtfr7Tnb3ib5rxFf5GeTvpSjQ=s800-w800-h600"],
+   photos:["https://genaud.github.io/Madere-2026/img/Calheta-beach-1.jpg","https://genaud.github.io/Madere-2026/img/Calheta-beach-3.jpg","https://genaud.github.io/Madere-2026/img/Calheta-beach-5.jpg"],
    tags:[{l:"Plage sable fin",c:"water"},{l:"4 ans ok",c:"chill"},{l:"Coucher de soleil",c:"cult"}]},
   {id:"s09",cat:"Adr\u00e9naline \u2014 Canyoning tropical",emoji:"&#128166;",bg:"#061a0c",
    name:"Canyoning Ribeira das Cales",
    hook:"Rappels, sauts et nage dans les gorges tropicales \u2014 l\u2019activit\u00e9 coup de coeur des ados.",
    desc:"Le canyon de la Ribeira das Cales est \u00e0 20 minutes de Funchal, dans une gorge creus\u00e9e dans la roche volcanique couverte de v\u00e9g\u00e9tation tropicale dense. Id\u00e9al pour les d\u00e9butants : difficult\u00e9 mod\u00e9r\u00e9e, encadrement professionnel, tout l\u2019\u00e9quipement fourni (combinaison n\u00e9opr\u00e8ne, casque, baudrier). Au programme : rappels le long de cascades tropicales, sauts dans des vasques turquoise, passages \u00e0 la nage entre des parois couvertes de foug\u00e8res. Dur\u00e9e 2h30. Les grands ados en ressortent euphoriques.",
    note:"R\u00e9server \u00e0 l\u2019avance \u2014 groupes limit\u00e9s. Tout l\u2019\u00e9quipement fourni.",
-   photos:["https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80","https://images.unsplash.com/photo-1467632499275-7a693a761056?w=800&q=80","https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=800&q=80"],
+   photos:["https://genaud.github.io/Madere-2026/img/canyoning-1.jpg","https://genaud.github.io/Madere-2026/img/canyoning-2.jpg","https://genaud.github.io/Madere-2026/img/canyoning-4.jpg"],
    tags:[{l:"Adr\u00e9naline",c:"fun"},{l:"12 ans +",c:"fun"},{l:"Encadr\u00e9",c:"chill"}]},
   {id:"s10",cat:"Altitude \u2014 Lever de soleil",emoji:"&#127749;",bg:"#0c0c20",
    name:"Pico Arieiro au lever du soleil (1818 m)",
    hook:"Contempler Mad\u00e8re endormie sous une mer de nuages depuis 1800 m.",
    desc:"Le Pico Arieiro est le troisi\u00e8me sommet de l\u2019\u00eele et le seul accessible directement en voiture jusqu\u2019\u00e0 1818 m d\u2019altitude. L\u2019exp\u00e9rience du lever de soleil est consid\u00e9r\u00e9e par des milliers de voyageurs comme la chose la plus belle qu\u2019ils aient jamais vue. D\u00e9part de Funchal \u00e0 5h15. En dessous : toute l\u2019\u00eele enfouie dans une mer de nuages. Au-dessus : ciel noir virant au violet, puis rose, puis orange.",
    note:"Veste chaude obligatoire \u2014 10-12 degr\u00e9s au sommet en ao\u00fbt.",
-   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pico_do_Arieiro%2C_Madeira%2C_Portugal%2C_2012-08-18%2C_DD_02.jpg/1280px-Pico_do_Arieiro%2C_Madeira%2C_Portugal%2C_2012-08-18%2C_DD_02.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Pico_do_Arieiro_summit_views.jpg/1280px-Pico_do_Arieiro_summit_views.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/P_do_Arieiro.jpg/1280px-P_do_Arieiro.jpg"],
+   photos:["https://genaud.github.io/Madere-2026/img/Pico-Arieiro-1.jpg","https://genaud.github.io/Madere-2026/img/Pico-Arieiro-2.jpeg","https://genaud.github.io/Madere-2026/img/Pico-Arieiro-3.jpg"],
    tags:[{l:"14 ans +",c:"fun"},{l:"Lever de soleil",c:"cult"},{l:"Altitude",c:"hike"}]},
   {id:"s11",cat:"Plage noire \u2014 C\u00f4te nord",emoji:"&#9899;",bg:"#0c0c14",
    name:"Seixal \u2014 plage volcanique et piscines",
    hook:"Sable volcanique noir, piscines naturelles sauvages \u2014 le coin secret du nord.",
    desc:"Seixal est le coup de coeur des familles qui connaissent bien l\u2019\u00eele. Village nich\u00e9 \u00e0 flanc de falaise sur la c\u00f4te nord, entour\u00e9 de terrasses de vignes et de for\u00eats de lauriers. La plage de sable volcanique noir contraste avec le vert intense de la v\u00e9g\u00e9tation. Deux piscines naturelles : une calme id\u00e9ale quand la mer est fra\u00eeche, une plus sauvage fr\u00e9quent\u00e9e par les locaux. Nettement moins touristique que Porto Moniz.",
    note:"Combinable avec Porto Moniz \u2014 m\u00eame axe routier, 15 min.",
-   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Seixal_beach_Madeira.jpg/1280px-Seixal_beach_Madeira.jpg","https://lh3.googleusercontent.com/place-photos/AJRVUZNtf0aD4q6L9EKbsT8nUxVLODhHwSSmzP8NJpR5YXi8CRpvFfRs8kJqm6dFj5aSVAK4TrMz9Z2N-dMuG7T4K_oeS=s800-w800-h600","https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Seixal_natural_pools.jpg/1280px-Seixal_natural_pools.jpg"],
+   photos:["https://genaud.github.io/Madere-2026/img/Seixal_beach_black_sand_1.jpg","https://genaud.github.io/Madere-2026/img/Seixal_beach_black_sand_2.jpg","https://genaud.github.io/Madere-2026/img/Seixal_beach_black_sand_3.jpg"],
    tags:[{l:"Plage noire",c:"water"},{l:"Moins touristique",c:"chill"},{l:"Nord sauvage",c:"hike"}]},
   {id:"s12",cat:"Sommet \u2014 Toit de l\u2019\u00eele",emoji:"&#9968;",bg:"#141424",
    name:"Pico Ruivo (1862 m) \u2014 panorama 360\u00b0",
    hook:"Le point le plus haut de Mad\u00e8re \u2014 45 min de marche pour voir toute l\u2019\u00eele.",
    desc:"Pico Ruivo est le point culminant de Mad\u00e8re \u00e0 1862 m. Depuis le parking d\u2019Achada do Teixeira (voiture jusqu\u2019\u00e0 1592 m), le sentier monte 270 m en 45 minutes dans un paysage de cr\u00eates rocheuses et de bruy\u00e8res g\u00e9antes. Au sommet par temps clair : vue \u00e0 360\u00b0 sur toute l\u2019\u00eele. Le sentiment d\u2019\u00eatre au-dessus du monde est imm\u00e9diat et saisissant. Accessible d\u00e8s 10 ans.",
    note:"Veste obligatoire. Ne pas cumuler avec Porto Santo le m\u00eame jour.",
-   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Madeira_-_Pico_Ruivo_%2836552177534%29.jpg/1280px-Madeira_-_Pico_Ruivo_%2836552177534%29.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Aerial_View_from_Pico_Ruivo.jpg/1280px-Aerial_View_from_Pico_Ruivo.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Pico_Ruivo_-_Madeira.jpg/1280px-Pico_Ruivo_-_Madeira.jpg"],
+   photos:["https://genaud.github.io/Madere-2026/img/Pico-Ruivo-1.jpg","https://genaud.github.io/Madere-2026/img/Pico-Ruivo-2.jpg","https://genaud.github.io/Madere-2026/img/Pico-Ruivo-4.jpg"],
    tags:[{l:"Rando",c:"hike"},{l:"Panorama 360\u00b0",c:"cult"},{l:"10 ans +",c:"fun"}]},
   {id:"s13",cat:"Culture et Histoire \u2014 Funchal",emoji:"&#127961;",bg:"#1a1020",
    name:"Funchal : ville, march\u00e9 et Mus\u00e9e CR7",
    hook:"La capitale la plus agr\u00e9able de l\u2019Atlantique \u2014 et la ville natale de Cristiano Ronaldo.",
    desc:"Funchal m\u00e9rite qu\u2019on s\u2019y attarde. La Rua de Santa Maria et ses centaines de portes peintes par des artistes locaux. Le Mercado dos Lavradores : strelitzias, fruits tropicaux, t\u00eates de peixe espada et stands de poncha. Et le Mus\u00e9e CR7 : Cristiano Ronaldo est n\u00e9 \u00e0 Funchal en 1985. Cinq Ballons d\u2019Or originaux expos\u00e9s. Statue en bronze devant l\u2019entr\u00e9e \u2014 incontournable pour les enfants fans de foot.",
    note:"Mus\u00e9e CR7 : file raisonnable t\u00f4t le matin. March\u00e9 ouvert en matin\u00e9e.",
-   photos:["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Funchal_Hafen.jpg/1280px-Funchal_Hafen.jpg","https://lh3.googleusercontent.com/place-photos/AJRVUZMqHL2z5c4y3kQ2LsVdW0HJfQ2k5Hf_T8qZ9YfK2dZ4P2mT5dVnY8wT5k=s800-w800-h600","https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Mercado_dos_Lavradores_Funchal.jpg/1280px-Mercado_dos_Lavradores_Funchal.jpg"],
+   photos:["https://genaud.github.io/Madere-2026/img/funchal-2.jpg","https://genaud.github.io/Madere-2026/img/funchal-5.jpg","https://genaud.github.io/Madere-2026/img/funchal-7.jpg"],
    tags:[{l:"Culture",c:"cult"},{l:"Foot",c:"fun"},{l:"March\u00e9",c:"chill"},{l:"Tout \u00e2ge",c:"chill"}]}
 ];
-
+ 
 var prenom=localStorage.getItem("mp")||null;
 var allVotes=[],customSlots=[],allSlots=SLOTS.slice(),pollTimer=null,chatHistory=[],gIdx={};
-
+ 
 function doSetPrenom(){
   var v=document.getElementById("pi").value.trim();
   if(!v){document.getElementById("pi").focus();return;}
@@ -396,7 +395,7 @@ document.getElementById("propbtn").addEventListener("click",openChat);
 document.getElementById("ccb").addEventListener("click",closeChat);
 document.getElementById("f-submit").addEventListener("click",sendMsg);
 if(prenom){document.getElementById("mo").classList.add("hidden");document.getElementById("up").classList.remove("hidden");document.getElementById("pn").textContent=prenom;loadAll();}
-
+ 
 function initMap(){
   var map=new google.maps.Map(document.getElementById("map"),{center:{lat:32.72,lng:-16.85},zoom:10,disableDefaultUI:true,zoomControl:true});
   var iw=new google.maps.InfoWindow();
@@ -422,7 +421,7 @@ function initMap(){
   mk(32.6900,-16.9100,"&#128166;","Canyoning","Rappels et sauts");
   mk(32.7950,-17.1500,"&#9899;","Seixal","Plage noire et piscines");
 }
-
+ 
 function loadAll(){
   Promise.all([
     sbFetch("/rest/v1/votes?select=slot_id,prenom,choice&order=created_at.asc"),
@@ -535,8 +534,6 @@ function saveSlot(parsed){
   });
 }
 </script>
-
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAC-4-2CWnHEIOgwQrszfvXT7JuHDh81pA&libraries=marker&callback=initMap&loading=async"></script>
-
 </body>
 </html>
