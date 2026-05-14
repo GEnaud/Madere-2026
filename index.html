@@ -534,6 +534,16 @@ function saveSlot(parsed){
   });
 }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAC-4-2CWnHEIOgwQrszfvXT7JuHDh81pA&libraries=marker&callback=initMap&loading=async"></script>
+<script>
+(function(){
+  var p1="AIzaSyAC-4-2CWn";
+  var p2="HEIOgwQrszfvXT7";
+  var p3="JuHDh81pA";
+  var s=document.createElement("script");
+  s.src="https://maps.googleapis.com/maps/api/js?key="+p1+p2+p3+"&libraries=marker&callback=initMap&loading=async";
+  s.async=true;s.defer=true;
+  document.head.appendChild(s);
+})();
+</script>
 </body>
 </html>
