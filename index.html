@@ -154,7 +154,7 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
 </style>
 </head>
 <body>
- 
+
 <div class="modal-overlay" id="mo">
   <div class="modal-box">
     <h2 class="modal-title"><em>Mad&egrave;re</em> &middot; Ao&ucirc;t 2026</h2>
@@ -164,12 +164,12 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
     <div class="modal-names" id="mn"></div>
   </div>
 </div>
- 
+
 <div class="user-pill hidden" id="up">
   <div class="dot"></div><span id="pn"></span>
   <span style="opacity:.4;font-size:.65rem">&nbsp;&middot; changer</span>
 </div>
- 
+
 <div class="chat-overlay hidden" id="co">
   <div class="chat-box">
     <div class="chat-hdr">
@@ -196,7 +196,7 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
     </div>
   </div>
 </div>
- 
+
 <section class="hero">
   <div class="hero-img"></div>
   <div class="hero-overlay"></div>
@@ -211,7 +211,7 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
   </div>
   <div class="hero-scroll" id="hs"><span>D&eacute;couvrir</span><div class="scroll-arrow"></div></div>
 </section>
- 
+
 <div class="map-section" id="mapsec">
   <h2>Nos deux <em>maisons</em> &amp; les activit&eacute;s</h2>
   <p class="map-sub">C&ocirc;t&eacute; est de l&rsquo;&icirc;le &middot; 8 km l&rsquo;une de l&rsquo;autre &middot; Cliquez sur les marqueurs</p>
@@ -229,7 +229,7 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
   </div>
   <div id="map"></div>
 </div>
- 
+
 <div class="intro">
   <h2 class="intro-title">Votez pour construire le <em>programme</em></h2>
   <p class="intro-body">Pas de planning impos&eacute; &mdash; une liste d&rsquo;activit&eacute;s &agrave; trier ensemble. Votez Pour, Peut-&ecirc;tre ou Non. Les cartes se r&eacute;organisent selon les scores.</p>
@@ -239,22 +239,22 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
     <div class="legend-item"><div class="legend-dot" style="background:var(--lava)"></div> Non (-2 pts)</div>
   </div>
 </div>
- 
+
 <div class="slots-section">
   <div class="slots-header"><h2>Les activit&eacute;s propos&eacute;es</h2><p>Plusieurs photos &middot; Votes en direct &middot; Tri&eacute;es par score</p></div>
   <div class="slots-grid" id="sg"><div class="loading">Connexion...</div></div>
 </div>
- 
+
 <div class="propose-section">
   <button class="propose-btn" id="propbtn">&#10024; Proposer une nouvelle activit&eacute;</button>
 </div>
- 
+
 <div class="podium-section">
   <h2>Le <em>classement</em></h2>
   <p class="podium-sub">Mis &agrave; jour en temps r&eacute;el</p>
   <div class="podium-list" id="pl"></div>
 </div>
- 
+
 <div class="practical">
   <div class="practical-inner">
     <h2>Infos <em>pratiques</em></h2>
@@ -269,7 +269,7 @@ footer{background:rgba(0,0,0,.4);text-align:center;padding:1.5rem;font-size:.65r
   </div>
 </div>
 <footer>Mad&egrave;re &middot; Ao&ucirc;t 2026 &middot; Programme co-construit par les deux familles</footer>
- 
+
 <script>
 var SBU="https://ekxsivbtixgvejpwabtd.supabase.co";
 var SBK="sb_publishable_mNRPVpyIvZu2-oGlp4X8rg_kMB-rMhJ";
@@ -280,7 +280,7 @@ function sbFetch(path,opts){
   opts.headers=h;
   return fetch(SBU+path,opts).then(function(r){return r.text().then(function(t){if(!r.ok)throw new Error(t);return t?JSON.parse(t):[];});});
 }
- 
+
 var SLOTS=[
   {id:"s01",cat:"Randonn\u00e9e \u2605\u2605",emoji:"&#127755;",bg:"#2a1505",
    name:"Ponta de S\u00e3o Louren\u00e7o",
@@ -374,10 +374,10 @@ var SLOTS=[
    photos:["https://genaud.github.io/Madere-2026/img/funchal-2.jpg","https://genaud.github.io/Madere-2026/img/funchal-5.jpg","https://genaud.github.io/Madere-2026/img/funchal-7.jpg"],
    tags:[{l:"Culture",c:"cult"},{l:"Foot",c:"fun"},{l:"March\u00e9",c:"chill"},{l:"Tout \u00e2ge",c:"chill"}]}
 ];
- 
+
 var prenom=localStorage.getItem("mp")||null;
 var allVotes=[],customSlots=[],allSlots=SLOTS.slice(),pollTimer=null,chatHistory=[],gIdx={};
- 
+
 function doSetPrenom(){
   var v=document.getElementById("pi").value.trim();
   if(!v){document.getElementById("pi").focus();return;}
@@ -395,7 +395,7 @@ document.getElementById("propbtn").addEventListener("click",openChat);
 document.getElementById("ccb").addEventListener("click",closeChat);
 document.getElementById("f-submit").addEventListener("click",sendMsg);
 if(prenom){document.getElementById("mo").classList.add("hidden");document.getElementById("up").classList.remove("hidden");document.getElementById("pn").textContent=prenom;loadAll();}
- 
+
 function initMap(){
   var map=new google.maps.Map(document.getElementById("map"),{center:{lat:32.72,lng:-16.85},zoom:10,disableDefaultUI:true,zoomControl:true});
   var iw=new google.maps.InfoWindow();
@@ -421,7 +421,7 @@ function initMap(){
   mk(32.6900,-16.9100,"&#128166;","Canyoning","Rappels et sauts");
   mk(32.7950,-17.1500,"&#9899;","Seixal","Plage noire et piscines");
 }
- 
+
 function loadAll(){
   Promise.all([
     sbFetch("/rest/v1/votes?select=slot_id,prenom,choice&order=created_at.asc"),
